@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Dodge(CallbackContext context)
     {
-        if (context.performed && moveInput != Vector2.zero)
+        if (!Dodging && context.performed && moveInput != Vector2.zero)
         {
             StartCoroutine(PerformDodge());
         }

@@ -55,7 +55,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""OnDodge"",
+                    ""name"": ""Dodge"",
                     ""type"": ""Button"",
                     ""id"": ""9f83a530-f526-47e1-a8c8-525ff728f264"",
                     ""expectedControlType"": ""Button"",
@@ -292,7 +292,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""OnDodge"",
+                    ""action"": ""Dodge"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -883,7 +883,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_PlayerBattle_Move = m_PlayerBattle.FindAction("Move", throwIfNotFound: true);
         m_PlayerBattle_Look = m_PlayerBattle.FindAction("Look", throwIfNotFound: true);
         m_PlayerBattle_Fire = m_PlayerBattle.FindAction("Fire", throwIfNotFound: true);
-        m_PlayerBattle_Dodge = m_PlayerBattle.FindAction("OnDodge", throwIfNotFound: true);
+        m_PlayerBattle_Dodge = m_PlayerBattle.FindAction("Dodge", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
