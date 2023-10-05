@@ -404,7 +404,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1790029320}
-  - component: {fileID: 1790029324}
+  - component: {fileID: 1790029326}
   - component: {fileID: 1790029323}
   - component: {fileID: 1790029319}
   - component: {fileID: 1790029321}
@@ -589,8 +589,9 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1790029324}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+      - m_Target: {fileID: 1790029326}
+        m_TargetAssemblyTypeName: Assets.Scripts.Gameplay.Player.PlayerStateController,
+          Assembly-CSharp
         m_MethodName: Dodge
         m_Mode: 0
         m_Arguments:
@@ -608,22 +609,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player-Battle
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1790029324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790029318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e02b9a3f48e415f4298e665dc7b1bbe3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 7.5
-  smoothInputSpeed: 0.2
-  dodgeRollTime: 0.7
-  dodgeSpeed: 10
 --- !u!58 &1790029325
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -659,6 +644,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1790029326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790029318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02bffc62c6405b949a414771ef9ff806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSettings: {fileID: 11400000, guid: b9fbdae532d9133469cd5ff587dfc238, type: 2}
+  smoothInputSpeed: 0.2
+  MoveInput: {x: 0, y: 0}
+  SmoothedInputVector: {x: 0, y: 0}
 --- !u!1 &1871003232
 GameObject:
   m_ObjectHideFlags: 0
