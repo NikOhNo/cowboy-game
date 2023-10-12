@@ -6,6 +6,7 @@ using static UnityEngine.InputSystem.InputAction;
 using UnityEngine.InputSystem.XR;
 using Assets.Scripts.Gameplay.Player.States.Gameplay_States;
 using Assets.Scripts.Gameplay.Player.Movement_States;
+using UnityEngine.InputSystem;
 
 namespace Assets.Scripts.Gameplay.Player
 {
@@ -19,7 +20,7 @@ namespace Assets.Scripts.Gameplay.Player
         private float smoothInputSpeed = .2f;
 
         [SerializeField]
-        private PlayerController playerController;
+        private PlayerController controller;
 
         //-- PROPERTIES
         public PlayerSettings PlayerSettings => playerSettings;
@@ -38,8 +39,6 @@ namespace Assets.Scripts.Gameplay.Player
         private PlayerInputActions playerInputActions;
         private Vector2 smoothInputVelocity;
 
-        private PlayerController controller;
-
         private void Awake()
         {
             playerInputActions = new();
@@ -52,6 +51,9 @@ namespace Assets.Scripts.Gameplay.Player
         {
             GetMoveInput();
             GetMousePosition();
+
+            PivotGunToMouse();
+
             currState.PerformState();
         }
 
@@ -62,6 +64,21 @@ namespace Assets.Scripts.Gameplay.Player
             currState = newState;
         }
 
+        //-- HELPERS
+        private void PivotGunToMouse()
+        {
+            Vector2 mousePos = MousePos;
+            Transform gunPivot = controller.gunPivot;
+
+            var mousePositionZ = Camera.main.farClipPlane;
+            var mouseScreenPos = new Vector3(mousePos.x, mousePos.y, mousePositionZ);
+            var mouseWorldPos = Camera.main.ScreenToWorldPoint(mouseScreenPos);
+
+            Vector3 targetDirection = mouseWorldPos - gunPivot.position;
+
+            float rotationZ = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
+            gunPivot.rotation = Quaternion.Euler(0f, 0f, rotationZ + 90);
+        }
 
         //-- INPUT HANDLING
 
@@ -69,7 +86,14 @@ namespace Assets.Scripts.Gameplay.Player
         {
             if (context.performed)
             {
-                ChangeState(AimState);
+                if (currState != AimState)
+                {
+                    ChangeState(AimState);
+                }
+                else
+                {
+                    ChangeState(MoveState);
+                }
             }
         }
 
@@ -79,12 +103,12 @@ namespace Assets.Scripts.Gameplay.Player
             {
                 if (currState is AimState aimState)
                 {
-                    // Tell aim state to fire
+                    aimState.FireGun();
 
                 }
                 else if (currState is MoveState moveState)
                 {
-                    
+                    moveState.FanHammer();
                 }
             }
         }
@@ -106,7 +130,7 @@ namespace Assets.Scripts.Gameplay.Player
 
         private void GetMousePosition()
         {
-            MousePos = playerInputActions.PlayerBattle.Look.ReadValue<Vector2>();
+            MousePos = Mouse.current.position.ReadValue();
         }
     }
 }

@@ -1,12 +1,15 @@
 ﻿using Assets.Scripts.Gameplay.Player.Movement_States;
-using System.Collections;
 using UnityEngine;
+
 
 namespace Assets.Scripts.Gameplay.Player.States.Gameplay_States
 {
     public class AimState : GameplayStateBase
     {
         float elapsedAimTime = 0f;
+
+        //-- GAMEPLAY STATE
+        public override bool CanInterrupt { get; protected set; } = true;
 
         public override void EnterState(PlayerStateController stateController, PlayerController playerController)
         {
@@ -17,18 +20,20 @@ namespace Assets.Scripts.Gameplay.Player.States.Gameplay_States
 
         public override void PerformState()
         {
-            // TODO: 
-            // * Walk slow
-            // * Aim at cursor
-            // * Click to fire
             elapsedAimTime += Time.deltaTime;
-            playerController.gunPivot.rotation = new Quaternion(0, 0, , 0);
         }
 
         public override void ExitState()
         {
             elapsedAimTime = 0;
-            throw new System.NotImplementedException();
         }
+
+        //-- PUBLIC FUNCTIONS
+        public void FireGun()
+        {
+
+        }
+
+        //-- HELPERS
     }
 }

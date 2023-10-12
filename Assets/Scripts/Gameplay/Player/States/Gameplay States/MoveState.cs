@@ -10,6 +10,8 @@ public class MoveState : GameplayStateBase
 {
     private float MoveSpeed => stateController.PlayerSettings.MoveSpeed;
 
+    public override bool CanInterrupt { get; protected set; } = true;
+
     public override void EnterState(PlayerStateController stateController, PlayerController playerController)
     {
         base.EnterState(stateController, playerController);
@@ -26,6 +28,11 @@ public class MoveState : GameplayStateBase
         Vector2 newVeloctiy = stateController.SmoothedInputVector * MoveSpeed;
 
         // Update velocity
-        playerController.rigidbody2D.velocity = newVeloctiy;
+        playerController.rb2D.velocity = newVeloctiy;
+    }
+
+    public void FanHammer()
+    {
+
     }
 }

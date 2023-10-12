@@ -754,6 +754,23 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 9f83a530-f526-47e1-a8c8-525ff728f264
     m_ActionName: Player-Battle/Dodge[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1790029326}
+        m_TargetAssemblyTypeName: Assets.Scripts.Gameplay.Player.PlayerStateController,
+          Assembly-CSharp
+        m_MethodName: EnterAim
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9655c541-bfde-44fa-b047-c3415572d6f1
+    m_ActionName: Player-Battle/Aim[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player-Battle
@@ -808,7 +825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSettings: {fileID: 11400000, guid: b9fbdae532d9133469cd5ff587dfc238, type: 2}
   smoothInputSpeed: 0.2
-  playerController: {fileID: 1790029327}
+  controller: {fileID: 1790029327}
   MoveInput: {x: 0, y: 0}
   SmoothedInputVector: {x: 0, y: 0}
   MousePos: {x: 0, y: 0}
@@ -825,7 +842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunPivot: {fileID: 19884822}
-  rigidbody2D: {fileID: 1790029321}
+  rb2D: {fileID: 1790029321}
   animator: {fileID: 0}
 --- !u!1 &1871003232
 GameObject:

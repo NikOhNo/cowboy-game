@@ -14,12 +14,14 @@ public class DodgeState : GameplayStateBase
     float elapsedTime = 0f;
     Vector2 dodgeVelocity;
 
+    public override bool CanInterrupt { get; protected set; } = false;
+
     public override void EnterState(PlayerStateController stateController, PlayerController playerController)
     {
         base.EnterState(stateController, playerController);
 
         dodgeVelocity = stateController.MoveInput * DodgeSpeed;
-        playerController.rigidbody2D.velocity = dodgeVelocity;
+        playerController.rb2D.velocity = dodgeVelocity;
         elapsedTime = 0f;
     }
 
@@ -30,7 +32,7 @@ public class DodgeState : GameplayStateBase
 
     public override void PerformState()
     {
-        playerController.rigidbody2D.velocity = dodgeVelocity;
+        playerController.rb2D.velocity = dodgeVelocity;
         elapsedTime += Time.deltaTime;
 
         if (elapsedTime >= DodgeTime)

@@ -8,6 +8,8 @@ namespace Assets.Scripts.Gameplay.Player.Movement_States
         protected PlayerStateController stateController;
         protected PlayerController playerController;
 
+        public abstract bool CanInterrupt { get; protected set; }
+
         public virtual void EnterState(PlayerStateController stateController, PlayerController playerController)
         {
             this.stateController = stateController;
