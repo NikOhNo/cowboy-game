@@ -2,7 +2,7 @@
     "name": "Cowboy Game",
     "maps": [
         {
-            "name": "Player",
+            "name": "Player-Battle",
             "id": "9bc23998-6763-4aea-8fe2-44e9c47661a0",
             "actions": [
                 {
@@ -27,6 +27,15 @@
                     "name": "Fire",
                     "type": "Button",
                     "id": "bed81993-b196-4b88-914a-77163d875e20",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Dodge",
+                    "type": "Button",
+                    "id": "9f83a530-f526-47e1-a8c8-525ff728f264",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -251,6 +260,17 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0bbc94f6-4000-49e6-b7ac-12a8b687964d",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dodge",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
