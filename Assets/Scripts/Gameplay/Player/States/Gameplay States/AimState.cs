@@ -24,6 +24,10 @@ namespace Assets.Scripts.Gameplay.Player.States.Gameplay_States
         {
             elapsedAimTime += Time.deltaTime;
             currAccuracy = GetCurrAccuracy();
+
+            PlayerSettings playerSettings = stateController.PlayerSettings;
+            Vector2 newVeloctiy = stateController.SmoothedInputVector * playerSettings.MoveSpeed * playerSettings.AimMoveModifier;
+            playerController.rb2D.velocity = newVeloctiy;
         }
 
         public override void ExitState()
