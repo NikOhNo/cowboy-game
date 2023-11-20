@@ -7,7 +7,10 @@ namespace Assets.Scripts.Gameplay.Weapons
     public abstract class Weapon : MonoBehaviour
     {
         [SerializeField]
-        WeaponSettings weaponSettings;
+        private WeaponSettings weaponSettings;
+
+        [SerializeField]
+        protected Transform projectileSpawnPoint;
 
         public WeaponSettings Settings => weaponSettings;
 

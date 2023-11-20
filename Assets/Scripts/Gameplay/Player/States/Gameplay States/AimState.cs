@@ -7,10 +7,8 @@ namespace Assets.Scripts.Gameplay.Player.States.Gameplay_States
 {
     public class AimState : GameplayStateBase
     {
-        float elapsedAimTime = 0f;
-        float currAccuracy;
-
-        Weapon weapon;
+        private float elapsedAimTime = 0f;
+        private float currAccuracy;
 
         //-- GAMEPLAY STATE
         public override bool CanInterrupt { get; protected set; } = true;
@@ -19,7 +17,6 @@ namespace Assets.Scripts.Gameplay.Player.States.Gameplay_States
         {
             base.EnterState(stateController, playerController);
 
-            weapon = stateController.CurrWeapon;
             ResetAim();
         }
 
@@ -38,20 +35,22 @@ namespace Assets.Scripts.Gameplay.Player.States.Gameplay_States
         public void AimFireWeapon()
         {
             currAccuracy = GetCurrAccuracy();
-            weapon.Fire(currAccuracy);
+            stateController.CurrWeapon.Fire(currAccuracy);
             ResetAim();
         }
 
         //-- HELPERS
         private float GetCurrAccuracy()
         {
-            return Mathf.Lerp(0f, weapon.Settings.HipFireAccuracyDegree, elapsedAimTime / weapon.Settings.TimeToAim);
+            Weapon currWeapon = stateController.CurrWeapon;
+            // TODO: Debug if this is working
+            return Mathf.Lerp(currWeapon.Settings.HipFireAccuracyDegree, 0f, elapsedAimTime / currWeapon.Settings.TimeToAim);
         }
 
         private void ResetAim()
         {
             elapsedAimTime = 0f;
-            currAccuracy = weapon.Settings.HipFireAccuracyDegree;
+            currAccuracy = stateController.CurrWeapon.Settings.HipFireAccuracyDegree;
         }
     }
 }

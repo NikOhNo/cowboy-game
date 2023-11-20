@@ -1,5 +1,6 @@
 using Assets.Scripts.Gameplay.Player;
 using Assets.Scripts.Gameplay.Player.Movement_States;
+using Assets.Scripts.Gameplay.Weapons;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Build;
@@ -33,6 +34,8 @@ public class MoveState : GameplayStateBase
 
     public void FireWeapon()
     {
+        Weapon currWeapon = stateController.CurrWeapon;
 
+        currWeapon.Fire(currWeapon.Settings.HipFireAccuracyDegree);
     }
 }

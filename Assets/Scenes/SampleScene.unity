@@ -249,8 +249,9 @@ GameObject:
   m_Component:
   - component: {fileID: 431182323}
   - component: {fileID: 431182324}
+  - component: {fileID: 431182325}
   m_Layer: 0
-  m_Name: Gun
+  m_Name: Revolver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -263,8 +264,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431182322}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.96, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.96, z: 0}
   m_LocalScale: {x: 0.2, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -324,6 +325,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &431182325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431182322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65df121b0c7be354c92c5f6904fd6b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponSettings: {fileID: 11400000, guid: 2f0c2ad4bf7764743a6ccf1cc37a58fe, type: 2}
+  projectileSpawnPoint: {fileID: 1915785656}
 --- !u!1 &449110354
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,11 +706,20 @@ MonoBehaviour:
     m_ActionId: b06c6d2b-9fcb-42e1-b1ce-7dcdacfee8bd
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 3001e35e-3002-4c8b-8ff9-3f23bc9df715
-    m_ActionName: Player/Look[/Mouse/delta]
-  - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1790029326}
+        m_TargetAssemblyTypeName: Assets.Scripts.Gameplay.Player.PlayerStateController,
+          Assembly-CSharp
+        m_MethodName: Fire
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: bed81993-b196-4b88-914a-77163d875e20
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -830,6 +854,7 @@ MonoBehaviour:
   MoveInput: {x: 0, y: 0}
   SmoothedInputVector: {x: 0, y: 0}
   MousePos: {x: 0, y: 0}
+  currWeapon: {fileID: 431182325}
 --- !u!114 &1790029327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1026,78 +1051,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915785655}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.33, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.1, z: 0}
   m_LocalScale: {x: 5, y: 1.6666666, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2097105645}
+  m_Children: []
   m_Father: {fileID: 431182323}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &2097105645 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1524702090358393216, guid: 29ac5d62500cb0a4d8136c8d207e1735, type: 3}
-  m_PrefabInstance: {fileID: 4331341268039523449}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &4331341268039523449
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1915785656}
-    m_Modifications:
-    - target: {fileID: 1524702090358393216, guid: 29ac5d62500cb0a4d8136c8d207e1735, type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1524702090358393216, guid: 29ac5d62500cb0a4d8136c8d207e1735, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1524702090358393216, guid: 29ac5d62500cb0a4d8136c8d207e1735, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1524702090358393216, guid: 29ac5d62500cb0a4d8136c8d207e1735, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1524702090358393216, guid: 29ac5d62500cb0a4d8136c8d207e1735, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1524702090358393216, guid: 29ac5d62500cb0a4d8136c8d207e1735, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1524702090358393216, guid: 29ac5d62500cb0a4d8136c8d207e1735, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1524702090358393216, guid: 29ac5d62500cb0a4d8136c8d207e1735, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1524702090358393216, guid: 29ac5d62500cb0a4d8136c8d207e1735, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1524702090358393216, guid: 29ac5d62500cb0a4d8136c8d207e1735, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1524702090358393216, guid: 29ac5d62500cb0a4d8136c8d207e1735, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4279403702075981129, guid: 29ac5d62500cb0a4d8136c8d207e1735, type: 3}
-      propertyPath: m_Name
-      value: Bullet
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 29ac5d62500cb0a4d8136c8d207e1735, type: 3}

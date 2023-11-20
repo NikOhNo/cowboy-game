@@ -36,7 +36,7 @@ namespace Assets.Scripts.Gameplay.Player
 
         //-- CACHED REFERENCES
         private IGameplayState currState;
-        private Weapon currWeapon;
+        [SerializeField] private Weapon currWeapon;     // TODO: Have curr weapon be determined by an outside source (not assigned in inspector)
 
         private PlayerInputActions playerInputActions;
         private Vector2 smoothInputVelocity;
@@ -79,11 +79,10 @@ namespace Assets.Scripts.Gameplay.Player
             Vector3 targetDirection = mouseWorldPos - gunPivot.position;
 
             float rotationZ = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
-            gunPivot.rotation = Quaternion.Euler(0f, 0f, rotationZ + 90);
+            gunPivot.rotation = Quaternion.Euler(0f, 0f, rotationZ + 270);
         }
 
         //-- INPUT HANDLING
-
         public void EnterAim(CallbackContext context)
         {
             if (context.performed)
@@ -105,7 +104,7 @@ namespace Assets.Scripts.Gameplay.Player
             {
                 if (currState is AimState aimState)
                 {
-                    aimState.AimFireWeapon();   // TODO: Pass in current weapon?
+                    aimState.AimFireWeapon();
                 }
                 else if (currState is MoveState moveState)
                 {

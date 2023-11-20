@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Revolver
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
-  bulletPrefab: {fileID: 4279403702075981129, guid: 29ac5d62500cb0a4d8136c8d207e1735, type: 3}
-  hipfireAccuracyDeg: 0
-  timeToAim: 0
+  projectilePrefab: {fileID: 4279403702075981129, guid: 29ac5d62500cb0a4d8136c8d207e1735, type: 3}
+  projectileSpeed: 1000
+  hipfireAccuracyDegree: 45
+  timeToAim: 1.5

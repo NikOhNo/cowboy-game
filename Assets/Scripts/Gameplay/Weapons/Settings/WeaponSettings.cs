@@ -8,14 +8,16 @@ namespace Assets.Scripts.Gameplay.Weapons.Settings
     {
         //-- SERIALIED FIELDS
         [SerializeField] Sprite sprite;
-        [SerializeField] GameObject bulletPrefab;
-        [SerializeField][Range(0f, 360f)] float hipfireAccuracyDeg;
-        [SerializeField][Range(0f, Mathf.Infinity)] float timeToAim;
+        [SerializeField] GameObject projectilePrefab;
+        [SerializeField] float projectileSpeed = 25.0f;
+        [SerializeField] float hipfireAccuracyDegree = 45.0f;
+        [SerializeField] float timeToAim = 1.5f;
 
         //-- PROPERTIES
         public Sprite WeaponSprite => sprite;
-        public GameObject BulletPrefab => bulletPrefab;
-        public float HipFireAccuracyDegree => hipfireAccuracyDeg;
+        public GameObject ProjectilePrefab => projectilePrefab;
+        public float ProjectileSpeed => projectileSpeed;
+        public float HipFireAccuracyDegree => hipfireAccuracyDegree;
         public float TimeToAim => timeToAim;
     }
 }
