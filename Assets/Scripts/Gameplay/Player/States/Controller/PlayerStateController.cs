@@ -5,8 +5,8 @@ using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 using UnityEngine.InputSystem.XR;
 using Assets.Scripts.Gameplay.Player.States.Gameplay_States;
-using Assets.Scripts.Gameplay.Player.Movement_States;
 using UnityEngine.InputSystem;
+using Assets.Scripts.Gameplay.Weapons;
 
 namespace Assets.Scripts.Gameplay.Player
 {
@@ -27,6 +27,7 @@ namespace Assets.Scripts.Gameplay.Player
         public Vector2 MoveInput = new();
         public Vector2 SmoothedInputVector = new();
         public Vector2 MousePos = new();
+        public Weapon CurrWeapon => currWeapon;
 
         //-- STATES
         public readonly MoveState MoveState = new();
@@ -35,6 +36,7 @@ namespace Assets.Scripts.Gameplay.Player
 
         //-- CACHED REFERENCES
         private IGameplayState currState;
+        private Weapon currWeapon;
 
         private PlayerInputActions playerInputActions;
         private Vector2 smoothInputVelocity;
@@ -103,12 +105,11 @@ namespace Assets.Scripts.Gameplay.Player
             {
                 if (currState is AimState aimState)
                 {
-                    aimState.FireGun();
-
+                    aimState.AimFireWeapon();   // TODO: Pass in current weapon?
                 }
                 else if (currState is MoveState moveState)
                 {
-                    moveState.FanHammer();
+                    moveState.FireWeapon();
                 }
             }
         }

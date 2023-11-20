@@ -31,7 +31,7 @@ public class MoveState : GameplayStateBase
         playerController.rb2D.velocity = newVeloctiy;
     }
 
-    public void FanHammer()
+    public void FireWeapon()
     {
 
     }

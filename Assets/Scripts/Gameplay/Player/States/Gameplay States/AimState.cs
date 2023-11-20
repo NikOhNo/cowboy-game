@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Gameplay.Player.Movement_States;
+using Assets.Scripts.Gameplay.Weapons;
 using UnityEngine;
 
 
@@ -7,6 +8,9 @@ namespace Assets.Scripts.Gameplay.Player.States.Gameplay_States
     public class AimState : GameplayStateBase
     {
         float elapsedAimTime = 0f;
+        float currAccuracy;
+
+        Weapon weapon;
 
         //-- GAMEPLAY STATE
         public override bool CanInterrupt { get; protected set; } = true;
@@ -15,12 +19,14 @@ namespace Assets.Scripts.Gameplay.Player.States.Gameplay_States
         {
             base.EnterState(stateController, playerController);
 
-            elapsedAimTime = 0f;
+            weapon = stateController.CurrWeapon;
+            ResetAim();
         }
 
         public override void PerformState()
         {
             elapsedAimTime += Time.deltaTime;
+            currAccuracy = GetCurrAccuracy();
         }
 
         public override void ExitState()
@@ -29,11 +35,23 @@ namespace Assets.Scripts.Gameplay.Player.States.Gameplay_States
         }
 
         //-- PUBLIC FUNCTIONS
-        public void FireGun()
+        public void AimFireWeapon()
         {
-
+            currAccuracy = GetCurrAccuracy();
+            weapon.Fire(currAccuracy);
+            ResetAim();
         }
 
         //-- HELPERS
+        private float GetCurrAccuracy()
+        {
+            return Mathf.Lerp(0f, weapon.Settings.HipFireAccuracyDegree, elapsedAimTime / weapon.Settings.TimeToAim);
+        }
+
+        private void ResetAim()
+        {
+            elapsedAimTime = 0f;
+            currAccuracy = weapon.Settings.HipFireAccuracyDegree;
+        }
     }
 }
