@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Gameplay.Player.Movement_States;
+﻿using Assets.Scripts.Events;
+using Assets.Scripts.Gameplay.Player.Movement_States;
 using Assets.Scripts.Gameplay.Weapons;
 using UnityEngine;
 
@@ -7,54 +8,27 @@ namespace Assets.Scripts.Gameplay.Player.States.Gameplay_States
 {
     public class AimState : GameplayStateBase
     {
-        private float elapsedAimTime = 0f;
-        private float currAccuracy;
+        
 
         //-- GAMEPLAY STATE
         public override bool CanInterrupt { get; protected set; } = true;
 
-        public override void EnterState(PlayerStateController stateController, PlayerController playerController)
+        public AimState(GameplayStateConfig config) : base(config)
         {
-            base.EnterState(stateController, playerController);
+        }
 
-            ResetAim();
+        public override void EnterState()
+        {
         }
 
         public override void PerformState()
-        {
-            elapsedAimTime += Time.deltaTime;
-            currAccuracy = GetCurrAccuracy();
-
-            PlayerSettings playerSettings = stateController.PlayerSettings;
-            Vector2 newVeloctiy = stateController.SmoothedInputVector * playerSettings.MoveSpeed * playerSettings.AimMoveModifier;
-            playerController.rb2D.velocity = newVeloctiy;
+        {            
+            // TODO: apply modifier for aiming movement
         }
 
         public override void ExitState()
         {
-            elapsedAimTime = 0;
-        }
-
-        //-- PUBLIC FUNCTIONS
-        public void AimFireWeapon()
-        {
-            currAccuracy = GetCurrAccuracy();
-            stateController.CurrWeapon.Fire(currAccuracy);
-            ResetAim();
-        }
-
-        //-- HELPERS
-        private float GetCurrAccuracy()
-        {
-            Weapon currWeapon = stateController.CurrWeapon;
-            // TODO: Debug if this is working
-            return Mathf.Lerp(currWeapon.Settings.HipFireAccuracyDegree, 0f, elapsedAimTime / currWeapon.Settings.TimeToAim);
-        }
-
-        private void ResetAim()
-        {
-            elapsedAimTime = 0f;
-            currAccuracy = stateController.CurrWeapon.Settings.HipFireAccuracyDegree;
+            
         }
     }
 }

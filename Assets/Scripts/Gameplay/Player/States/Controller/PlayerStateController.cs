@@ -14,123 +14,71 @@ namespace Assets.Scripts.Gameplay.Player
     {
         //-- SERIALIZED FIELDS
         [SerializeField]
-        private PlayerSettings playerSettings;
-
-        [SerializeField]
-        private float smoothInputSpeed = .2f;
-
-        [SerializeField]
         private PlayerController controller;
 
-        //-- PROPERTIES
-        public PlayerSettings PlayerSettings => playerSettings;
-        public Vector2 MoveInput = new();
-        public Vector2 SmoothedInputVector = new();
-        public Vector2 MousePos = new();
-        public Weapon CurrWeapon => currWeapon;
+        [SerializeField]
+        private PlayerInputEventChannelSO inputEventChannel;
+
+        [SerializeField]
+        private PlayerSettingsSO playerSettings;
 
         //-- STATES
-        public readonly MoveState MoveState = new();
-        public readonly DodgeState DodgeState = new();
-        public readonly AimState AimState = new();
+        public MoveState MoveState;
+        public DodgeState DodgeState;
+        public AimState AimState;
 
         //-- CACHED REFERENCES
-        private IGameplayState currState;
-        [SerializeField] private Weapon currWeapon;     // TODO: Have curr weapon be determined by an outside source (not assigned in inspector)
-
-        private PlayerInputActions playerInputActions;
-        private Vector2 smoothInputVelocity;
+        private IGameplayState currentState;
 
         private void Awake()
         {
-            playerInputActions = new();
-            playerInputActions.PlayerBattle.Enable();
+            GameplayStateConfig config = new()
+            {
+                stateController = this,
+                playerController = controller,
+                inputChannel = inputEventChannel
+            };
+            MoveState = new(config);
+            DodgeState = new(config);
+            AimState = new(config);
 
             ChangeState(MoveState);
+
+            inputEventChannel.OnAimPerformed.AddListener(EnterExitAim);
+            inputEventChannel.OnDodgePerformed.AddListener(Dodge);
         }
 
         private void Update()
         {
-            GetMoveInput();
-            GetMousePosition();
-
-            PivotGunToMouse();
-
-            currState.PerformState();
+            currentState.PerformState();
         }
 
         public void ChangeState(IGameplayState newState)
         {
-            currState?.ExitState();
-            newState.EnterState(this, controller);
-            currState = newState;
-        }
-
-        //-- HELPERS
-        private void PivotGunToMouse()
-        {
-            Vector2 mousePos = MousePos;
-            Transform gunPivot = controller.gunPivot;
-
-            var mousePositionZ = Camera.main.farClipPlane;
-            var mouseScreenPos = new Vector3(mousePos.x, mousePos.y, mousePositionZ);
-            var mouseWorldPos = Camera.main.ScreenToWorldPoint(mouseScreenPos);
-
-            Vector3 targetDirection = mouseWorldPos - gunPivot.position;
-
-            float rotationZ = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
-            gunPivot.rotation = Quaternion.Euler(0f, 0f, rotationZ + 270);
+            currentState?.ExitState();
+            newState.EnterState();
+            currentState = newState;
         }
 
         //-- INPUT HANDLING
-        public void EnterAim(CallbackContext context)
+        public void EnterExitAim(CallbackContext context)
         {
-            if (context.performed)
+            if (currentState != AimState)
             {
-                if (currState != AimState)
-                {
-                    ChangeState(AimState);
-                }
-                else
-                {
-                    ChangeState(MoveState);
-                }
+                ChangeState(AimState);
             }
-        }
-
-        public void Fire(CallbackContext context)
-        {
-            if (context.performed)
+            else
             {
-                if (currState is AimState aimState)
-                {
-                    aimState.AimFireWeapon();
-                }
-                else if (currState is MoveState moveState)
-                {
-                    moveState.FireWeapon();
-                }
+                ChangeState(MoveState);
             }
         }
 
         public void Dodge(CallbackContext context)
         {
-            if (currState != DodgeState && context.performed && MoveInput != Vector2.zero)
+            if ((currentState != DodgeState) && (inputEventChannel.MoveInput != Vector2.zero))
             {
                 ChangeState(DodgeState);
             }
-        }
-
-        private void GetMoveInput()
-        {
-            MoveInput = playerInputActions.PlayerBattle.Move.ReadValue<Vector2>();
-            // Calculate Smoothed Input
-            SmoothedInputVector = Vector2.SmoothDamp(SmoothedInputVector, MoveInput, ref smoothInputVelocity, smoothInputSpeed);
-        }
-
-        private void GetMousePosition()
-        {
-            MousePos = Mouse.current.position.ReadValue();
         }
     }
 }

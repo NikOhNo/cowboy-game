@@ -1,20 +1,20 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Gameplay.Player.States.Gameplay_States;
+using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts.Gameplay.Player.Movement_States
 {
     public abstract class GameplayStateBase : IGameplayState
     {
-        protected PlayerStateController stateController;
-        protected PlayerController playerController;
-
+        protected readonly GameplayStateConfig config;
         public abstract bool CanInterrupt { get; protected set; }
 
-        public virtual void EnterState(PlayerStateController stateController, PlayerController playerController)
+        public GameplayStateBase(GameplayStateConfig config)
         {
-            this.stateController = stateController;
-            this.playerController = playerController;
+            this.config = config;
         }
+
+        public abstract void EnterState();
         public abstract void ExitState();
         public abstract void PerformState();
     }
