@@ -4,6 +4,9 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 using UnityEngine.InputSystem.XR;
+using Assets.Scripts.Gameplay.Player.States.Gameplay_States;
+using UnityEngine.InputSystem;
+using Assets.Scripts.Gameplay.Weapons;
 
 namespace Assets.Scripts.Gameplay.Player
 {
@@ -11,67 +14,68 @@ namespace Assets.Scripts.Gameplay.Player
     {
         //-- SERIALIZED FIELDS
         [SerializeField]
-        private PlayerSettings playerSettings;
-        [SerializeField]
-        private float smoothInputSpeed = .2f;
+        private PlayerController controller;
 
-        //-- PROPERTIES
-        public PlayerSettings PlayerSettings => playerSettings;
-        public Vector2 MoveInput = new();
-        public Vector2 SmoothedInputVector = new();
+        [SerializeField]
+        private PlayerInputEventChannelSO inputEventChannel;
+
+        [SerializeField]
+        private PlayerSettingsSO playerSettings;
 
         //-- STATES
-        public readonly MoveState MoveState = new();
-        public readonly DodgeState DodgeState = new();
+        public MoveState MoveState;
+        public DodgeState DodgeState;
+        public AimState AimState;
 
         //-- CACHED REFERENCES
-        private IGameplayState currState;
-
-        private PlayerInputActions playerInputActions;
-        private Vector2 smoothInputVelocity;
-
-        private PlayerController controller;
+        private IGameplayState currentState;
 
         private void Awake()
         {
-            controller = new PlayerController()
+            GameplayStateConfig config = new()
             {
-                rigidbody2D = GetComponent<Rigidbody2D>(),
-                animator = GetComponent<Animator>()
+                stateController = this,
+                playerController = controller,
+                inputChannel = inputEventChannel
             };
-
-            playerInputActions = new();
-            playerInputActions.PlayerBattle.Enable();
+            MoveState = new(config);
+            DodgeState = new(config);
+            AimState = new(config);
 
             ChangeState(MoveState);
+
+            inputEventChannel.OnAimPerformed.AddListener(EnterExitAim);
+            inputEventChannel.OnDodgePerformed.AddListener(Dodge);
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
-            GetMoveInput();
-            currState.PerformState();
+            currentState.PerformState();
         }
 
         public void ChangeState(IGameplayState newState)
         {
-            currState?.ExitState();
-            newState.EnterState(this, controller);
-            currState = newState;
+            currentState?.ExitState();
+            newState.EnterState();
+            currentState = newState;
         }
 
-
         //-- INPUT HANDLING
-
-        public void GetMoveInput()
+        public void EnterExitAim(CallbackContext context)
         {
-            MoveInput = playerInputActions.PlayerBattle.Move.ReadValue<Vector2>();
-            // Calculate Smoothed Input
-            SmoothedInputVector = Vector2.SmoothDamp(SmoothedInputVector, MoveInput, ref smoothInputVelocity, smoothInputSpeed);
+            if (currentState != AimState)
+            {
+                ChangeState(AimState);
+            }
+            else
+            {
+                ChangeState(MoveState);
+            }
         }
 
         public void Dodge(CallbackContext context)
         {
-            if (currState != DodgeState && context.performed && MoveInput != Vector2.zero)
+            if ((currentState != DodgeState) && (inputEventChannel.MoveInput != Vector2.zero))
             {
                 ChangeState(DodgeState);
             }
