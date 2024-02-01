@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEditor.UI;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class QuestDisplay : MonoBehaviour
 
     private List<string> activeQuests = new List<string>();
     private List<string> completedQuests = new List<string>();
+
+    private List<GameObject> textItems = new List<GameObject>();
 
     private Vector2 textOrigin;
 
@@ -58,33 +61,90 @@ public class QuestDisplay : MonoBehaviour
     // event callback for QuestManager.onActivateQuest
     private void ActivateQuest(string id)
     {
-        string questDescription = QuestManager.instance.GetQuestDescription(id);
-        if (questDescription != null)
+        // destroy all previously created textItem gameObjects
+        foreach (GameObject textItem in textItems)
+        {
+            Destroy(textItem);
+        }
+
+        var newQuestTextOrigin = RedrawActiveQuestText(textOrigin);
+
+        // create new quest text
+        string newQuestDescription = QuestManager.instance.GetQuestDescription(id);
+        if (newQuestDescription != null)
         {
             activeQuests.Add(id);
             // instantiate text item
-            var textItem = Instantiate(questTextItemPrefab, new Vector3(textOrigin.x, textOrigin.y, 0), Quaternion.identity, gameObject.transform);
+            var textItem = Instantiate(questTextItemPrefab, new Vector3(newQuestTextOrigin.x, newQuestTextOrigin.y, 0), Quaternion.identity, gameObject.transform);
+
+            // add it to the array for later
+            textItems.Add(textItem);
             
-            textItem.GetComponent<TextMeshProUGUI>().text = questDescription;
-            textOrigin += new Vector2(0, -50);
+            textItem.GetComponent<TextMeshProUGUI>().text = newQuestDescription;
+            newQuestTextOrigin += new Vector2(0, -50);
         }
 
-        // TODO draw completed quests. this will require you to remove the active quest prefabs? so you don't draw them anymore? then move them to completed.
-        // probably maintain a list of active and completed quests, and every time this event is called, destroy and replace all the prefabs so that they draw correctly.
-        // maybe a better way to do it, i'm not experienced in ui stuff
+        RedrawCompletedQuestText(newQuestTextOrigin);
     }
 
     // event callback for QuestManager.onCompleteQuest
     private void CompleteQuest(string id)
     {
         activeQuests.Remove(id);
-        completedQuests.Add(id);
+        completedQuests = completedQuests.Prepend(id).ToList(); // (prepend because we want the completed quests to be in the OPPOSITE order you completed them, i.e., most recent to least recent)
+
+        // destroy all previously created textItem gameObjects
+        foreach (GameObject textItem in textItems)
+        {
+            Destroy(textItem);
+        }
+
+        var newQuestTextOrigin = RedrawActiveQuestText(textOrigin);
+
+        RedrawCompletedQuestText(newQuestTextOrigin);
     }
 
-    // call when state of quests change (when activating a quest or completing a quest)
-    // in order to move down the completed quest list (when adding an active quest) or moving UP the active quest list (when adding a completed quest)
-    private void RedrawQuestText()
+    // recreates questTextItemPrefabs for active quests. origin is where the first textItem should be placed, the rest will be placed based on that
+    // returns the position of the last placed textItem
+    private Vector2 RedrawActiveQuestText(Vector2 origin)
     {
-        // TODO
+
+        var textOriginTemp = origin;
+        // create ONLY active quest texts
+        foreach (string questID in activeQuests)
+        {
+            string questDescription = QuestManager.instance.GetQuestDescription(questID);
+
+            var textItem = Instantiate(questTextItemPrefab, new Vector3(textOriginTemp.x, textOriginTemp.y, 0), Quaternion.identity, gameObject.transform);
+
+            textItems.Add(textItem);
+
+            textItem.GetComponent<TextMeshProUGUI>().text = questDescription;
+            textOriginTemp += new Vector2(0, -50);
+        }
+
+        return textOriginTemp;
+    }
+
+    // recreates questTextItemPrefabs for completed quests. origin is where the first textItem should be placed, the rest will be placed based on that
+    // returns the position of the last placed textItem
+    private Vector2 RedrawCompletedQuestText(Vector2 origin)
+    {
+        var textOriginTemp = origin;
+        // create old COMPLETED quest texts
+        foreach (string questID in completedQuests)
+        {
+            string questDescription = QuestManager.instance.GetQuestDescription(questID);
+
+            var textItem = Instantiate(questTextItemPrefab, new Vector3(textOriginTemp.x, textOriginTemp.y, 0), Quaternion.identity, gameObject.transform);
+
+            textItems.Add(textItem);
+
+            textItem.GetComponent<TextMeshProUGUI>().text = questDescription;
+            textItem.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
+            textOriginTemp += new Vector2(0, -50);
+        }
+
+        return textOriginTemp;
     }
 }
