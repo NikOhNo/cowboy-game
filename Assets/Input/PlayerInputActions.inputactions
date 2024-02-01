@@ -1,5 +1,5 @@
 {
-    "name": "Cowboy Game",
+    "name": "PlayerInputActions",
     "maps": [
         {
             "name": "Player-Battle",
@@ -366,6 +366,15 @@
                     "type": "PassThrough",
                     "id": "8b75a523-9e60-463a-a52e-489150779cab",
                     "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DisplayQuestList",
+                    "type": "Button",
+                    "id": "1df8ea48-bc51-45eb-9769-b13f763dbf90",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -787,6 +796,17 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "70868560-4ad4-4d7a-a32b-bf6c7bd6ac08",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "DisplayQuestList",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
