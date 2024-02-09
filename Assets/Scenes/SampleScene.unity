@@ -352,6 +352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponSettings: {fileID: 11400000, guid: 2f0c2ad4bf7764743a6ccf1cc37a58fe, type: 2}
   projectileSpawnPoint: {fileID: 1915785656}
+  aimer: {fileID: 0}
 --- !u!1 &449110354
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,6 +820,7 @@ GameObject:
   - component: {fileID: 1790029328}
   - component: {fileID: 1790029321}
   - component: {fileID: 1790029325}
+  - component: {fileID: 1790029329}
   m_Layer: 0
   m_Name: Cowboy
   m_TagString: Untagged
@@ -955,6 +957,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1790029329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790029318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505cfd5026968af42ad01ea160e616e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerState: 0
+  speed: 5
 --- !u!1 &1871003232
 GameObject:
   m_ObjectHideFlags: 0
