@@ -2,10 +2,7 @@
 //using Unity.Android.Gradle;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.InputSystem.InputAction;
-using UnityEngine.InputSystem.XR;
 using Assets.Scripts.Gameplay.Player.States.Gameplay_States;
-using UnityEngine.InputSystem;
 using Assets.Scripts.Gameplay.Weapons;
 
 namespace Assets.Scripts.Gameplay.Player
@@ -15,9 +12,6 @@ namespace Assets.Scripts.Gameplay.Player
         //-- SERIALIZED FIELDS
         [SerializeField]
         private PlayerController controller;
-
-        [SerializeField]
-        private PlayerInputEventChannelSO inputEventChannel;
 
         [SerializeField]
         private PlayerSettingsSO playerSettings;
@@ -35,17 +29,13 @@ namespace Assets.Scripts.Gameplay.Player
             GameplayStateConfig config = new()
             {
                 stateController = this,
-                playerController = controller,
-                inputChannel = inputEventChannel
+                playerController = controller
             };
             MoveState = new(config);
             DodgeState = new(config);
             AimState = new(config);
 
             ChangeState(MoveState);
-
-            inputEventChannel.OnAimPerformed.AddListener(EnterExitAim);
-            inputEventChannel.OnDodgePerformed.AddListener(Dodge);
         }
 
         private void Update()
@@ -61,7 +51,7 @@ namespace Assets.Scripts.Gameplay.Player
         }
 
         //-- INPUT HANDLING
-        public void EnterExitAim(CallbackContext context)
+        public void EnterExitAim()
         {
             if (currentState != AimState)
             {
@@ -73,9 +63,10 @@ namespace Assets.Scripts.Gameplay.Player
             }
         }
 
-        public void Dodge(CallbackContext context)
+        public void Dodge()
         {
-            if ((currentState != DodgeState) && (inputEventChannel.MoveInput != Vector2.zero))
+            //  && (inputEventChannel.MoveInput != Vector2.zero) used to be in if statement removed while removing new input system
+            if ((currentState != DodgeState))
             {
                 ChangeState(DodgeState);
             }

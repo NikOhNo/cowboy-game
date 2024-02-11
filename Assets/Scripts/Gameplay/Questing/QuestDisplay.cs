@@ -7,8 +7,6 @@ using UnityEngine;
 
 public class QuestDisplay : MonoBehaviour
 {
-    PlayerInputActions playerInputActions;
-
     public GameObject questTextItemPrefab;
 
     private List<string> activeQuests = new List<string>();
@@ -22,14 +20,9 @@ public class QuestDisplay : MonoBehaviour
     void Start()
     {
         gameObject.SetActive(false);
-        if (playerInputActions == null)
-        {
-            playerInputActions = new();
-        }
 
-        playerInputActions.Enable();
-        playerInputActions.UI.DisplayQuestList.started += ctx => { gameObject.SetActive(true); };
-        playerInputActions.UI.DisplayQuestList.canceled += ctx => { gameObject.SetActive(false); };
+        //playerInputActions.UI.DisplayQuestList.started += ctx => { gameObject.SetActive(true); };
+        //playerInputActions.UI.DisplayQuestList.canceled += ctx => { gameObject.SetActive(false); };
 
         //questListText = GetComponentInChildren<TextMeshProUGUI>();
 
