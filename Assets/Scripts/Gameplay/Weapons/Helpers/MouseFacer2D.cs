@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
-using UnityEngine.InputSystem;
 
 public class MouseFacer2D : MonoBehaviour
 {
@@ -21,7 +19,7 @@ public class MouseFacer2D : MonoBehaviour
     //-- HELPERS
     private void FaceMouse()
     {
-        Vector2 mousePos = Mouse.current.position.value;
+        Vector2 mousePos = Input.mousePosition;
 
         var mousePositionZ = Camera.main.farClipPlane;
         var mouseScreenPos = new Vector3(mousePos.x, mousePos.y, mousePositionZ);
