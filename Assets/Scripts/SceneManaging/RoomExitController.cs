@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,13 +12,13 @@ public class RoomExitController : MonoBehaviour
 {
     public SceneAsset sceneToLoad;
     private string sceneAssetPath;
-    BoxCollider2D bc2d;
+    BoxCollider2D bc2d; // controls area in which the player gets the prompt to switch rooms
     public GameObject playerSpawnPosition;
+    public Collider2D target; // collider2d attached to player
     
-    /*
-     TODO make player persistent, so the player isn't re-created with every room they go into, and so we don't have to
-        put a player object in every room
-    */
+    public KeyCode interactButton = KeyCode.F;
+    
+    private bool activatable = false;
 
     void Start()
     {
@@ -27,37 +28,42 @@ public class RoomExitController : MonoBehaviour
         // get position of the PlayerSpawnPosition child object
     }
 
+    public void Update()
+    {
+        // FIXME maybe trigger something on the player that lets them know that they're activatable?
+        if (activatable && Input.GetKeyDown(interactButton))
+        {
+            SwitchSceneAndRepositionPlayer(target);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D col)
     {
-        // Debug.Log("SceneTransitionController collided with " + col.name);
-        var spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.color = Color.red;
-        // if the collider is a player, load the next scene
         if (col.CompareTag("Player"))
         {
-            // set player position to the position they /would/ be in the next room
-            DontDestroyOnLoad(col);
-            // switch to the next room
-            SceneManager.LoadScene(sceneToLoad.name, LoadSceneMode.Single);
-            col.gameObject.transform.position = playerSpawnPosition.transform.position;
-            // TODO do a sick cool awesome transition effect
+            activatable = true;
+            target = col;
+            var spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.color = Color.red;
         }
+        
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        var spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.color = Color.black;
+        if (col.CompareTag("Player") && activatable)
+        {
+            activatable = false;
+            target = null;
+            var spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.color = Color.black;
+        }
     }
-    
-    // dont worry about this method
-    public void SwitchScene(SceneAsset newScene)
+
+    public void SwitchSceneAndRepositionPlayer(Collider2D target)
     {
-        // SceneManager.LoadScene(scene.buildIndex);
-        
-        SceneManager.LoadSceneAsync(sceneToLoad.name, LoadSceneMode.Single);
-        // var scene = SceneManager.GetSceneByPath(assetPath);
-        // Debug.Log($"asset path is {assetPath}");
-        // SceneManager.LoadScene(scene.buildIndex);
+        DontDestroyOnLoad(target);
+        SceneManager.LoadScene(sceneToLoad.name, LoadSceneMode.Single);
+        target.gameObject.transform.position = playerSpawnPosition.transform.position;
     }
 }
