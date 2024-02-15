@@ -19,6 +19,13 @@ public class RoomExitController : MonoBehaviour
     public KeyCode interactButton = KeyCode.F;
     
     private bool activatable = false;
+    
+    /*
+     * a plan
+     *  create a gameobject that is dontdestroyonload-ed, store in this game object the reference to the target
+     *  find the roomexit in the new scene, place the player at that roomexit's playerSpawnPosition. then destroy the
+     *  previously created object.. ... ... . .yeyyyghlkjajh
+     */
 
     void Start()
     {
@@ -33,6 +40,7 @@ public class RoomExitController : MonoBehaviour
         // FIXME maybe trigger something on the player that lets them know that they're activatable?
         if (activatable && Input.GetKeyDown(interactButton))
         {
+            SceneManager.sceneLoaded += OnSceneLoaded;
             SwitchSceneAndRepositionPlayer(target);
         }
     }
@@ -64,6 +72,12 @@ public class RoomExitController : MonoBehaviour
     {
         DontDestroyOnLoad(target);
         SceneManager.LoadScene(sceneToLoad.name, LoadSceneMode.Single);
-        target.gameObject.transform.position = playerSpawnPosition.transform.position;
+        
+        target.transform.position = playerSpawnPosition.transform.position;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
