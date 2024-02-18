@@ -15,8 +15,12 @@ public class RoomExitController : MonoBehaviour
     BoxCollider2D bc2d; // controls area in which the player gets the prompt to switch rooms
     public GameObject playerSpawnPosition;
     public Collider2D target; // collider2d attached to player
+
+    public UIController uiController;
     
     public KeyCode interactButton = KeyCode.F;
+
+    public GameObject roomExitSpawner;
     
     private bool activatable = false;
     
@@ -32,6 +36,7 @@ public class RoomExitController : MonoBehaviour
         bc2d = GetComponent<BoxCollider2D>();
         bc2d.isTrigger = true;
         sceneAssetPath = AssetDatabase.GetAssetPath(sceneToLoad);
+        uiController = GameObject.Find("UIController").GetComponent<UIController>();
         // get position of the PlayerSpawnPosition child object
     }
 
@@ -40,7 +45,6 @@ public class RoomExitController : MonoBehaviour
         // FIXME maybe trigger something on the player that lets them know that they're activatable?
         if (activatable && Input.GetKeyDown(interactButton))
         {
-            SceneManager.sceneLoaded += OnSceneLoaded;
             SwitchSceneAndRepositionPlayer(target);
         }
     }
@@ -71,13 +75,18 @@ public class RoomExitController : MonoBehaviour
     public void SwitchSceneAndRepositionPlayer(Collider2D target)
     {
         DontDestroyOnLoad(target);
+        var spawnerInstance = Instantiate(roomExitSpawner);
+        DontDestroyOnLoad(spawnerInstance);
+        var roomExitSpawnerScript = spawnerInstance.GetComponent<RoomExitSpawner>();
+        roomExitSpawnerScript.player = target.gameObject;
+        //uiController.StartRoomTransition(); // uncomment for fade to black effect
         SceneManager.LoadScene(sceneToLoad.name, LoadSceneMode.Single);
-        
-        target.transform.position = playerSpawnPosition.transform.position;
+        //
+        // target.transform.position = playerSpawnPosition.transform.position;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        // SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

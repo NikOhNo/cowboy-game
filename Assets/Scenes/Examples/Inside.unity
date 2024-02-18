@@ -260,11 +260,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1557953447 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1577290317476897637, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
-  m_PrefabInstance: {fileID: 5604174595276228096}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5604174595276228096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -295,16 +290,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4602202745773017523, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.1
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: sceneToLoad
       value: 
       objectReference: {fileID: 102900000, guid: 1c1f8eda0d4e92246bf7a2934c42ab0b, type: 3}
     - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
-      propertyPath: playerSpawnPosition
+      propertyPath: uiController
       value: 
-      objectReference: {fileID: 1557953447}
+      objectReference: {fileID: 0}
     - target: {fileID: 7981659705172534632, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_RootOrder
       value: 1

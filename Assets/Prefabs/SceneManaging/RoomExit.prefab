@@ -79,6 +79,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: {fileID: 0}
+  playerSpawnPosition: {fileID: 1577290317476897637}
+  target: {fileID: 0}
+  interactButton: 102
+  roomExitSpawner: {fileID: 5791266661262717595, guid: f007594aa708ace4a99ecc17408974bd, type: 3}
 --- !u!61 &1425376780695768023
 BoxCollider2D:
   m_ObjectHideFlags: 0
