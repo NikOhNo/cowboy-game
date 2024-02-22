@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="149a9bf4-9567-4468-8754-53199a5a965f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.lickety-split/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.lickety-split/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SceneManaging/RoomExit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SceneManaging/RoomExit.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Examples/Inside.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Examples/Inside.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Examples/Outside.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Examples/Outside.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/States/Controller/PlayerStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Gameplay/Player/States/Controller/PlayerStateController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/RoomExitController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/RoomExitController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/RoomExitSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/RoomExitSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/UIController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +49,9 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\hamom\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\hamom\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\hamom\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\Garett\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Garett\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\Garett\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -113,6 +111,7 @@
       <workItem from="1707803135901" duration="2598000" />
       <workItem from="1707976500864" duration="1344000" />
       <workItem from="1708201116813" duration="2685000" />
+      <workItem from="1708628708988" duration="5137000" />
     </task>
     <servers />
   </component>

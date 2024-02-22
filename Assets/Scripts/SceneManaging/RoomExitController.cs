@@ -75,18 +75,30 @@ public class RoomExitController : MonoBehaviour
     public void SwitchSceneAndRepositionPlayer(Collider2D target)
     {
         DontDestroyOnLoad(target);
+        // create room exit spawner, which will persist into the next room and place the player at the right location 
+        // for the exit in that room. 
+        // maybe in the future, when there are more than one exit per room, each exit is connected to another exit in a
+        // different scene. perhaps, when the roomExitSpawner is looking for the exit to place the player at, check 
+        // what room they connect to? and compare that to the room the player is coming from?
         var spawnerInstance = Instantiate(roomExitSpawner);
         DontDestroyOnLoad(spawnerInstance);
         var roomExitSpawnerScript = spawnerInstance.GetComponent<RoomExitSpawner>();
         roomExitSpawnerScript.player = target.gameObject;
-        //uiController.StartRoomTransition(); // uncomment for fade to black effect
-        SceneManager.LoadScene(sceneToLoad.name, LoadSceneMode.Single);
-        //
-        // target.transform.position = playerSpawnPosition.transform.position;
+        roomExitSpawnerScript.previousScene = SceneManager.GetActiveScene().name;
+        uiController.StartCoroutine(uiController.FadeToBlack()); // uncomment for fade to black effect
+        // wait until the fade to black has finished to load the scene...
+        uiController.onFinishFadeToBlack += OnFinishFadeToBlack;
+        // SceneManager.LoadScene(sceneToLoad.name, LoadSceneMode.Single);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnFinishFadeToBlack()
+    {
+        uiController.onFinishFadeToBlack -= OnFinishFadeToBlack;
+        SceneManager.LoadScene(sceneToLoad.name, LoadSceneMode.Single);
     }
 }

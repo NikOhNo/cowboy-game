@@ -9,9 +9,12 @@ public class RoomExitSpawner : MonoBehaviour
     // it is then destroyed by itself after doing its job
     // used to persist information between scenes
     
-    public GameObject player;
-    public GameObject roomExit;
     public UIController uiController;
+    
+    // all of these are set by the RoomExitController who creates this RoomExitSpawner
+    public GameObject player;
+    public RoomExitController roomExit;
+    public string previousScene;
 
     public void Start()
     {
@@ -27,19 +30,31 @@ public class RoomExitSpawner : MonoBehaviour
     {
         SceneManager.sceneLoaded -= FindRoomExit;
     }
-
+    
     public void FindRoomExit(Scene scene, LoadSceneMode mode)
     {
         //uiController.FinishRoomTransition();
         // find the room exit in this room
-        roomExit = GameObject.Find("RoomExit");
-        if (roomExit)
+        // roomExit = GameObject.Find("RoomExit");
+        
+        var roomExitList = FindObjectsOfType<RoomExitController>();
+        foreach (var roomExit in roomExitList)
         {
-            // time for spaghetti 😈
-            Vector3 playerSpawnPosition = roomExit.GetComponent<RoomExitController>().playerSpawnPosition.transform.position;
-            player.transform.position = playerSpawnPosition;
-            // purpose fulfilled
-            Destroy(gameObject);
+            if (previousScene.Equals(roomExit.sceneToLoad.name))
+            {
+                Debug.Log($"previous scene: {previousScene}, roomExitList: {roomExitList}");
+                // time for spaghetti 😈
+                Vector3 playerSpawnPosition = roomExit.playerSpawnPosition.transform.position;
+                player.transform.position = playerSpawnPosition;
+                // purpose fulfilled
+                uiController.StartCoroutine(uiController.FadeFromBlack());
+                Destroy(gameObject);
+            }
+        }
+
+        if (roomExitList.Length == 0)
+        {
+            Debug.Log("length of roomExitList is ZERO!!!!!");
         }
     }
 }
