@@ -7,7 +7,14 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 
-// detects collisions 
+// script for Controlling the exiting of rooms.
+// when the player gets near, they can press a button to move to sceneToLoad.
+// uses a RoomExitSpawner (i know it's a bad name im sorry) to preserve data between scenes.
+// places player at child playerSpawnPosition of the roomExitController in sceneToLoad that has the same scene as the one we just transitioned from (the corresponding exit to this one).
+// has a lot of Annoying dependencies, such as a UIController.
+// works properly when there are multiple roomExitControllers in the scene it is transitioning to.
+// doesn't so much work properly when there are multiple roomExitControllers that go to the same scene in the scene it's transitioning to. it'll go to the first one in the hierarchy. this can be
+// fixed by having more specificity of the connection between the roomExits. idk how to actually implement this though. just don't have multiple entrances to the same place
 public class RoomExitController : MonoBehaviour
 {
     public SceneAsset sceneToLoad;
@@ -15,6 +22,11 @@ public class RoomExitController : MonoBehaviour
     BoxCollider2D bc2d; // controls area in which the player gets the prompt to switch rooms
     public GameObject playerSpawnPosition;
     public Collider2D target; // collider2d attached to player
+    
+    // EXACT NAME of the RoomExit that this RoomExit is supposed to put the player in front of when they go through.
+    // this is the first thing it checks, if there is no RoomExit in sceneToLoad that has this name, it puts the player at the RoomExit with sceneToLoad of this RoomExit.
+    // msg me if the above doesn't make sense lol
+    public string correspondingExitName; 
 
     public UIController uiController;
     
@@ -85,6 +97,7 @@ public class RoomExitController : MonoBehaviour
         var roomExitSpawnerScript = spawnerInstance.GetComponent<RoomExitSpawner>();
         roomExitSpawnerScript.player = target.gameObject;
         roomExitSpawnerScript.previousScene = SceneManager.GetActiveScene().name;
+        roomExitSpawnerScript.correspondingRoomExitName = correspondingExitName;
         uiController.StartCoroutine(uiController.FadeToBlack()); // uncomment for fade to black effect
         // wait until the fade to black has finished to load the scene...
         uiController.onFinishFadeToBlack += OnFinishFadeToBlack;

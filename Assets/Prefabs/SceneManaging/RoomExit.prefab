@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577290317476897637}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.004, y: -0.03, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 2097207309882162798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9573526, y: 0.448, z: 1}
+  m_LocalScale: {x: 0.08385, y: 0.0799, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4602202745773017523}
@@ -81,6 +81,7 @@ MonoBehaviour:
   sceneToLoad: {fileID: 0}
   playerSpawnPosition: {fileID: 1577290317476897637}
   target: {fileID: 0}
+  uiController: {fileID: 0}
   interactButton: 102
   roomExitSpawner: {fileID: 5791266661262717595, guid: f007594aa708ace4a99ecc17408974bd, type: 3}
 --- !u!61 &1425376780695768023
@@ -126,7 +127,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 13.379381, y: 25.043774}
   m_EdgeRadius: 0
 --- !u!212 &8463438650758466035
 SpriteRenderer:

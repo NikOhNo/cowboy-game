@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class RoomExitSpawner : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class RoomExitSpawner : MonoBehaviour
     public GameObject player;
     public RoomExitController roomExit;
     public string previousScene;
+    public string correspondingRoomExitName;
 
     public void Start()
     {
@@ -40,15 +42,34 @@ public class RoomExitSpawner : MonoBehaviour
         var roomExitList = FindObjectsOfType<RoomExitController>();
         foreach (var roomExit in roomExitList)
         {
-            if (previousScene.Equals(roomExit.sceneToLoad.name))
+            if (roomExit.gameObject.name == correspondingRoomExitName)
             {
-                Debug.Log($"previous scene: {previousScene}, roomExitList: {roomExitList}");
+                Debug.Log($"{roomExit.gameObject.name} matches with {correspondingRoomExitName}!!!!!");
+                PlacePlayer(roomExit);
+                uiController.StartCoroutine(uiController.FadeFromBlack());
+                Destroy(gameObject);
+                return;
+            }
+            
+            Debug.Log($"{roomExit.gameObject.name} does not match with {correspondingRoomExitName}, apparently");
+            Debug.Log(roomExit.gameObject.name == correspondingRoomExitName);
+            
+        }
+        
+        Debug.Log($"RoomExit with name {correspondingRoomExitName} not found, defaulting to scene name");
+        
+        // if there's no RoomExit that has the right name
+        foreach (var roomExit in roomExitList)
+        {
+            if (previousScene == roomExit.sceneToLoad.name)
+            {
+                Debug.Log($"scene holder found, it's {roomExit.sceneToLoad.name}");
                 // time for spaghetti 😈
-                Vector3 playerSpawnPosition = roomExit.playerSpawnPosition.transform.position;
-                player.transform.position = playerSpawnPosition;
+                PlacePlayer(roomExit);
                 // purpose fulfilled
                 uiController.StartCoroutine(uiController.FadeFromBlack());
                 Destroy(gameObject);
+                return;
             }
         }
 
@@ -56,5 +77,11 @@ public class RoomExitSpawner : MonoBehaviour
         {
             Debug.Log("length of roomExitList is ZERO!!!!!");
         }
+    }
+
+    public void PlacePlayer(RoomExitController roomExit)
+    {
+        Vector3 playerSpawnPosition = roomExit.playerSpawnPosition.transform.position;
+        player.transform.position = playerSpawnPosition;
     }
 }
