@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class AttackItem : MonoBehaviour
+{
+    public int attackPower = 10;
+    public GameObject projectilePrefab;
+    public bool canUse = true;
+    
+
+    public Transform playerTransform; // Assign the player's transform in the Unity Editor
+    
+
+    protected virtual void Update()
+    {
+        if (canUse && Input.GetButtonDown("Fire1")) // Assuming "Fire1" is the left mouse button
+        {
+            ShootProjectile();
+        }
+    }
+
+    public virtual void ShootProjectile()
+    {
+        Debug.Log("Shooting projectile");
+    }
+
+}
