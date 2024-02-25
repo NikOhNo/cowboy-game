@@ -4,13 +4,20 @@ using UnityEngine;
 
 public class PlayableCharacter : MonoBehaviour
 {
-    public enum State
+    public enum MoveState
     {
         Idle,
         Walking,
         DodgeRolling
     };
-    public State playerState = State.Idle;
+
+    public enum AttackState
+    {
+        Idle,
+        Attacking
+    };//might add more for weapons and whatnot...
+    public MoveState playerState = MoveState.Idle;
+    public AttackState playerAttackState = AttackState.Idle;
     public float speed = 5.0f;
     Rigidbody2D rb;
     private float horizontalInput;
@@ -26,12 +33,18 @@ public class PlayableCharacter : MonoBehaviour
 
     void FixedUpdate()
     {
-        //TODO: Apply speed slower to diagonal movement
+        MovementLogic();
+        AttackLogic();
         
+    
+    }
+
+
+    void MovementLogic(){
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        HandleState();
-        if(playerState == State.Walking){
+        HandleMoveState();
+        if(playerState == MoveState.Walking){
             Vector2 movement = new Vector2(horizontalInput, verticalInput);
             float currentSpeed = speed;
             if(againstWall){
@@ -44,16 +57,14 @@ public class PlayableCharacter : MonoBehaviour
             rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
         }
         
-    
     }
 
-
-    void HandleState(){
-        if(playerState == State.Idle && (horizontalInput != 0 || verticalInput != 0)){
-            playerState = State.Walking;
+    void HandleMoveState(){
+        if(playerState == MoveState.Idle && (horizontalInput != 0 || verticalInput != 0)){
+            playerState = MoveState.Walking;
         }
-        else if(playerState == State.Walking && (horizontalInput == 0 && verticalInput == 0)){
-            playerState = State.Idle;
+        else if(playerState == MoveState.Walking && (horizontalInput == 0 && verticalInput == 0)){
+            playerState = MoveState.Idle;
         }
         /*else if(player.State == State.Walking && Input.GetKeyDown(KeyCode.Space)){
             playerState = State.DodgeRolling;
@@ -61,6 +72,16 @@ public class PlayableCharacter : MonoBehaviour
         Need more dodge rolling info to complete this part
         */
         
+    }
+
+
+    void AttackLogic(){
+        if(playerAttackState == AttackState.Idle && Input.GetMouseButton(0)){
+            playerAttackState = AttackState.Attacking;
+        }
+        else if(playerAttackState == AttackState.Attacking && !Input.GetMouseButton(0)){
+            playerAttackState = AttackState.Idle;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other){
