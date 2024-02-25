@@ -6,21 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="149a9bf4-9567-4468-8754-53199a5a965f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.lickety-split/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.lickety-split/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SceneManaging/RoomExit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SceneManaging/RoomExit.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Examples/ExampleExteriorScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Examples/ExampleExteriorScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Examples/ExampleInteriorScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Examples/ExampleInteriorScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Examples/Inside.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Examples/Inside.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Examples/Outside.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Examples/Outside.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/QuestSystemScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/QuestSystemScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/RoomExitController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/RoomExitController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/RoomExitSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/RoomExitSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/UIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SceneManaging/RoomExit.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SceneManaging/RoomExit.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SceneManaging/RoomExitSpawner.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SceneManaging/RoomExitSpawner.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Examples/SceneManaging/Outside.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Examples/SceneManaging/Outside.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/RoomExitController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/RoomEntranceController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/RoomExitController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/RoomEntranceController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/RoomExitSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/RoomEntranceSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/RoomExitSpawner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/RoomEntranceSpawner.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +120,7 @@
       <workItem from="1708628708988" duration="5327000" />
       <workItem from="1708751393002" duration="4268000" />
       <workItem from="1708762152261" duration="1325000" />
+      <workItem from="1708897014257" duration="1094000" />
     </task>
     <servers />
   </component>

@@ -334,6 +334,10 @@ PrefabInstance:
       propertyPath: uiController
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
+      propertyPath: correspondingEntranceName
+      value: Inside2Entrance
+      objectReference: {fileID: 0}
     - target: {fileID: 7981659705172534632, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -697,6 +701,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: correspondingExitName
+      value: Inside2Entrance
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
+      propertyPath: correspondingEntranceName
       value: Inside2Entrance
       objectReference: {fileID: 0}
     - target: {fileID: 7981659705172534632, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}

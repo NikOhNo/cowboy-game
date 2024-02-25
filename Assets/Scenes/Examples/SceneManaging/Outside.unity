@@ -133,11 +133,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1425376780695768023, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_Size.x
-      value: 1.5697056
+      value: 11.349333
       objectReference: {fileID: 0}
     - target: {fileID: 1425376780695768023, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_Size.y
-      value: 3.3285098
+      value: 19.179447
       objectReference: {fileID: 0}
     - target: {fileID: 1425376780695768023, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_Offset.x
@@ -162,7 +162,7 @@ PrefabInstance:
     - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: sceneToLoad
       value: 
-      objectReference: {fileID: 102900000, guid: f12fd9148ad219f46b1ca10b8c02e851, type: 3}
+      objectReference: {fileID: 102900000, guid: 1342ecda03da2604cb82f196fec86f7a, type: 3}
     - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: uiController
       value: 
@@ -176,7 +176,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 431759719}
     - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
+      propertyPath: roomEntranceSpawner
+      value: 
+      objectReference: {fileID: 5791266661262717595, guid: f007594aa708ace4a99ecc17408974bd, type: 3}
+    - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: correspondingExitName
+      value: OutsideEntrance
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
+      propertyPath: correspondingEntranceName
       value: OutsideEntrance
       objectReference: {fileID: 0}
     - target: {fileID: 7981659705172534632, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
@@ -313,7 +321,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 102900000, guid: d2284e3fd2507c64ca54932d494b5b1c, type: 3}
     - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
+      propertyPath: roomEntranceSpawner
+      value: 
+      objectReference: {fileID: 5791266661262717595, guid: f007594aa708ace4a99ecc17408974bd, type: 3}
+    - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: correspondingExitName
+      value: OutsideEntrance
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
+      propertyPath: correspondingEntranceName
       value: OutsideEntrance
       objectReference: {fileID: 0}
     - target: {fileID: 7981659705172534632, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
@@ -623,11 +639,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1425376780695768023, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_Size.x
-      value: 1.5697056
+      value: 12.853789
       objectReference: {fileID: 0}
     - target: {fileID: 1425376780695768023, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_Size.y
-      value: 3.3285098
+      value: 19.773907
       objectReference: {fileID: 0}
     - target: {fileID: 1425376780695768023, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_Offset.x
@@ -652,7 +668,7 @@ PrefabInstance:
     - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: sceneToLoad
       value: 
-      objectReference: {fileID: 102900000, guid: 1342ecda03da2604cb82f196fec86f7a, type: 3}
+      objectReference: {fileID: 102900000, guid: f12fd9148ad219f46b1ca10b8c02e851, type: 3}
     - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: uiController
       value: 
@@ -666,7 +682,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1694964116}
     - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
+      propertyPath: roomEntranceSpawner
+      value: 
+      objectReference: {fileID: 5791266661262717595, guid: f007594aa708ace4a99ecc17408974bd, type: 3}
+    - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: correspondingExitName
+      value: OutsideEntrance
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
+      propertyPath: correspondingEntranceName
       value: OutsideEntrance
       objectReference: {fileID: 0}
     - target: {fileID: 7981659705172534632, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
@@ -833,6 +857,10 @@ PrefabInstance:
       objectReference: {fileID: 102900000, guid: d2284e3fd2507c64ca54932d494b5b1c, type: 3}
     - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: correspondingExitName
+      value: OutsideEntrance2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
+      propertyPath: correspondingEntranceName
       value: OutsideEntrance2
       objectReference: {fileID: 0}
     - target: {fileID: 7981659705172534632, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}

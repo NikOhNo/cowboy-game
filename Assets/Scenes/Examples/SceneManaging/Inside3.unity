@@ -291,6 +291,10 @@ PrefabInstance:
       propertyPath: correspondingExitName
       value: Inside3Entrance2
       objectReference: {fileID: 0}
+    - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
+      propertyPath: correspondingEntranceName
+      value: Inside3Entrance2
+      objectReference: {fileID: 0}
     - target: {fileID: 7981659705172534632, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -592,6 +596,10 @@ PrefabInstance:
       objectReference: {fileID: 102900000, guid: 1c1f8eda0d4e92246bf7a2934c42ab0b, type: 3}
     - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: correspondingExitName
+      value: Inside3Entrance
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143719055848018831, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
+      propertyPath: correspondingEntranceName
       value: Inside3Entrance
       objectReference: {fileID: 0}
     - target: {fileID: 7981659705172534632, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
