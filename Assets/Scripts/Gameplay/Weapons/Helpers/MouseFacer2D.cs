@@ -21,8 +21,7 @@ public class MouseFacer2D : MonoBehaviour
     {
         Vector2 mousePos = Input.mousePosition;
 
-        var mousePositionZ = Camera.main.farClipPlane;
-        var mouseScreenPos = new Vector3(mousePos.x, mousePos.y, mousePositionZ);
+        var mouseScreenPos = new Vector3(mousePos.x, mousePos.y, pivotPoint.position.z);
         var mouseWorldPos = Camera.main.ScreenToWorldPoint(mouseScreenPos);
 
         Vector3 targetDirection = mouseWorldPos - pivotPoint.position;
