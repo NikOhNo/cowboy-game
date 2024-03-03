@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2147919157887770989}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.5261397, y: -1.6147742, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -109,6 +109,7 @@ MonoBehaviour:
   damageCooldown: 0.4
   animator: {fileID: 0}
   landedSprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
+  rotationSpeed: 300
 --- !u!70 &1095130524213127862
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

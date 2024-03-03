@@ -15,7 +15,6 @@ public class WeaponScroll : MonoBehaviour
 
         // Change the current value based on the scroll input
         float midValue = scrollInput * scrollSpeed;
-        Debug.Log(midValue);
         currentValue += (int)(midValue);
         if(currentValue < 0)
         {
@@ -29,6 +28,7 @@ public class WeaponScroll : MonoBehaviour
 
 
     void WeaponLogic(){
+        //not proud of this, but didn't want to invest time on O(1).
         for (int i = 0; i < numWeapons; i++)
         {
             if (i == currentValue)
