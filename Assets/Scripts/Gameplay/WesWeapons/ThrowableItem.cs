@@ -7,6 +7,8 @@ public class ThrowableItem : ProjectileItem
     public Vector3 targetCoords;
     public bool isLanded = false;
     public float landLifeTime = 2f;
+    public float damageCooldown = .4f;
+    
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -15,8 +17,9 @@ public class ThrowableItem : ProjectileItem
         rb.velocity = Vector3.Normalize(targetCoords - transform.position) * speed;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
+        if(other.isTrigger) return;
         if(other.gameObject.tag != "Player"){
             if(!isLanded)
             {
@@ -26,7 +29,8 @@ public class ThrowableItem : ProjectileItem
             }
             
         }
-        DealDamage(other);
+            DealDamage(other); //needs to add a damage cooldown Component to the damaged object
         
     }
+
 }
