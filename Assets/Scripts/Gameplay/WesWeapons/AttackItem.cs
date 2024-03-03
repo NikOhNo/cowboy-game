@@ -7,6 +7,8 @@ public class AttackItem : MonoBehaviour
     public int attackPower = 10;
     public GameObject projectilePrefab;
     public bool canUse = true;
+    public float reloadTime = 1.5f;
+    protected float reloadTimer = 0;
     
 
     public Transform playerTransform; // Assign the player's transform in the Unity Editor
