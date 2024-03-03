@@ -7,6 +7,7 @@ public class CatGrenade : ThrowableItem
     public Animator animator;
     public float catSpeed = 15f;
     private float angle = 0f;
+    private bool isExpanded = false;
 
     protected override void Update()
     {
@@ -18,6 +19,11 @@ public class CatGrenade : ThrowableItem
         if (isLanded)
         {
             //animator.SetBool("hasExploded", true);
+            if(!isExpanded)
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+                isExpanded = true;
+            }
             LandedBehavior();
             
         }
@@ -37,6 +43,9 @@ public class CatGrenade : ThrowableItem
         {
             angle -= 2 * Mathf.PI;
         }
+
+        //change circle collider radius to 2
+        GetComponent<CircleCollider2D>().radius = 1;
     }
     
 }

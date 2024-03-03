@@ -6,10 +6,12 @@ public class WThrowHolder : AttackItem
 {
     
     public int throwableCount = 3;
+    public GameObject MouseTarget;
+    private GameObject mouseTargetInstance;
     // Start is called before the first frame update
     void Start()
     {
-        
+        mouseTargetInstance = Instantiate(MouseTarget, Vector3.zero, Quaternion.identity, this.transform);
     }
 
     protected override void Update()
@@ -23,6 +25,11 @@ public class WThrowHolder : AttackItem
                 canUse = true;
                 reloadTimer = 0;
             }
+            mouseTargetInstance.SetActive(false);
+        }
+        else
+        {
+            mouseTargetInstance.SetActive(true);
         }
         
     }
