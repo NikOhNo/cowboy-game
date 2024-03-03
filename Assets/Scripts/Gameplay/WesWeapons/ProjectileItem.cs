@@ -6,9 +6,9 @@ public class ProjectileItem : MonoBehaviour
 {
     public float speed = 20f;
     public int attackDamage = 20;
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     public float lifetime = 5f;
-    private float timer = 0f;
+    protected float timer = 0f;
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -17,7 +17,7 @@ public class ProjectileItem : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         timer += Time.deltaTime;
         if (timer >= lifetime)
@@ -30,6 +30,27 @@ public class ProjectileItem : MonoBehaviour
     {
         attackDamage = newAttackDamage;
         
+    }
+
+    public void DealDamage(Collision2D other){
+        if (other.gameObject.tag == "Damageable")
+        {
+            if(other.gameObject.TryGetComponent(out Enemy enemy))
+            {
+                enemy.TakeDamage(attackDamage);
+                Debug.Log("Hit Enemy");
+            }
+        }
+    }
+    public void DealDamage(Collider2D other){
+        if (other.gameObject.tag == "Damageable")
+        {
+            if(other.gameObject.TryGetComponent(out Enemy enemy))
+            {
+                enemy.TakeDamage(attackDamage);
+                Debug.Log("Hit Enemy");
+            }
+        }
     }
 
 

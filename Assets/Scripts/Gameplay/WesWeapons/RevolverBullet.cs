@@ -9,19 +9,9 @@ public class RevolverBullet : ProjectileItem
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Damageable")
-        {
-            if(other.gameObject.TryGetComponent(out Enemy enemy))
-            {
-                enemy.TakeDamage(attackDamage);
-                Debug.Log("Hit Enemy");
-            }
-            
-            
-            Destroy(this.gameObject);
-            
+        DealDamage(other);
+        Destroy(this.gameObject);
 
-        }
     }
 
     
