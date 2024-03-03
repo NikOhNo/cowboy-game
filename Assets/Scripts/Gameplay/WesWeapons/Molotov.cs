@@ -24,6 +24,11 @@ public class Molotov : ThrowableItem
         {
             transform.Rotate(new Vector3(0, 0, 1), rotationSpeed * Time.deltaTime);
         }
+
+        if(!isLanded)
+        {
+            transform.Rotate(new Vector3(0, 0, 1), rotationSpeed * Time.deltaTime);
+        }
         if (isLanded && !isExpanded)
         {
             isExpanded = true;
