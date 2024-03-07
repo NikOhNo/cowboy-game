@@ -28,6 +28,7 @@ public class NPCConvo : MonoBehaviour
     private void Update() {
         if (canTalk && (Input.GetKeyDown(KeyCode.F))) {
             ConversationManager.Instance.StartConversation(myConvo);
+            canTalk = false;
         }
     }
 }

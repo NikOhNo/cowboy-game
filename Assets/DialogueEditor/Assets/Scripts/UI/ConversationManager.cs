@@ -43,6 +43,7 @@ namespace DialogueEditor
         // Not exposed via custom inspector
         // 
         // Base panels
+        public RectTransform FadeBackground;
         public RectTransform DialoguePanel;
         public RectTransform OptionsPanel;
         // Dialogue UI
@@ -626,6 +627,7 @@ namespace DialogueEditor
 
         private void TurnOnUI()
         {
+            FadeBackground.gameObject.SetActive(true);
             DialoguePanel.gameObject.SetActive(true);
             OptionsPanel.gameObject.SetActive(true);
 
@@ -644,6 +646,7 @@ namespace DialogueEditor
 
         private void TurnOffUI()
         {
+            FadeBackground.gameObject.SetActive(false);
             DialoguePanel.gameObject.SetActive(false);
             OptionsPanel.gameObject.SetActive(false);
             SetState(eState.Off);
@@ -680,7 +683,7 @@ namespace DialogueEditor
                         UIConversationButton uiOption = CreateButton();
                         SpeechNode next = GetValidSpeechOfNode(m_currentSpeech);
 
-                        // If there was no valid speech node (due to no conditions being met) this becomes a None button type
+                        // If there was no valid speech node (due to no conditions met) this becomes a None button type
                         if (next == null)
                         {
                             uiOption.SetupButton(UIConversationButton.eButtonType.End, null, endFont: m_conversation.EndConversationFont);
