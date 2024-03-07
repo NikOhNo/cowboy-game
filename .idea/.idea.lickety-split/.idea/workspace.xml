@@ -4,22 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="149a9bf4-9567-4468-8754-53199a5a965f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.lickety-split/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.lickety-split/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SceneManaging/RoomEntrance.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SceneManaging/RoomEntrance.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/RoomEntranceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneManaging/RoomEntranceController.cs" afterDir="false" />
     </list>
+=======
+    <list default="true" id="149a9bf4-9567-4468-8754-53199a5a965f" name="Changes" comment="" />
+>>>>>>> main
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/PlayerSpawner.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/RoomExitSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+=======
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4911eca47f294e18a7b3306f02701303946200/72/fcb94da8/SceneAsset.cs" root0="SKIP_HIGHLIGHTING" />
+>>>>>>> main
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SceneManaging/CustomSceneManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -30,6 +39,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
@@ -54,6 +64,30 @@
     ]
   }
 }</component>
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "SolutionBuilderGeneralOptionsPage",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Garett\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Garett\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\Garett\\AppData\\Local\\Symbols\\src"
+    ]
+  }
+}]]></component>
+>>>>>>> main
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.0f1\Editor\Unity.exe" />
@@ -104,6 +138,7 @@
       <workItem from="1707105769383" duration="1918000" />
       <workItem from="1707175224465" duration="2264000" />
       <workItem from="1707177540701" duration="4502000" />
+<<<<<<< HEAD
       <workItem from="1707680275935" duration="25000" />
       <workItem from="1707680321808" duration="33000" />
       <workItem from="1707680768101" duration="3948000" />
@@ -115,6 +150,8 @@
       <workItem from="1708762152261" duration="1325000" />
       <workItem from="1708897014257" duration="2285000" />
       <workItem from="1709837142182" duration="1695000" />
+=======
+>>>>>>> main
     </task>
     <servers />
   </component>

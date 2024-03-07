@@ -353,7 +353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adbd5c4a6991f9c428c8417a44c1c994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pivotPoint: {fileID: 0}
 --- !u!1 &542575713
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,7 +419,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &542575715
@@ -474,10 +473,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerState: 0
   speed: 5
-  rb: {fileID: 0}
-  horizontalInput: 0
-  verticalInput: 0
-  againstWall: 0
 --- !u!58 &1093323688
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -587,10 +582,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02bffc62c6405b949a414771ef9ff806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 1093323691}
   playerSettings: {fileID: 0}
-  smoothInputSpeed: 0.2
-  MoveInput: {x: 0, y: 0}
-  SmoothedInputVector: {x: 0, y: 0}
 --- !u!4 &1093323693
 Transform:
   m_ObjectHideFlags: 0

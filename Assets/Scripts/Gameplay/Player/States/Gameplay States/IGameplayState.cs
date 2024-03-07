@@ -5,7 +5,9 @@ using UnityEngine;
 
 public interface IGameplayState 
 {
-    public void EnterState(PlayerStateController playerStateController, PlayerController playerController);
+    public bool CanInterrupt { get; }
+
+    public void EnterState();
     public void PerformState();
     public void ExitState();
 }
