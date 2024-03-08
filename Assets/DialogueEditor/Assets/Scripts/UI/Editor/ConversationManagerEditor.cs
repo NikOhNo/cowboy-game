@@ -14,7 +14,7 @@ namespace DialogueEditor
         private const float OPTION_BUFFER = 5;
         private const float OPTION_TEXT_BUF_Y = 10;
 
-
+        SerializedProperty FadeBackgroundProperty;
         SerializedProperty BackgroundImageProperty;
         SerializedProperty BackgroundImageSlicedProperty;
         SerializedProperty OptionImageProperty;
@@ -25,6 +25,7 @@ namespace DialogueEditor
 
         private void OnEnable()
         {
+            FadeBackgroundProperty = serializedObject.FindProperty("FadeBackground");
             BackgroundImageProperty = serializedObject.FindProperty("BackgroundImage");
             BackgroundImageSlicedProperty = serializedObject.FindProperty("BackgroundImageSliced");
             OptionImageProperty = serializedObject.FindProperty("OptionImage");
@@ -46,6 +47,11 @@ namespace DialogueEditor
             EditorGUILayout.BeginVertical();
             GUILayout.Space(BOX_HEIGHT + OPTION_BUFFER + OPTION_HEIGHT);
             EditorGUILayout.EndVertical();
+
+            // Fade Background image
+            GUILayout.Label("Fade Background", EditorStyles.boldLabel);
+            EditorGUILayout.PropertyField(FadeBackgroundProperty);
+            EditorGUILayout.Space();
 
             // Background image
             GUILayout.Label("Dialogue Image Options", EditorStyles.boldLabel);
