@@ -15,6 +15,8 @@ public class CatGrenade : ThrowableItem
         if(Mathf.Abs(targetCoords.x - transform.position.x) <= 0.1f && Mathf.Abs(targetCoords.y - transform.position.y) <= 0.1f)
         {
             isLanded = true;
+            
+            
         }
         if (isLanded)
         {
@@ -23,6 +25,8 @@ public class CatGrenade : ThrowableItem
             {
                 transform.localScale = new Vector3(1, 1, 1);
                 isExpanded = true;
+                lifetime = landLifeTime;
+                timer = 0f;
             }
             LandedBehavior();
             

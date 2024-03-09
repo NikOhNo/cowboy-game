@@ -36,7 +36,7 @@ public class WThrowHolder : AttackItem
 
     public override void ShootProjectile()
     {
-        GameObject projectileInstance = Instantiate(projectilePrefab, transform.position, transform.parent.rotation);
+        GameObject projectileInstance = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         projectileInstance.GetComponent<ThrowableItem>().SetAttackDamage(attackPower);
         
         canUse = false;
