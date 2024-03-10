@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponScroll : MonoBehaviour
 {
     public float scrollSpeed = 10.0f;
     public int currentValue = 0;
+    private int lastValue = -1;
     public int numWeapons = 3;
+    public List<Sprite> weaponSprites = new List<Sprite>();
+    public WeaponDisplay weaponDisplay;
 
     void Update()
     {
@@ -23,12 +27,18 @@ public class WeaponScroll : MonoBehaviour
         else{
             currentValue = currentValue % numWeapons;
         }
-        WeaponLogic();
+        //only update on switches
+        if(currentValue != lastValue)
+        {
+            lastValue = currentValue;
+            WeaponLogic();
+        }
     }
 
 
     void WeaponLogic(){
         //not proud of this, but didn't want to invest time on O(1).
+        
         for (int i = 0; i < numWeapons; i++)
         {
             if (i == currentValue)
@@ -40,6 +50,16 @@ public class WeaponScroll : MonoBehaviour
                 transform.GetChild(i).gameObject.SetActive(false);
             }
         }
+        WeaponDisplay();
+    }
+
+    void WeaponDisplay(){
+        weaponDisplay.WeaponDisplayUpdate(currentValue);
+    }
+
+    public void UpdateAmmoCount(int changeValue){
+        //convert to channel system if there's time.
+        weaponDisplay.UpdateAmmoCount(changeValue);
     }
 
 }

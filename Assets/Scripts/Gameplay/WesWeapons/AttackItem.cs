@@ -19,6 +19,8 @@ public class AttackItem : MonoBehaviour
         if (canUse && Input.GetButtonDown("Fire1")) // Assuming "Fire1" is the left mouse button
         {
             ShootProjectile();
+            //get parent game object
+            transform.parent.GetComponent<WeaponScroll>().UpdateAmmoCount(-1);
         }
     }
 
