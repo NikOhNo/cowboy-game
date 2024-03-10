@@ -7,6 +7,7 @@ public class WRevolver : AttackItem
     public int bulletCap = 6;
     public int bulletsLoaded = 6;
     public int bulletCount = 30;
+    public GameObject reloadText;
     
     void Start()
     {
@@ -29,6 +30,7 @@ public class WRevolver : AttackItem
         bulletCount--;
         if (bulletsLoaded <= 0)
         {
+            reloadText.SetActive(true);
             canUse = false;
             Debug.Log("Out of bullets, Right click to reload");
         }
@@ -40,6 +42,7 @@ public class WRevolver : AttackItem
         {
             bulletsLoaded = bulletCap;
             canUse = true;
+            reloadText.SetActive(false);
         }
     }
 }

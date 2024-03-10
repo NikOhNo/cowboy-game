@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2147919157887770989}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.5261397, y: -1.6147742, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,9 +75,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.14184242, g: 0.509434, b: 0, a: 1}
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: d245fcd51efdc3d44bba3304030ef77f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   landLifeTime: 2
   damageCooldown: 0.4
   animator: {fileID: 0}
-  landedSprite: {fileID: -2413806693520163455, guid: 4adeaf2d2b1c7417e89f026626d8264f, type: 3}
+  landedSprite: {fileID: 21300000, guid: 88cf29f9c8ee414449699ba3d7275c67, type: 3}
   rotationSpeed: 300
 --- !u!70 &1095130524213127862
 CapsuleCollider2D:

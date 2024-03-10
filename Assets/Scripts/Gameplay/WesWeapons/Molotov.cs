@@ -12,9 +12,12 @@ public class Molotov : ThrowableItem
     protected override void Update()
     {
         base.Update();
-        if(Mathf.Abs(targetCoords.x - transform.position.x) <= 0.1f && Mathf.Abs(targetCoords.y - transform.position.y) <= 0.1f)
+        if(!isLanded && (Mathf.Abs(targetCoords.x - transform.position.x) <= 0.1f && Mathf.Abs(targetCoords.y - transform.position.y) <= 0.1f))
         {
-            isLanded = true;
+                
+                isLanded = true;
+                timer = 0f;
+                lifetime = landLifeTime;
         }
 
         if(!isLanded)
