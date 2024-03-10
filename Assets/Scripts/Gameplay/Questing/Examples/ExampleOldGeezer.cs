@@ -10,7 +10,7 @@ public class ExampleOldGeezer : MonoBehaviour
     void Start()
     {
         gameObject.SetActive(false);
-        QuestManager.instance.OnActivateQuest += OnActivateGeezerQuest;
+        QuestManager.Instance.OnActivateQuest += OnActivateGeezerQuest;
     }
 
     private void OnActivateGeezerQuest(string questID)
@@ -20,7 +20,7 @@ public class ExampleOldGeezer : MonoBehaviour
         {
             gameObject.SetActive(true);
             button = GetComponent<Button>();
-            button.onClick.AddListener(delegate { gameObject.SetActive(false); QuestManager.instance.CompleteQuest(questID); });
+            button.onClick.AddListener(delegate { gameObject.SetActive(false); QuestManager.Instance.CompleteQuest(questID); });
         }
     }
 

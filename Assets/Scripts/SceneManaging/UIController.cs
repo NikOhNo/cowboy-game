@@ -26,7 +26,7 @@ public class UIController : MonoBehaviour
             DontDestroyOnLoad(this);
         }
         // make permanent
-        DontDestroyOnLoad(GameObject.Find("FadeToBlackCanvas"));
+        DontDestroyOnLoad(GameObject.Find("FadeToBlackCanvasGroup"));
     }
     
     public IEnumerator FadeToBlack(int fadeSpeed = 5)
@@ -43,8 +43,6 @@ public class UIController : MonoBehaviour
             yield return null;
         }
         onFinishFadeToBlack?.Invoke();
-
-
     }
 
     public IEnumerator FadeFromBlack(int fadeSpeed = 5)

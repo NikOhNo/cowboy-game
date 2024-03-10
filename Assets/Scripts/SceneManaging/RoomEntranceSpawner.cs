@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -66,7 +67,7 @@ public class RoomEntranceSpawner : MonoBehaviour
                 Debug.Log($"scene holder found, it's {roomEntrance.sceneToLoad.name}");
                 // time for spaghetti 😈
                 PlacePlayer(roomEntrance);
-                // purpose fulfilled
+                // purpose fulfilled, time to die
                 uiController.StartCoroutine(uiController.FadeFromBlack());
                 Destroy(gameObject);
                 return;
@@ -83,5 +84,6 @@ public class RoomEntranceSpawner : MonoBehaviour
     {
         Vector3 playerSpawnPosition = roomEntrance.playerSpawnPosition.transform.position;
         player.transform.position = playerSpawnPosition;
+        GameObject.Find("Virtual Camera").GetComponent<CinemachineVirtualCamera>().Follow = player.transform;
     }
 }

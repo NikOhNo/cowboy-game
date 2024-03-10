@@ -56,7 +56,7 @@ public class RoomEntranceController : MonoBehaviour
             {
                 interactIcon.SetActive(true);
             }
-            interactIcon.transform.position = target.transform.position + new Vector3(0, 1.25f, 0);
+            interactIcon.transform.position = (target.transform.position) + new Vector3(0, 0.50f, 0);
             // TODO replace with actual dimensions of screen
             // Vector3 finalPosition = interactIcon.transform.position;
             // // Vector3 viewPos = Camera.main.WorldToViewportPoint(interactIcon.transform.position);

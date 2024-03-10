@@ -27,8 +27,8 @@ public class QuestDisplay : MonoBehaviour
         //questListText = GetComponentInChildren<TextMeshProUGUI>();
 
         // subscribe to quest manager's quest events
-        QuestManager.instance.OnActivateQuest += ActivateQuest;
-        QuestManager.instance.OnQuestComplete += CompleteQuest;
+        QuestManager.Instance.OnActivateQuest += ActivateQuest;
+        QuestManager.Instance.OnQuestComplete += CompleteQuest;
 
         textOrigin = GetComponentInChildren<TextMeshProUGUI>().transform.position;
     }
@@ -40,8 +40,8 @@ public class QuestDisplay : MonoBehaviour
 
     //private void OnDisable()
     //{
-    //    QuestManager.instance.OnActivateQuest -= ActivateQuest;
-    //    QuestManager.instance.OnQuestComplete -= CompleteQuest;
+    //    QuestManager.Instance.OnActivateQuest -= ActivateQuest;
+    //    QuestManager.Instance.OnQuestComplete -= CompleteQuest;
     //}
 
 
@@ -63,7 +63,7 @@ public class QuestDisplay : MonoBehaviour
         var newQuestTextOrigin = RedrawActiveQuestText(textOrigin);
 
         // create new quest text
-        string newQuestDescription = QuestManager.instance.GetQuestDescription(id);
+        string newQuestDescription = QuestManager.Instance.GetQuestDescription(id);
         if (newQuestDescription != null)
         {
             activeQuests.Add(id);
@@ -106,7 +106,7 @@ public class QuestDisplay : MonoBehaviour
         // create ONLY active quest texts
         foreach (string questID in activeQuests)
         {
-            string questDescription = QuestManager.instance.GetQuestDescription(questID);
+            string questDescription = QuestManager.Instance.GetQuestDescription(questID);
 
             var textItem = Instantiate(questTextItemPrefab, new Vector3(textOriginTemp.x, textOriginTemp.y, 0), Quaternion.identity, gameObject.transform);
 
@@ -127,7 +127,7 @@ public class QuestDisplay : MonoBehaviour
         // create old COMPLETED quest texts
         foreach (string questID in completedQuests)
         {
-            string questDescription = QuestManager.instance.GetQuestDescription(questID);
+            string questDescription = QuestManager.Instance.GetQuestDescription(questID);
 
             var textItem = Instantiate(questTextItemPrefab, new Vector3(textOriginTemp.x, textOriginTemp.y, 0), Quaternion.identity, gameObject.transform);
 

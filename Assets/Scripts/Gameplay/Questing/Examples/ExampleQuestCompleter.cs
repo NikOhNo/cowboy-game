@@ -13,6 +13,6 @@ public class ExampleQuestCompleter : MonoBehaviour
     {
         completeQuestButton = GetComponent<Button>();
 
-        completeQuestButton.onClick.AddListener(delegate { QuestManager.instance.CompleteQuest("quest_PressButton"); gameObject.SetActive(false); });
+        completeQuestButton.onClick.AddListener(delegate { QuestManager.Instance.CompleteQuest("quest_PressButton"); gameObject.SetActive(false); });
     }
 }
