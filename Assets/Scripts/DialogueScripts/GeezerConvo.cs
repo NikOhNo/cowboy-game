@@ -1,3 +1,4 @@
+using System;
 using Assets.Scripts.Gameplay.Questing;
 using DialogueEditor;
 using System.Collections;
@@ -10,18 +11,41 @@ public class GeezerConvo : NPCConvo
 
     [SerializeField] NPCConversation introConvo;
     [SerializeField] NPCConversation quest2IntroConvo;
+    [SerializeField] NPCConversation quest2ActualConvo;
+    
+    public bool quest2_usedDialogue = false;
     
 
     private void Awake()
+    {
+        if (ProducerQuestManager.Instance)
+        {
+            ProducerQuestManager.Instance.CompleteGeezerStep += OnCompleteGeezerStep;
+        }
+        UpdateDialogue();
+    }
+
+    private void UpdateDialogue()
     {
         if (questLog.TalkedToGeezer == false)
         {
             myConvo = introConvo;
         }
-        else if (questLog.ConstructionComplete)
+        else if (questLog.ConstructionComplete && !questLog.ProducerStarted)
         {
             myConvo = quest2IntroConvo;
         }
+        else if (questLog.ProducerStarted && !quest2_usedDialogue)
+        {
+            myConvo = quest2ActualConvo;
+            Debug.Log($"set myConvo to {myConvo}");
+        }
     }
 
+    public void OnCompleteGeezerStep()
+    {
+        quest2_usedDialogue = true;
+        UpdateDialogue();
+        // TODO switch dialogue to some other one
+    }
 }

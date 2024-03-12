@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 1
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":305.5,"yPos":87},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Sick
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":275.5,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Sick
     moves, Bee! Now get on out of there and- wub wub WUB WA WA WA - get on to the
     next! We got two more! It''s orange and- haaaa heeee hooo- don''t be afraid of
     heights!","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Ana","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
@@ -107,12 +107,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e92e23455e713b4e97b8207b1331c86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CountdownTimerDisplayPrefab: {fileID: 4862914811568930063, guid: 8c459b900e946d0429b4541f8b3dc152, type: 3}
+  countdownTimerDisplayPrefab: {fileID: 4862914811568930063, guid: 8c459b900e946d0429b4541f8b3dc152, type: 3}
+  questLog: {fileID: 11400000, guid: 079e9e6f44425954880e2a258d727ab1, type: 2}
   initiateQuestDialogue: {fileID: 8697115561916455531}
-  completeGeezerStepDialogue: {fileID: 0}
-  completeSheriffStepDialogue: {fileID: 0}
-  completeHouseStepDialogue: {fileID: 0}
-  completeBarnStepDialogue: {fileID: 0}
+  completeGeezerStepDialogue: {fileID: 4189643042730434073}
+  completeSheriffStepDialogue: {fileID: 5072314641268558682}
+  completeHouseStepDialogue: {fileID: 1124907054411519804}
+  completeBarnStepDialogue: {fileID: 7452044028126606275}
 --- !u!114 &6726346423419240444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 1
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":258.5,"yPos":115},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Well,
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":275.5,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Well,
     you could''ve gotten through that faster- vrrerr veeee ra ra ra- alright! One
     more place to- WUB WUB WUB WUB- head over TO THAT THERE BARN AN- WEE WOO WAAHH","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Ana","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
@@ -363,7 +364,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4925560672595937666}
   m_Father: {fileID: 3405425724558751301}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -380,12 +382,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 1
-  json: 
-  saveVersion: 0
-  DefaultName: 
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":296.5,"yPos":102},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"So
+    uh, when''d you learn to speak horse? - WUB WUB WEE WOO WUB- anyway no time for
+    chit chat! Get on over here we have a SHOW TO PERFORM!","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Ana","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+  saveVersion: 110
+  DefaultName: Ana
   DefaultSprite: {fileID: 0}
   DefaultFont: {fileID: 0}
-  NodeSerializedDataList: []
+  NodeSerializedDataList:
+  - {fileID: 1210100336981155687}
   ContinueFont: {fileID: 0}
   EndConversationFont: {fileID: 0}
   Event:
@@ -437,7 +442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 1
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":288.5,"yPos":72},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Great
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":275.5,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Great
     job!- wub wub ksss vvv wawawawaawa- next stop, I need the next package and FAST,
     it''s over- wuhwuhwuh beep boop babababa- blue! Got it? Now GO!","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Ana","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
@@ -490,6 +495,57 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6750763323055117843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 0
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
+  Audio: {fileID: 0}
+--- !u!1 &7284158379478882908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4925560672595937666}
+  - component: {fileID: 1210100336981155687}
+  m_Layer: 0
+  m_Name: ConversationEventInfo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4925560672595937666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7284158379478882908}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.23963559, y: 0.030514728, z: 0.08246106}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7031905991143660493}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1210100336981155687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7284158379478882908}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}

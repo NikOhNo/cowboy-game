@@ -58,6 +58,12 @@ namespace DialogueEditor
         // Default values
         public Sprite BlankSprite;
 
+        // added by garett so that we can control the scroll speed at runtime from events
+        public void SetScrollSpeed(float amount)
+        {
+            ScrollSpeed = amount;
+        }
+
         // Getter properties
         public bool IsConversationActive
         {
@@ -74,7 +80,7 @@ namespace DialogueEditor
         private eState m_state;
         private float m_stateTime;
         
-        private Conversation m_conversation;
+        public Conversation m_conversation;
         private SpeechNode m_currentSpeech;
         private OptionNode m_selectedOption;
 

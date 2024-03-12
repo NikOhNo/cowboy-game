@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using Assets.Scripts.Gameplay.Questing;
 using DialogueEditor;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-public class TownsfolkConvo : NPCConvo
+public class BarnConvo : NPCConvo
 {
     [SerializeField] private QuestCompletionLog questLog;
     
@@ -16,25 +15,25 @@ public class TownsfolkConvo : NPCConvo
     {
         if (ProducerQuestManager.Instance)
         {
-            ProducerQuestManager.Instance.CompleteSheriffStep += UpdateDialogue;
             ProducerQuestManager.Instance.CompleteHouseStep += UpdateDialogue;
+            ProducerQuestManager.Instance.CompleteBarnStep += UpdateDialogue;
         }
 
         UpdateDialogue();
     }
 
-    private void OnFinishSheriffStep()
+    private void OnFinishHouseStep()
     {
         UpdateDialogue();
     }
 
     private void UpdateDialogue()
     {
-        if (!questLog.ProducerFinishedSheriffStep)
+        if (!questLog.ProducerFinishedHouseStep)
         {
             myConvo = wrongTimeConvo;
         }
-        else if (!questLog.ProducerFinishedHouseStep)
+        else if (!questLog.ProducerFinishedBarnStep)
         {
             myConvo = quest2Convo;
         }

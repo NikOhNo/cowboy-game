@@ -73,7 +73,6 @@ public class QuestManager : MonoBehaviour
         AddQuest("quest_DefeatDustDevil", "Defeat the dust devil!");
         
         AddQuest("quest_TalkToProducer", "Investigate the saloon!");
-        AddQuest("quest_LeaveSaloon", "Leave the saloon");
-        AddQuest("quest_Producer", "Solve the producer's problems");
+        AddQuest("quest_Producer", "Solve the producer's problems!");
     }
 }
