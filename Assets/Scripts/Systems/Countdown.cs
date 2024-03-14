@@ -16,7 +16,7 @@ public class Countdown: MonoBehaviour {
 
     private void _tick() {
         timeRemaining--;
-        if(timeRemaining > 0) {
+        if(timeRemaining >= 0) {
             Invoke ( "_tick", 1f );
         } else {
             isCountingDown = false;

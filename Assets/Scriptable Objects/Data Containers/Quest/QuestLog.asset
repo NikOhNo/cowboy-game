@@ -15,10 +15,10 @@ MonoBehaviour:
   talkedToGeezer: 1
   constructionComplete: 1
   producerStarted: 1
-  producerFinishedGeezerStep: 1
-  producerFinishedSheriffStep: 1
-  producerFinishedHouseStep: 1
-  producerFinishedBarnStep: 1
+  producerFinishedGeezerStep: 0
+  producerFinishedSheriffStep: 0
+  producerFinishedHouseStep: 0
+  producerFinishedBarnStep: 0
   producerComplete: 0
   twinsComplete: 0
   dustDevilComplete: 0

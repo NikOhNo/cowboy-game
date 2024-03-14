@@ -12,7 +12,11 @@ public class EDMProducer : MonoBehaviour
     // if/when this evolves from being a quarter project to something Greater.
     public void BeginProducerQuest()
     {
-        Instantiate(producerQuestManagerPrefab);
+        // in case the quest was failed and the quest manager still exists
+        if (!ProducerQuestManager.Instance)
+        {
+            Instantiate(producerQuestManagerPrefab);
+        }
     }
 
     public void CompleteProducerQuest()

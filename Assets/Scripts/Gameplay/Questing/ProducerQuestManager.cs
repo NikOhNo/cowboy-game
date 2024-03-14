@@ -17,7 +17,7 @@ public class ProducerQuestManager : MonoBehaviour
     private bool questStarted;
     private Countdown countdown;
     
-    [FormerlySerializedAs("CountdownTimerDisplayPrefab")] [SerializeField] private GameObject countdownTimerDisplayPrefab;
+    [SerializeField] private GameObject countdownTimerDisplayPrefab;
     private GameObject countdownTimerDisplay;
     
     // use this to Observe whenever the quest states change
@@ -31,6 +31,7 @@ public class ProducerQuestManager : MonoBehaviour
     [SerializeField] private NPCConversation completeSheriffStepDialogue;
     [SerializeField] private NPCConversation completeHouseStepDialogue;
     [SerializeField] private NPCConversation completeBarnStepDialogue;
+    [SerializeField] private NPCConversation failQuestDialogue;
     
     private bool geezerStepFinished = false;
     private bool sheriffStepFinished = false;
@@ -61,31 +62,39 @@ void Awake()
     
     private void Update()
     {
-        // update countdownTimerDisplay to show the current time if it is counting down
-        if (countdownTimerDisplay && countdown.isCountingDown)
+        if (countdown.isCountingDown)
         {
-            countdownTimerDisplay.GetComponent<TextMeshProUGUI>().text = countdown.timeRemaining.ToString();
-
-            if (questLog.ProducerFinishedGeezerStep && !geezerStepFinished)
+            if (countdown.timeRemaining == 0)
             {
-                Progress();
+                ResetEntireQuest();
             }
-            if (questLog.ProducerFinishedSheriffStep && !sheriffStepFinished)
+            // update countdownTimerDisplay to show the current time if it is counting down
+            if (countdownTimerDisplay)
             {
-                Progress();
-            }
+                countdownTimerDisplay.GetComponent<TextMeshProUGUI>().text = countdown.timeRemaining.ToString();
 
-            if (questLog.ProducerFinishedHouseStep && !houseStepFinished)
-            {
-                Progress();
-            }
+                if (questLog.ProducerFinishedGeezerStep && !geezerStepFinished)
+                {
+                    Progress();
+                }
 
-            if (questLog.ProducerFinishedBarnStep && !barnStepFinished)
-            {
-                Progress();
+                if (questLog.ProducerFinishedSheriffStep && !sheriffStepFinished)
+                {
+                    Progress();
+                }
+
+                if (questLog.ProducerFinishedHouseStep && !houseStepFinished)
+                {
+                    Progress();
+                }
+
+                if (questLog.ProducerFinishedBarnStep && !barnStepFinished)
+                {
+                    Progress();
+                }
             }
         }
-        
+
         // if the conversation queue is nonempty, continuously check if there isn't a conversation so we can run the 
         // conversation in the queue. could probably switch this to hook into the ConversationManager.Instance.OnConversationEnd event
         if (conversationQueue.Count != 0)
@@ -171,5 +180,24 @@ void Awake()
             CompleteBarnStep?.Invoke();
             return;
         }
+    }
+
+
+    public void ResetEntireQuest()
+    {
+        conversationQueue.Clear();
+        conversationQueue.Enqueue(failQuestDialogue);
+        questLog.ProducerFinishedGeezerStep = false;
+        geezerStepFinished = false;
+        questLog.ProducerFinishedSheriffStep = false;
+        sheriffStepFinished = false;
+        questLog.ProducerFinishedHouseStep = false;
+        houseStepFinished = false;
+        questLog.ProducerFinishedBarnStep = false;
+        barnStepFinished = false;
+        
+        questLog.ProducerStarted = false;
+        
+        // return back to the saloon, indicate this somehow
     }
 }
