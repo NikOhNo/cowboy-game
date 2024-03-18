@@ -7,7 +7,8 @@ namespace Assets.Scripts.Gameplay.Questing
     [CreateAssetMenu(fileName = "newQuestCompleteLog", menuName = "New Quest Completion Log")]
     public class QuestCompletionLog : ScriptableObject
     {
-        [SerializeField] private bool talkedToGeezer;
+        [SerializeField] private bool seenFirstCutscene;
+		[SerializeField] private bool talkedToGeezer;
         [SerializeField] private bool constructionComplete;
         [SerializeField] private bool producerStarted;
         [SerializeField] private bool producerFinishedGeezerStep;
@@ -18,6 +19,8 @@ namespace Assets.Scripts.Gameplay.Questing
         [SerializeField] private bool twinsComplete;
         [SerializeField] private bool dustDevilComplete;
         
+		public bool SeenFirstCutscene => seenFirstCutscene;
+
         public bool TalkedToGeezer
         {
             get => talkedToGeezer;

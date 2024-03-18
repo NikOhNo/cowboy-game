@@ -152,6 +152,7 @@ namespace DialogueEditor
 
         public void StartConversation(NPCConversation conversation)
         {
+            FindObjectOfType<PlayableCharacter>()?.FreezePlayer();
             m_conversation = conversation.Deserialize();
             if (OnConversationStarted != null)
                 OnConversationStarted.Invoke();
@@ -163,6 +164,7 @@ namespace DialogueEditor
 
         public void EndConversation()
         {
+            FindObjectOfType<PlayableCharacter>()?.UnfreezePlayer();
             SetState(eState.TransitioningDialogueOff);
 
             if (OnConversationEnded != null)

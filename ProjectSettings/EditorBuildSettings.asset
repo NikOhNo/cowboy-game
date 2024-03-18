@@ -6,34 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Development/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/Development/Examples/SceneManaging/ExampleExteriorScene.unity
-    guid: 21be26bc1b4a4904c9141fc441ac3bb5
-  - enabled: 1
-    path: Assets/Scenes/Development/Examples/SceneManaging/ExampleInteriorScene.unity
-    guid: 5fdec84172fcf944e9ea67b47067cce5
-  - enabled: 1
-    path: Assets/Scenes/Development/Examples/SceneManaging/Outside.unity
-    guid: 1c1f8eda0d4e92246bf7a2934c42ab0b
-  - enabled: 1
-    path: Assets/Scenes/Development/Examples/SceneManaging/Inside.unity
-    guid: 1342ecda03da2604cb82f196fec86f7a
-  - enabled: 1
-    path: Assets/Scenes/Development/Examples/SceneManaging/Inside2.unity
-    guid: f12fd9148ad219f46b1ca10b8c02e851
-  - enabled: 1
-    path: Assets/Scenes/Development/Examples/SceneManaging/Inside3.unity
-    guid: d2284e3fd2507c64ca54932d494b5b1c
-  - enabled: 1
-    path: Assets/Scenes/Development/Examples/SceneManaging/Outside2.unity
-    guid: ae610ddf5af11fa428b2b36dd23d595f
-  - enabled: 1
-    path: Assets/Scenes/Development/TemporaryInteriors/SaloonInterior.unity
-    guid: ede8dce0b9c8f9f4eb2d2f0f0ec5ccce
+    path: Assets/Scenes/Final Game/MainMenu.unity
+    guid: 9549bbaa7ba98b34b81a5e3f54dd44c8
   - enabled: 1
     path: Assets/Scenes/Final Game/Town Scene.unity
     guid: f5118c85491de344eb1efa0866ea6b15
+  - enabled: 1
+    path: Assets/Scenes/Final Game/Credits.unity
+    guid: 0aa07f7ac20b2444a839f09327295e50
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 3843e67973056924c9e8b0b8fc0a8d02, type: 2}

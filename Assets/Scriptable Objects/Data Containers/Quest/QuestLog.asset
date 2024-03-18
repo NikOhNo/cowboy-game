@@ -12,13 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e99ee32ba081c074b9c35f4f5994c76b, type: 3}
   m_Name: QuestLog
   m_EditorClassIdentifier: 
-  talkedToGeezer: 1
-  constructionComplete: 1
-  producerStarted: 1
-  producerFinishedGeezerStep: 0
-  producerFinishedSheriffStep: 0
-  producerFinishedHouseStep: 0
-  producerFinishedBarnStep: 0
-  producerComplete: 0
-  twinsComplete: 0
-  dustDevilComplete: 0
+  SeenFirstCutscene: 1
+  TalkedToGeezer: 0
+  EDMComplete: 0
+  ConstructionComplete: 0
+  TwinsComplete: 0
+  DustDevilComplete: 0
