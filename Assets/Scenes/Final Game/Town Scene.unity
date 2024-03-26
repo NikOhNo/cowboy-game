@@ -429,15 +429,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.x
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.y
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.z
-      value: 30
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -905,14 +905,14 @@ MonoBehaviour:
   saveVersion: 110
   DefaultName: Sheriff
   DefaultSprite: {fileID: 0}
-  DefaultFont: {fileID: 0}
+  DefaultFont: {fileID: 11400000, guid: b3f3bba7d1475ce4c9d790b5aaee4e48, type: 2}
   NodeSerializedDataList:
   - {fileID: 1349000655}
   - {fileID: 1349000654}
   - {fileID: 1349000653}
   - {fileID: 1349000652}
-  ContinueFont: {fileID: 0}
-  EndConversationFont: {fileID: 0}
+  ContinueFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
+  EndConversationFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
   Event:
     m_PersistentCalls:
       m_Calls: []
@@ -938,15 +938,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.x
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.y
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.z
-      value: 30
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3022,15 +3022,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.x
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.y
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.z
-      value: 30
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3662,13 +3662,13 @@ MonoBehaviour:
   saveVersion: 110
   DefaultName: Old Geezer
   DefaultSprite: {fileID: 21300000, guid: 3c180933793293342b7a8903ce9837b3, type: 3}
-  DefaultFont: {fileID: 0}
+  DefaultFont: {fileID: 11400000, guid: b3f3bba7d1475ce4c9d790b5aaee4e48, type: 2}
   NodeSerializedDataList:
   - {fileID: 2141165960}
   - {fileID: 2141165959}
   - {fileID: 2141165958}
-  ContinueFont: {fileID: 0}
-  EndConversationFont: {fileID: 0}
+  ContinueFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
+  EndConversationFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
   Event:
     m_PersistentCalls:
       m_Calls: []
@@ -3915,15 +3915,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.x
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.y
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.z
-      value: 30
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4224,15 +4224,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.x
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.y
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.z
-      value: 30
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4731,16 +4731,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 1
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":272.5,"yPos":125},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"[You
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":224,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"[You
     hear distant grumbling. Now might not be the best time.]","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Sheriff","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: Sheriff
   DefaultSprite: {fileID: 0}
-  DefaultFont: {fileID: 0}
+  DefaultFont: {fileID: 11400000, guid: b3f3bba7d1475ce4c9d790b5aaee4e48, type: 2}
   NodeSerializedDataList:
   - {fileID: 764942569}
-  ContinueFont: {fileID: 0}
-  EndConversationFont: {fileID: 0}
+  ContinueFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
+  EndConversationFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
   Event:
     m_PersistentCalls:
       m_Calls: []
@@ -4805,6 +4805,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5dcac1b9dc650a4ab031d9ea15de862, type: 3}
+--- !u!114 &987708026 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2840683259678318747, guid: e5dcac1b9dc650a4ab031d9ea15de862, type: 3}
+  m_PrefabInstance: {fileID: 987708025}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9071483c6d90a4b46b5871793cdca3fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1003955638
 GameObject:
   m_ObjectHideFlags: 0
@@ -4857,11 +4868,11 @@ MonoBehaviour:
   saveVersion: 110
   DefaultName: Barn
   DefaultSprite: {fileID: 0}
-  DefaultFont: {fileID: 0}
+  DefaultFont: {fileID: 11400000, guid: b3f3bba7d1475ce4c9d790b5aaee4e48, type: 2}
   NodeSerializedDataList:
   - {fileID: 239765484}
-  ContinueFont: {fileID: 0}
-  EndConversationFont: {fileID: 0}
+  ContinueFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
+  EndConversationFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
   Event:
     m_PersistentCalls:
       m_Calls: []
@@ -4916,11 +4927,11 @@ MonoBehaviour:
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
-  DefaultFont: {fileID: 0}
+  DefaultFont: {fileID: 11400000, guid: b3f3bba7d1475ce4c9d790b5aaee4e48, type: 2}
   NodeSerializedDataList:
   - {fileID: 522166651}
-  ContinueFont: {fileID: 0}
-  EndConversationFont: {fileID: 0}
+  ContinueFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
+  EndConversationFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
   Event:
     m_PersistentCalls:
       m_Calls: []
@@ -5710,15 +5721,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.x
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.y
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.z
-      value: 30
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6067,15 +6078,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.x
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.y
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.z
-      value: 30
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6978,21 +6989,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 7
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":226,"yPos":-20},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Yer
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":224,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Yer
     back, and just in time! Listen here, honey-licker, those damn greenhorns may
     be gone for now but I reckon they''ll be back before ya know it.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Old
-    Geezer","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":false,"xPos":228.5,"yPos":73},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Lean
+    Geezer","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":false,"xPos":226.5,"yPos":115},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Lean
     in close, ya hear? ... Closer. Even closer- AH TOO CLOSE I CAN SMELL YAH, YOU
     WACKADOODLE. Right, looky here, we need ta put a stop to these yellow-headed
     bottom-feeders.","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Old
-    Geezer","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":4}],"EditorInfo":{"isRoot":false,"xPos":227.5,"yPos":168},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"Beyond
+    Geezer","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":4}],"EditorInfo":{"isRoot":false,"xPos":225.5,"yPos":210},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"Beyond
     the steel canyon is their nest, but to get there yer gonna have to be brave,
     Bee. Our great cowboy ancestors be buried in that sand, and one wrong step and
     they''ll yoink ya back to the non-cowboy underworld with them!","parentUIDs":[1],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Old
-    Geezer","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":5}],"EditorInfo":{"isRoot":false,"xPos":227.5,"yPos":263},"ID":4,"ParamActions":[],"TMPFontGUID":null,"Text":"Hah??
+    Geezer","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":5}],"EditorInfo":{"isRoot":false,"xPos":225.5,"yPos":305},"ID":4,"ParamActions":[],"TMPFontGUID":null,"Text":"Hah??
     Whatdya mean you don''t know how to fight an ancient cowboy spirit haunting the
     desert? Back in my prime, we''d be hunting those things every blasted evening!","parentUIDs":[3],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Old
-    Geezer","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":225.5,"yPos":369},"ID":5,"ParamActions":[],"TMPFontGUID":null,"Text":"If
+    Geezer","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":223.5,"yPos":411},"ID":5,"ParamActions":[],"TMPFontGUID":null,"Text":"If
     ya still don''t know where ta start, head over to the saloon and you''ll find
     some help there. Now scram, honey-licker I''m tired of seeing yer face!","parentUIDs":[4],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Old
     Geezer","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
@@ -7010,19 +7021,7 @@ MonoBehaviour:
   EndConversationFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
   Event:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: QuestManager, Assembly-CSharp
-        m_MethodName: ActivateQuest
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: quest_TalkToProducer
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1447034219
 GameObject:
   m_ObjectHideFlags: 0
@@ -7524,15 +7523,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.x
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.y
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.z
-      value: 30
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8000,7 +7999,7 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 987708026}
         m_TargetAssemblyTypeName: QuestManager, Assembly-CSharp
         m_MethodName: ActivateQuest
         m_Mode: 5
@@ -8325,15 +8324,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.x
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.y
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.z
-      value: 30
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8455,7 +8454,7 @@ MonoBehaviour:
   saveVersion: 110
   DefaultName: Horse
   DefaultSprite: {fileID: 0}
-  DefaultFont: {fileID: 0}
+  DefaultFont: {fileID: 11400000, guid: b3f3bba7d1475ce4c9d790b5aaee4e48, type: 2}
   NodeSerializedDataList:
   - {fileID: 628544642}
   - {fileID: 628544641}
@@ -8469,8 +8468,8 @@ MonoBehaviour:
   - {fileID: 628544633}
   - {fileID: 628544632}
   - {fileID: 628544631}
-  ContinueFont: {fileID: 0}
-  EndConversationFont: {fileID: 0}
+  ContinueFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
+  EndConversationFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
   Event:
     m_PersistentCalls:
       m_Calls: []
@@ -8527,15 +8526,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.x
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.y
-      value: 30
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalScale.z
-      value: 30
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7219845705961556925, guid: 6b0d7f959f3251b419b65532668d6b47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8673,7 +8672,7 @@ MonoBehaviour:
   saveVersion: 110
   DefaultName: Townsfolk
   DefaultSprite: {fileID: 0}
-  DefaultFont: {fileID: 0}
+  DefaultFont: {fileID: 11400000, guid: b3f3bba7d1475ce4c9d790b5aaee4e48, type: 2}
   NodeSerializedDataList:
   - {fileID: 356559666}
   - {fileID: 356559665}
@@ -8685,8 +8684,8 @@ MonoBehaviour:
   - {fileID: 356559659}
   - {fileID: 356559658}
   - {fileID: 356559657}
-  ContinueFont: {fileID: 0}
-  EndConversationFont: {fileID: 0}
+  ContinueFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
+  EndConversationFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
   Event:
     m_PersistentCalls:
       m_Calls: []
