@@ -18,8 +18,12 @@ namespace Assets.Scripts.Gameplay.Questing
         [SerializeField] private bool producerComplete;
         [SerializeField] private bool twinsComplete;
         [SerializeField] private bool dustDevilComplete;
-        
-		public bool SeenFirstCutscene => seenFirstCutscene;
+
+        public bool SeenFirstCutscene
+        {
+            get => seenFirstCutscene;
+            set => seenFirstCutscene = value;
+        }
 
         public bool TalkedToGeezer
         {

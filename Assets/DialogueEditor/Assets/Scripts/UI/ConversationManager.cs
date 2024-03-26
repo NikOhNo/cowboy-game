@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -81,6 +82,7 @@ namespace DialogueEditor
         private float m_stateTime;
         
         public Conversation m_conversation;
+        private TMP_FontAsset m_defaultFont;
         private SpeechNode m_currentSpeech;
         private OptionNode m_selectedOption;
 
@@ -154,6 +156,7 @@ namespace DialogueEditor
         {
             FindObjectOfType<PlayableCharacter>()?.FreezePlayer();
             m_conversation = conversation.Deserialize();
+            m_defaultFont = conversation.DefaultFont;
             if (OnConversationStarted != null)
                 OnConversationStarted.Invoke();
 
@@ -495,7 +498,7 @@ namespace DialogueEditor
             }
             else
             {
-                DialogueText.font = null;
+                DialogueText.font = m_defaultFont;
             }
 
             // Set name

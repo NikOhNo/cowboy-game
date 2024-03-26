@@ -42,6 +42,12 @@ public class GeezerConvo : NPCConvo
         }
     }
 
+    protected override void BeginConversation()
+    {
+        UpdateDialogue();
+        base.BeginConversation();
+    }
+
     public void OnCompleteGeezerStep()
     {
         quest2_usedDialogue = true;

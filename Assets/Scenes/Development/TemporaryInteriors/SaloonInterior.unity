@@ -1035,7 +1035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 1
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":275.5,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"[She
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":224,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"[She
     seems to be busy... whispering to her instruments? You should probably leave
     her alone for now.]","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Producer?","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
@@ -1095,26 +1095,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 8
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":262.5,"yPos":-542},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"WHOA
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":1}],"EditorInfo":{"isRoot":true,"xPos":224,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"WHOA
     THERE- hey stranger what''s groovy? Haven''t seen you around! But I do spend
     most my time talking to my instruments here so maybe that''s why.","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"EDM
-    Producer","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":2}],"EditorInfo":{"isRoot":false,"xPos":260,"yPos":-437},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Don''t
+    Producer","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":2}],"EditorInfo":{"isRoot":false,"xPos":221.5,"yPos":127},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"Don''t
     ya know? Music makes much better company than people. Name''s Ana! Short for
     Analog. I''m just getting my equipment all set up so you might wanna scram ''till
     then.","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"EDM
-    Producer","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":false,"xPos":261,"yPos":-332},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"Eh?
+    Producer","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":false,"xPos":222.5,"yPos":232},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"Eh?
     That Old Geezer sent you here? I''d help you if I could my buzzing buddy, but
-    I don''t know piss all about cowboys or cowboy related drama!","parentUIDs":[1],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Ana","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":4}],"EditorInfo":{"isRoot":false,"xPos":261,"yPos":-227},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"Actually-
+    I don''t know piss all about cowboys or cowboy related drama!","parentUIDs":[1],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Ana","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":4}],"EditorInfo":{"isRoot":false,"xPos":222.5,"yPos":337},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"Actually-
     you know what? There is this one thing I was given when I bought the place. Some
     ancient, thousand year old rootbeer. I kinda through it was stupid so I almost
-    threw it out, but hey if that''s what you need, you can have it.","parentUIDs":[2],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Ana","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":5}],"EditorInfo":{"isRoot":false,"xPos":258,"yPos":-120},"ID":4,"ParamActions":[],"TMPFontGUID":null,"Text":"Just
+    threw it out, but hey if that''s what you need, you can have it.","parentUIDs":[2],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Ana","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":5}],"EditorInfo":{"isRoot":false,"xPos":219.5,"yPos":444},"ID":4,"ParamActions":[],"TMPFontGUID":null,"Text":"Just
     uh... how ''bout you help me out here. I get your beat on track, you help me
-    get mine, yeah?","parentUIDs":[3],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Ana","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":false,"xPos":258,"yPos":-19},"ID":5,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+    get mine, yeah?","parentUIDs":[3],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Ana","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":6}],"EditorInfo":{"isRoot":false,"xPos":219.5,"yPos":545},"ID":5,"ParamActions":[],"TMPFontGUID":null,"Text":"I
     got my first performance real soon, full lights and action and all! But my equipment
     isn''t working! I ordered some parts from Cranazon but I think they went to the
-    wrong houses.","parentUIDs":[4],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Ana","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":7}],"EditorInfo":{"isRoot":false,"xPos":259,"yPos":104},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"How
+    wrong houses.","parentUIDs":[4],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Ana","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":7}],"EditorInfo":{"isRoot":false,"xPos":220.5,"yPos":668},"ID":6,"ParamActions":[],"TMPFontGUID":null,"Text":"How
     about this, Bee, I gotta do my sound check but I need those parts. You go and
-    get ''em for me, and I''ll give you that rootbeer.","parentUIDs":[5],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Ana","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":259,"yPos":208},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"It''s
+    get ''em for me, and I''ll give you that rootbeer.","parentUIDs":[5],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Ana","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":220.5,"yPos":772},"ID":7,"ParamActions":[],"TMPFontGUID":null,"Text":"It''s
     a deal! Radical! When you''re ready to start, just head on outside!","parentUIDs":[6],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Ana","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
   DefaultName: Ana
@@ -1133,43 +1133,7 @@ MonoBehaviour:
   EndConversationFont: {fileID: 0}
   Event:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 291987186}
-        m_TargetAssemblyTypeName: QuestManager, Assembly-CSharp
-        m_MethodName: CompleteQuest
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: quest_TalkToProducer
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 337191371}
-        m_TargetAssemblyTypeName: EDMProducer, Assembly-CSharp
-        m_MethodName: BeginProducerQuest
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 291987186}
-        m_TargetAssemblyTypeName: QuestManager, Assembly-CSharp
-        m_MethodName: ActivateQuest
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: quest_Producer
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &960969360
 GameObject:
   m_ObjectHideFlags: 0
@@ -2010,7 +1974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 1
-  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":275.5,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Well,
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":224,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Well,
     well, look at you! You''ve outdone yourself here, Bee. Thanks a million! Now
     sit back, enjoy the show, and I''ll get you your rootbeer! Though it probably
     went flat a few centuries ago, to each their own!","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Ana","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
@@ -2024,32 +1988,7 @@ MonoBehaviour:
   EndConversationFont: {fileID: 0}
   Event:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 291987186}
-        m_TargetAssemblyTypeName: QuestManager, Assembly-CSharp
-        m_MethodName: CompleteQuest
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: quest_Producer
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 11400000, guid: 079e9e6f44425954880e2a258d727ab1, type: 2}
-        m_TargetAssemblyTypeName: Assets.Scripts.Gameplay.Questing.QuestCompletionLog,
-          Assembly-CSharp
-        m_MethodName: set_ProducerComplete
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1710671848
 GameObject:
   m_ObjectHideFlags: 0

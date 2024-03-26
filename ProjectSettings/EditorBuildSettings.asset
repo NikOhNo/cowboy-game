@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Final Game/Town Scene.unity
     guid: f5118c85491de344eb1efa0866ea6b15
   - enabled: 1
+    path: Assets/Scenes/Development/TemporaryInteriors/SaloonInterior.unity
+    guid: ede8dce0b9c8f9f4eb2d2f0f0ec5ccce
+  - enabled: 1
     path: Assets/Scenes/Final Game/Credits.unity
     guid: 0aa07f7ac20b2444a839f09327295e50
   m_configObjects:

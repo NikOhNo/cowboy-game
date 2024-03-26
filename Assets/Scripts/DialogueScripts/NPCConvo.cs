@@ -25,10 +25,17 @@ public class NPCConvo : MonoBehaviour
         }
     }
 
-    private void Update() {
-        if (canTalk && (Input.GetKeyDown(KeyCode.F))) {
-            ConversationManager.Instance.StartConversation(myConvo);
-            canTalk = false;
+    private void Update()
+    {
+        if (canTalk && (Input.GetKeyDown(KeyCode.F)))
+        {
+            BeginConversation();
         }
+    }
+
+    protected virtual void BeginConversation()
+    {
+        ConversationManager.Instance.StartConversation(myConvo);
+        canTalk = false;
     }
 }
