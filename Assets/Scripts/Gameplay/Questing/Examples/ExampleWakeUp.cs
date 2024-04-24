@@ -10,7 +10,7 @@ public class ExampleWakeUp : MonoBehaviour
     void Start()
     {
         gameObject.SetActive(false);
-        QuestManager.instance.OnQuestComplete += OnCompleteButtonQuest;
+        QuestManager.Instance.OnQuestComplete += OnCompleteButtonQuest;
     }
 
     private void OnCompleteButtonQuest(string questID)
@@ -19,7 +19,7 @@ public class ExampleWakeUp : MonoBehaviour
         {
             gameObject.SetActive(true);
             button = GetComponent<Button>();
-            button.onClick.AddListener(delegate { gameObject.SetActive(false); QuestManager.instance.ActivateQuest("quest_TalkToOldGeezer"); });
+            button.onClick.AddListener(delegate { gameObject.SetActive(false); QuestManager.Instance.ActivateQuest("quest_TalkToOldGeezer"); });
         }
     }
 }

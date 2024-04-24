@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,8 @@ public class PlayableCharacter : MonoBehaviour
     {
         Idle,
         Walking,
-        DodgeRolling
+        DodgeRolling,
+        Frozen
     };
 
     public enum AttackState
@@ -19,10 +21,19 @@ public class PlayableCharacter : MonoBehaviour
     public MoveState playerState = MoveState.Idle;
     public AttackState playerAttackState = AttackState.Idle;
     public float speed = 5.0f;
+    [SerializeField] InteractPopup interactPopup;
+    public InteractPopup InteractPopup => interactPopup;
     Rigidbody2D rb;
     private float horizontalInput;
     private float verticalInput;
     private bool againstWall = false;
+    private Animator animator;
+    private float timeElapsed = 0f;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
 
     void Start()
@@ -35,14 +46,43 @@ public class PlayableCharacter : MonoBehaviour
     {
         MovementLogic();
         AttackLogic();
-        
-    
+        PlayRandomWindIdleAnim();
+    }
+
+    private void PlayRandomWindIdleAnim()
+    {
+        timeElapsed += Time.deltaTime;
+        if (timeElapsed > 7.5f)
+        {
+            animator.SetTrigger("IdleWind");
+            timeElapsed = 0f;
+        }
+    }
+
+    public void FreezePlayer()
+    {
+        playerState = MoveState.Frozen;
+    }
+
+    public void UnfreezePlayer()
+    {
+        playerState = MoveState.Idle;
     }
 
 
     void MovementLogic(){
+        if (playerState == MoveState.Frozen)
+        {
+            rb.velocity = Vector2.zero;
+            return;
+        }
+
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
+        animator.SetBool("Walking", Mathf.Abs(horizontalInput) > Mathf.Epsilon || Mathf.Abs(verticalInput) > Mathf.Epsilon);
+        animator.SetFloat("xInput", horizontalInput);
+        animator.SetFloat("yInput", verticalInput);
+    
         HandleMoveState();
         if(playerState == MoveState.Walking){
             Vector2 movement = new Vector2(horizontalInput, verticalInput);
@@ -53,7 +93,7 @@ public class PlayableCharacter : MonoBehaviour
             else if(horizontalInput != 0 && verticalInput != 0){
                 currentSpeed *= 0.7f;
             }
-            movement.Normalize();
+            //movement.Normalize();
             rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
         }
         

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -58,6 +59,12 @@ namespace DialogueEditor
         // Default values
         public Sprite BlankSprite;
 
+        // added by garett so that we can control the scroll speed at runtime from events
+        public void SetScrollSpeed(float amount)
+        {
+            ScrollSpeed = amount;
+        }
+
         // Getter properties
         public bool IsConversationActive
         {
@@ -74,7 +81,8 @@ namespace DialogueEditor
         private eState m_state;
         private float m_stateTime;
         
-        private Conversation m_conversation;
+        public Conversation m_conversation;
+        private TMP_FontAsset m_defaultFont;
         private SpeechNode m_currentSpeech;
         private OptionNode m_selectedOption;
 
@@ -146,7 +154,9 @@ namespace DialogueEditor
 
         public void StartConversation(NPCConversation conversation)
         {
+            FindObjectOfType<PlayableCharacter>()?.FreezePlayer();
             m_conversation = conversation.Deserialize();
+            m_defaultFont = conversation.DefaultFont;
             if (OnConversationStarted != null)
                 OnConversationStarted.Invoke();
 
@@ -157,6 +167,7 @@ namespace DialogueEditor
 
         public void EndConversation()
         {
+            FindObjectOfType<PlayableCharacter>()?.UnfreezePlayer();
             SetState(eState.TransitioningDialogueOff);
 
             if (OnConversationEnded != null)
@@ -487,7 +498,7 @@ namespace DialogueEditor
             }
             else
             {
-                DialogueText.font = null;
+                DialogueText.font = m_defaultFont;
             }
 
             // Set name

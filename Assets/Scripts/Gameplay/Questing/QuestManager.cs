@@ -6,7 +6,7 @@ using UnityEngine;
 public class QuestManager : MonoBehaviour
 {
     // QuestManager singleton!
-    public static QuestManager instance;
+    public static QuestManager Instance;
 
     private List<Quest> activeQuests = new List<Quest>();
     private List<Quest> completedQuests = new List<Quest>();
@@ -15,7 +15,7 @@ public class QuestManager : MonoBehaviour
 
     public void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
     //--EVENTS
@@ -71,5 +71,8 @@ public class QuestManager : MonoBehaviour
         AddQuest("quest_PressButton", "Press the button!");
         AddQuest("quest_TalkToOldGeezer", "Talk to the old geezer!");
         AddQuest("quest_DefeatDustDevil", "Defeat the dust devil!");
+        
+        AddQuest("quest_TalkToProducer", "Investigate the saloon!");
+        AddQuest("quest_Producer", "Solve the producer's problems!");
     }
 }

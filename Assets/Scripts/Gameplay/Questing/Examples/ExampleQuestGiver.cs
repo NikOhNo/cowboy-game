@@ -13,6 +13,6 @@ public class ExampleQuestGiver : MonoBehaviour
     {
         giveQuestButton = GetComponent<Button>();
 
-        giveQuestButton.onClick.AddListener(delegate { QuestManager.instance.ActivateQuest("quest_PressButton"); gameObject.SetActive(false); });
+        giveQuestButton.onClick.AddListener(delegate { QuestManager.Instance.ActivateQuest("quest_PressButton"); gameObject.SetActive(false); });
     }
 }

@@ -23,7 +23,6 @@ public class RoomEntranceController : MonoBehaviour
     BoxCollider2D bc2d; // controls area in which the player gets the prompt to switch rooms
     public GameObject playerSpawnPosition;
     public Collider2D target; // collider2d attached to player
-    public GameObject interactIcon; // set in IN SPEC TOR
     
     // EXACT NAME of the RoomEntrance that THIS RoomEntrance is supposed to put the player in front of when they go through.
     // this is the first thing it checks, if there is no RoomEntrance in sceneToLoad that has this name, it puts the player at the RoomEntrance with sceneToLoad of this RoomEntrance.
@@ -37,6 +36,7 @@ public class RoomEntranceController : MonoBehaviour
     public GameObject roomEntranceSpawner;
     // can the player press a button to go into this entrance
     private bool activatable = false;
+    private PlayableCharacter player = null;
 
     void Start()
     {
@@ -49,33 +49,11 @@ public class RoomEntranceController : MonoBehaviour
 
     public void Update()
     {
-        // FIXME maybe trigger something on the player that lets them know that they're activatable?
         if (activatable)
         {
-            if (!interactIcon.activeSelf)
-            {
-                interactIcon.SetActive(true);
-            }
-            interactIcon.transform.position = target.transform.position + new Vector3(0, 1.25f, 0);
-            // TODO replace with actual dimensions of screen
-            // Vector3 finalPosition = interactIcon.transform.position;
-            // // Vector3 viewPos = Camera.main.WorldToViewportPoint(interactIcon.transform.position);
-            // finalPosition.x = Mathf.Clamp(finalPosition.x, 0, Screen.width);
-            // finalPosition.y = Mathf.Clamp(finalPosition.y, 0, Screen.height);
-            // // interactIcon.transform.position = math.clamp(target.transform.TransformPoint(interactIcon.transform.position), new Vector3(0, 0, 0), new Vector3(1920, 1080, 0));
-            // interactIcon.transform.position = finalPosition;
-
             if (Input.GetKeyDown(interactButton))
             {
                 SwitchSceneAndRepositionPlayer(target);
-            }
-        }
-
-        if (!activatable)
-        {
-            if (interactIcon.activeSelf)
-            {
-                interactIcon.SetActive(false);
             }
         }
     }
@@ -84,6 +62,8 @@ public class RoomEntranceController : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
+            player = col.GetComponent<PlayableCharacter>();
+            player.InteractPopup.DisplayDoorPopup();
             activatable = true;
             target = col;
             var spriteRenderer = GetComponent<SpriteRenderer>();
@@ -96,6 +76,8 @@ public class RoomEntranceController : MonoBehaviour
     {
         if (col.CompareTag("Player") && activatable)
         {
+            player.InteractPopup.HidePopup();
+            player = null;
             activatable = false;
             target = null;
             var spriteRenderer = GetComponent<SpriteRenderer>();
