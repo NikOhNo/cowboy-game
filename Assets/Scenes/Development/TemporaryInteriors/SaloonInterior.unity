@@ -1041,11 +1041,11 @@ MonoBehaviour:
   saveVersion: 110
   DefaultName: Producer?
   DefaultSprite: {fileID: 0}
-  DefaultFont: {fileID: 0}
+  DefaultFont: {fileID: 11400000, guid: b3f3bba7d1475ce4c9d790b5aaee4e48, type: 2}
   NodeSerializedDataList:
   - {fileID: 218026385}
-  ContinueFont: {fileID: 0}
-  EndConversationFont: {fileID: 0}
+  ContinueFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
+  EndConversationFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
   Event:
     m_PersistentCalls:
       m_Calls: []
@@ -1119,7 +1119,7 @@ MonoBehaviour:
   saveVersion: 110
   DefaultName: Ana
   DefaultSprite: {fileID: 0}
-  DefaultFont: {fileID: 0}
+  DefaultFont: {fileID: 11400000, guid: b3f3bba7d1475ce4c9d790b5aaee4e48, type: 2}
   NodeSerializedDataList:
   - {fileID: 1919335395}
   - {fileID: 1919335394}
@@ -1129,8 +1129,8 @@ MonoBehaviour:
   - {fileID: 1919335390}
   - {fileID: 1919335389}
   - {fileID: 1919335388}
-  ContinueFont: {fileID: 0}
-  EndConversationFont: {fileID: 0}
+  ContinueFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
+  EndConversationFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
   Event:
     m_PersistentCalls:
       m_Calls: []
@@ -1981,11 +1981,11 @@ MonoBehaviour:
   saveVersion: 110
   DefaultName: Ana
   DefaultSprite: {fileID: 0}
-  DefaultFont: {fileID: 0}
+  DefaultFont: {fileID: 11400000, guid: b3f3bba7d1475ce4c9d790b5aaee4e48, type: 2}
   NodeSerializedDataList:
   - {fileID: 1648961374}
-  ContinueFont: {fileID: 0}
-  EndConversationFont: {fileID: 0}
+  ContinueFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
+  EndConversationFont: {fileID: 11400000, guid: eacd68b2f38f42b48803ee34c155bf6f, type: 2}
   Event:
     m_PersistentCalls:
       m_Calls: []
