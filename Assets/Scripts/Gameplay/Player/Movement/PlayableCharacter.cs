@@ -54,8 +54,12 @@ public class PlayableCharacter : MonoBehaviour
         timeElapsed += Time.deltaTime;
         if (timeElapsed > 7.5f)
         {
-            animator.SetTrigger("IdleWind");
             timeElapsed = 0f;
+
+            if (rb.velocity == Vector2.zero)
+            {
+                animator.SetTrigger("IdleWind");
+            }
         }
     }
 
