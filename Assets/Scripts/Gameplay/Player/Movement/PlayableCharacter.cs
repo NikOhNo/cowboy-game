@@ -21,6 +21,8 @@ public class PlayableCharacter : MonoBehaviour
     public MoveState playerState = MoveState.Idle;
     public AttackState playerAttackState = AttackState.Idle;
     public float speed = 5.0f;
+    [SerializeField] InteractPopup interactPopup;
+    public InteractPopup InteractPopup => interactPopup;
     Rigidbody2D rb;
     private float horizontalInput;
     private float verticalInput;

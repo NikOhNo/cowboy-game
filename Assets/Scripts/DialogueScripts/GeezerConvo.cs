@@ -38,7 +38,6 @@ public class GeezerConvo : NPCConvo
         else if (questLog.ProducerStarted && !quest2_usedDialogue)
         {
             myConvo = quest2ActualConvo;
-            Debug.Log($"set myConvo to {myConvo}");
         }
     }
 
