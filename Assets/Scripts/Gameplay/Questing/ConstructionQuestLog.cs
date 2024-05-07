@@ -8,9 +8,16 @@ public class ConstructionQuestLog : ScriptableObject
 {
     public UnityEvent OnBeginQuest;
     public UnityEvent OnFailQuest;
+    public UnityEvent OnEndQuest;
+    public UnityEvent OnObtainRevolver;
+    public UnityEvent OnObtainHardHat;
+    public UnityEvent OnObtainID;
+    public UnityEvent OnUseRevolver;
+    public UnityEvent OnUseHardHat;
+    public UnityEvent OnUseID;
 
     public bool QuestActive = false;
-    public bool HasRevolver = true;
+    public bool HasRevolver = false;
     public int TimesRevolverUsed = 0;
     public bool HasHardHat = false;
     public int TimesHardHatUsed = 0;
@@ -28,6 +35,24 @@ public class ConstructionQuestLog : ScriptableObject
         OnBeginQuest.Invoke();
     }
 
+    public void ObtainRevolver()
+    {
+        HasRevolver = true;
+        OnObtainRevolver.Invoke();
+    }
+
+    public void ObtainHardHat()
+    {
+        HasHardHat = true;
+        OnObtainHardHat.Invoke();
+    }
+
+    public void ObtainID()
+    {
+        HasID = true;
+        OnObtainID.Invoke();
+    }
+
     public void UseRevolver()
     {
         TimesRevolverUsed++;
@@ -35,15 +60,17 @@ public class ConstructionQuestLog : ScriptableObject
         {
             FailQuest();
         }
+        OnUseRevolver.Invoke();
     }
 
-    public void UseHardHate()
+    public void UseHardHat()
     {
         TimesHardHatUsed++;
         if (TimesHardHatUsed > 3)
         {
             FailQuest();
         }
+        OnUseHardHat.Invoke();
     }   
 
     public void UseID()
@@ -53,6 +80,7 @@ public class ConstructionQuestLog : ScriptableObject
         {
             FailQuest();
         }
+        OnUseID.Invoke();
     }
 
     public void FailQuest()
