@@ -12,9 +12,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28cd2e97185dcd149821cb565307c0da, type: 3}
   m_Name: ConstructionLog
   m_EditorClassIdentifier: 
-  QuestActive: 0
+  OnBeginQuest:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFailQuest:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEndQuest:
+    m_PersistentCalls:
+      m_Calls: []
+  OnObtainRevolver:
+    m_PersistentCalls:
+      m_Calls: []
+  OnObtainHardHat:
+    m_PersistentCalls:
+      m_Calls: []
+  OnObtainID:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUseRevolver:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUseHardHat:
+    m_PersistentCalls:
+      m_Calls: []
+  OnUseID:
+    m_PersistentCalls:
+      m_Calls: []
+  QuestActive: 1
   HasRevolver: 1
-  TimesRevolverUsed: 0
+  TimesRevolverUsed: 1
   HasHardHat: 0
   TimesHardHatUsed: 0
   HasID: 0

@@ -6,6 +6,7 @@ using UnityEngine;
 public class ConstructionQuestDisplay : MonoBehaviour
 {
     [SerializeField] ConstructionQuestLog constructionQuestLog;
+    [SerializeField] GameObject displayPanel;
     [SerializeField] ConstructionQuestUsageDisplay revolver;
     [SerializeField] ConstructionQuestUsageDisplay hardHat;
     [SerializeField] ConstructionQuestUsageDisplay idCard;
@@ -13,8 +14,8 @@ public class ConstructionQuestDisplay : MonoBehaviour
 
     private void Awake()
     {
-        constructionQuestLog.OnBeginQuest.AddListener(() => this.gameObject.SetActive(true));
-        constructionQuestLog.OnEndQuest.AddListener(() => this.gameObject.SetActive(false));
+        constructionQuestLog.OnBeginQuest.AddListener(ShowPanel);
+        constructionQuestLog.OnEndQuest.AddListener(HidePanel);
 
         constructionQuestLog.OnObtainRevolver.AddListener(() => revolver.gameObject.SetActive(true));
         constructionQuestLog.OnObtainHardHat.AddListener(() => hardHat.gameObject.SetActive(true));
@@ -28,9 +29,27 @@ public class ConstructionQuestDisplay : MonoBehaviour
 
         if (constructionQuestLog.QuestActive)
         {
-            this.gameObject.SetActive(true);
+            ShowPanel();
         }
+        else
+        {
+            HidePanel();
+        }
+    }
 
+    public void ShowPanel()
+    {
+        UpdatePanel();
+        displayPanel.SetActive(true);
+    }
+
+    public void HidePanel()
+    {
+        displayPanel.SetActive(false);
+    }
+
+    private void UpdatePanel()
+    {
         if (constructionQuestLog.HasRevolver)
         {
             revolver.gameObject.SetActive(true);

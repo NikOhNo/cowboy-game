@@ -6,12 +6,7 @@ using UnityEngine;
 public class ConstructionQuestUsageDisplay : MonoBehaviour
 {
     [SerializeField] string itemName;
-    TMP_Text displayText;
-
-    private void Awake()
-    {
-        displayText = GetComponentInChildren<TMP_Text>();
-    }
+    [SerializeField] TMP_Text displayText;
 
     public void UpdateDisplay(int number)
     {
