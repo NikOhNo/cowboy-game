@@ -13,13 +13,13 @@ public class NPCConvo : MonoBehaviour
     //     }
     // }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    protected void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player") {
             canTalk = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other) {
+    protected virtual void OnTriggerExit2D(Collider2D other) {
         if (other.tag == "Player") {
             canTalk = false;
         }

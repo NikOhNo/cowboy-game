@@ -17,7 +17,7 @@ public class ConstructionQuestLog : ScriptableObject
     public UnityEvent OnUseID;
 
     public bool QuestActive = false;
-    public bool HasRevolver = false;
+    public bool HasRevolver = true;
     public int TimesRevolverUsed = 0;
     public bool HasHardHat = false;
     public int TimesHardHatUsed = 0;
