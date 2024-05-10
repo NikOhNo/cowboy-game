@@ -13,7 +13,7 @@ public class NPCConvo : MonoBehaviour
     //     }
     // }
 
-    protected void OnTriggerEnter2D(Collider2D other) {
+    protected virtual void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player") {
             canTalk = true;
         }

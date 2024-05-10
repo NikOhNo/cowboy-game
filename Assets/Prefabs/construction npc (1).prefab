@@ -223,3 +223,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myConvo: {fileID: 0}
   dialogueOptions: {fileID: 0}
+  npcObject: {fileID: 6721384954696657928}
