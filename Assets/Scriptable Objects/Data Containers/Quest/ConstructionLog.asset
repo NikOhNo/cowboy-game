@@ -18,6 +18,9 @@ MonoBehaviour:
   OnFailQuest:
     m_PersistentCalls:
       m_Calls: []
+  OnCompleteQuest:
+    m_PersistentCalls:
+      m_Calls: []
   OnEndQuest:
     m_PersistentCalls:
       m_Calls: []
@@ -41,8 +44,9 @@ MonoBehaviour:
       m_Calls: []
   QuestActive: 1
   HasRevolver: 1
-  TimesRevolverUsed: 1
+  TimesRevolverUsed: 3
   HasHardHat: 0
   TimesHardHatUsed: 0
   HasID: 0
   TimesIDUsed: 0
+  WorkersGone: 0

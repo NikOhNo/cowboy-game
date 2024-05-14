@@ -15,6 +15,7 @@ public class ConstructionQuestDisplay : MonoBehaviour
     private void Awake()
     {
         constructionQuestLog.OnBeginQuest.AddListener(ShowPanel);
+        constructionQuestLog.OnFailQuest.AddListener(UpdatePanel);
         constructionQuestLog.OnEndQuest.AddListener(HidePanel);
 
         constructionQuestLog.OnObtainRevolver.AddListener(() => revolver.gameObject.SetActive(true));
