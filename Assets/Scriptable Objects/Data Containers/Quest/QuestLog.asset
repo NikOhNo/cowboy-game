@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seenFirstCutscene: 1
   talkedToGeezer: 1
-  constructionComplete: 1
+  constructionComplete: 0
   producerStarted: 0
   producerFinishedGeezerStep: 0
   producerFinishedSheriffStep: 0
