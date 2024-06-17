@@ -1,6 +1,5 @@
 using System;
 using Assets.Scripts.Gameplay.Questing;
-using DialogueEditor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,9 +8,9 @@ public class GeezerConvo : NPCConvo
 {
     [SerializeField] QuestCompletionLog questLog;
 
-    [SerializeField] NPCConversation introConvo;
-    [SerializeField] NPCConversation quest2IntroConvo;
-    [SerializeField] NPCConversation quest2ActualConvo;
+    //[SerializeField] NPCConversation introConvo;
+    //[SerializeField] NPCConversation quest2IntroConvo;
+    //[SerializeField] NPCConversation quest2ActualConvo;
     
     public bool quest2_usedDialogue = false;
     
@@ -29,15 +28,15 @@ public class GeezerConvo : NPCConvo
     {
         if (questLog.TalkedToGeezer == false)
         {
-            myConvo = introConvo;
+            //myConvo = introConvo;
         }
         else if (questLog.ConstructionComplete && !questLog.ProducerStarted)
         {
-            myConvo = quest2IntroConvo;
+            //myConvo = quest2IntroConvo;
         }
         else if (questLog.ProducerStarted && !quest2_usedDialogue)
         {
-            myConvo = quest2ActualConvo;
+            //myConvo = quest2ActualConvo;
         }
     }
 

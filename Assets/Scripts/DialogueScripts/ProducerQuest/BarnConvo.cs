@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts.Gameplay.Questing;
-using DialogueEditor;
 using UnityEngine;
 
 public class BarnConvo : NPCConvo
 {
     [SerializeField] private QuestCompletionLog questLog;
     
-    [SerializeField] private NPCConversation wrongTimeConvo;
-    [SerializeField] private NPCConversation quest2Convo;
+    //[SerializeField] private NPCConversation wrongTimeConvo;
+    //[SerializeField] private NPCConversation quest2Convo;
 
     private void Awake()
     {
@@ -31,15 +30,15 @@ public class BarnConvo : NPCConvo
     {
         if (!questLog.ProducerFinishedHouseStep)
         {
-            myConvo = wrongTimeConvo;
+            //myConvo = wrongTimeConvo;
         }
         else if (!questLog.ProducerFinishedBarnStep)
         {
-            myConvo = quest2Convo;
+            //myConvo = quest2Convo;
         }
         else
         {
-            myConvo = wrongTimeConvo;
+            //myConvo = wrongTimeConvo;
         }
     }
 }
