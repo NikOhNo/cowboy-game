@@ -1,0 +1,1 @@
+EXTERNAL SetSpeaker(speaker)
