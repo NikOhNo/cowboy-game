@@ -219,6 +219,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4854190452694805121, guid: 6ea366783dcc7564eb45629192adcfbd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6659396594517813173, guid: 6ea366783dcc7564eb45629192adcfbd, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -291,6 +295,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4888949148858315536, guid: 3e57f1e4cbad49c4096edf2cfb1dd47a, type: 3}
       propertyPath: temp
+      value: 
+      objectReference: {fileID: 4900000, guid: 2b995ac33f1da3d42bb6407f8c7d2101, type: 3}
+    - target: {fileID: 4888949148858315536, guid: 3e57f1e4cbad49c4096edf2cfb1dd47a, type: 3}
+      propertyPath: story
       value: 
       objectReference: {fileID: 4900000, guid: 2b995ac33f1da3d42bb6407f8c7d2101, type: 3}
     - target: {fileID: 4888949148858315536, guid: 3e57f1e4cbad49c4096edf2cfb1dd47a, type: 3}
@@ -539,8 +547,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 326, y: 404}
-  m_SizeDelta: {x: 620, y: -133.84}
+  m_AnchoredPosition: {x: 372.68018, y: 404}
+  m_SizeDelta: {x: 526.6396, y: -133.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &3683959543589537047
 RectTransform:
@@ -1063,7 +1071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16358eb190cbe894c9bba80485df9fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choiceButtonPrefab: {fileID: 0}
+  choiceButtonPrefab: {fileID: 8715628717511213062, guid: 636157b0ecdd66043a88e204fb744d2e, type: 3}
   speakerProfiles:
   - {fileID: 11400000, guid: a44e9a083a4f5f24d895cfe6dcb04188, type: 2}
   speakerImage: {fileID: 7053839827897134398}

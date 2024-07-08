@@ -13,12 +13,14 @@ public class InkInterpreter : MonoBehaviour
     public void PlayStory(TextAsset storyJSON)
     {
         Story story = new Story(storyJSON.text);
+        story.ResetState();
         story.BindExternalFunction("SetSpeaker", (string name) => inkStoryDisplay.SetSpeaker(name));
 
         while (story.canContinue)
         {
             string newDialogue = story.Continue();
             newDialogue = newDialogue.Trim();
+            inkStoryDisplay.SetSpeech(newDialogue); 
 
             if (story.currentChoices.Count > 0)
             {
