@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class InkStoryDisplay : MonoBehaviour
 {
     [SerializeField] Button choiceButtonPrefab;
-    [SerializeField] Dictionary<string, SpeakerProfileSO> nameToSpeakerProfile;
+    [SerializeField] Dictionary<string, SpeakerProfileSO> nameToSpeakerProfile = new();
     [SerializeField] Image speakerImage;
     [SerializeField] TMP_Text nameText;
     [SerializeField] TMP_Text dialogueText;
@@ -66,7 +66,7 @@ public class InkStoryDisplay : MonoBehaviour
         }
         catch
         {
-            Debug.LogWarning($"Could not find speaker profile with name: '{name}'. Please ensure it is spelled correctly in the ink file and that a speaker profile exists with that name and is in the list on this object.");
+            Debug.LogError($"Could not find speaker profile with name: '{name}'. Please ensure it is spelled correctly in the ink file and that a speaker profile exists with that name and is in the list on this object.");
             return null;
         }
     }
@@ -99,7 +99,7 @@ public class InkStoryDisplay : MonoBehaviour
         foreach (var scriptableObj in scriptableObjects)
         {
             SpeakerProfileSO speakerProfile = scriptableObj as SpeakerProfileSO;
-            nameToSpeakerProfile.Add(name, speakerProfile);
+            nameToSpeakerProfile.Add(speakerProfile.name, speakerProfile);
         }
     }
 }

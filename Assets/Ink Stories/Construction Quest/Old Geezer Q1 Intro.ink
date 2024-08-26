@@ -4,4 +4,6 @@ INCLUDE ../LicketySplit.ink
 
 === deepestnarrativeyouwilleversee
 ~ SetSpeaker("Old Geezer")
-hi bee! ->END
+hi bee! 
+* hello geezer ->END
+* goodbye geezer ->END

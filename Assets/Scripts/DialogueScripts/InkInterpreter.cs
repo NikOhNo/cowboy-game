@@ -12,6 +12,8 @@ public class InkInterpreter : MonoBehaviour
 
     public void PlayStory(TextAsset storyJSON)
     {
+        Debug.Log($"Playing story: {storyJSON.name}");
+
         Story story = new Story(storyJSON.text);
         story.ResetState();
         story.BindExternalFunction("SetSpeaker", (string name) => inkStoryDisplay.SetSpeaker(name));
@@ -28,7 +30,4 @@ public class InkInterpreter : MonoBehaviour
             }
         }
     }
-
-    //public void StartStory(TextAsset storyJson);
-
 }
