@@ -15,10 +15,10 @@ public class InkInterpreter : MonoBehaviour
         Debug.Log($"Playing story: {storyJSON.name}");
 
         Story story = new(storyJSON.text);
-        story.ResetState();
         story.BindExternalFunction("SetSpeaker", (string name) => inkStoryDisplay.SetSpeaker(name));
 
         inkStoryDisplay.OnChoiceMade.AddListener(() => ContinueUntilChoice(story));
+        inkStoryDisplay.ShowDisplay();
         ContinueUntilChoice(story);
     }
 

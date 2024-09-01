@@ -502,7 +502,7 @@ MonoBehaviour:
         m_MethodName: PlayStory
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 4900000, guid: 7fa809642c5f0034a9206704a28817a7, type: 3}
+          m_ObjectArgument: {fileID: 4900000, guid: 2b995ac33f1da3d42bb6407f8c7d2101, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.TextAsset, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0

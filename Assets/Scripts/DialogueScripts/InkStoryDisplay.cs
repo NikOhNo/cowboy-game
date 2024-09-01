@@ -27,6 +27,7 @@ public class InkStoryDisplay : MonoBehaviour
     private void Awake()
     {
         ParseSpeakerProfiles();
+        HideDisplay();
     }
 
     public void SetSpeech(string text)
@@ -41,7 +42,7 @@ public class InkStoryDisplay : MonoBehaviour
         {
             Choice currentChoice = story.currentChoices[i];
             choiceButtons[i].SetChoice(currentChoice, delegate {
-                ClearAllChoiceButtons();
+                ClearChoiceButtons();
                 story.ChooseChoiceIndex(currentChoice.index);
                 OnChoiceMade.Invoke();
             });
@@ -62,17 +63,22 @@ public class InkStoryDisplay : MonoBehaviour
     public void ShowEndButton()
     {
         choiceButtons[0].SetChoice(new Choice() { text = "End." }, delegate {
-            ClearAllChoiceButtons();
-            CloseDisplay();
+            ClearChoiceButtons();
+            HideDisplay();
         });
     }
 
-    public void CloseDisplay()
+    public void ShowDisplay()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void HideDisplay()
     {
         gameObject.SetActive(false);
     }
 
-    public void ClearAllChoiceButtons()
+    public void ClearChoiceButtons()
     {
         foreach (var choiceButton in choiceButtons)
         {
