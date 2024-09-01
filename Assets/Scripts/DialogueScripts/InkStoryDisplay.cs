@@ -4,15 +4,19 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class InkStoryDisplay : MonoBehaviour
 {
-    [SerializeField] Button choiceButtonPrefab;
+    [SerializeField] List<ChoiceButton> choiceButtons = new List<ChoiceButton>();
+    [SerializeField] VerticalLayoutGroup choiceButtonsLayoutGroup;
     [SerializeField] Dictionary<string, SpeakerProfileSO> nameToSpeakerProfile = new();
     [SerializeField] Image speakerImage;
     [SerializeField] TMP_Text nameText;
     [SerializeField] TMP_Text dialogueText;
+
+    public UnityEvent OnChoiceMade { get; private set; } = new();
 
     SpeakerProfileSO currentSpeaker;
 
@@ -33,11 +37,13 @@ public class InkStoryDisplay : MonoBehaviour
 
     public void SetUpChoices(Story story)
     {
-        foreach (Choice choice in story.currentChoices)
+        for (int i = 0; i < story.currentChoices.Count; i++)
         {
-            Button choiceButton = Instantiate(choiceButtonPrefab) as Button;
-            choiceButton.onClick.AddListener(delegate {
-                OnClickChoiceButton(story, choice);
+            Choice currentChoice = story.currentChoices[i];
+            choiceButtons[i].SetChoice(currentChoice, delegate {
+                ClearAllChoiceButtons();
+                story.ChooseChoiceIndex(currentChoice.index);
+                OnChoiceMade.Invoke();
             });
         }
     }
@@ -53,9 +59,25 @@ public class InkStoryDisplay : MonoBehaviour
         currentSpeaker = newSpeaker;
     }
 
-    private void OnClickChoiceButton(Story story, Choice choice)
+    public void ShowEndButton()
     {
-        story.ChooseChoiceIndex(choice.index);
+        choiceButtons[0].SetChoice(new Choice() { text = "End." }, delegate {
+            ClearAllChoiceButtons();
+            CloseDisplay();
+        });
+    }
+
+    public void CloseDisplay()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void ClearAllChoiceButtons()
+    {
+        foreach (var choiceButton in choiceButtons)
+        {
+            choiceButton.ClearButton();
+        }
     }
 
     private SpeakerProfileSO FindSpeaker(string name)
@@ -70,11 +92,12 @@ public class InkStoryDisplay : MonoBehaviour
             return null;
         }
     }
+
     private void ParseSpeakerProfiles()
     {
         if (!AssetDatabase.IsValidFolder(folderPath))
         {
-            Debug.LogError("ERM could not fild the speaker profiles");
+            Debug.LogError("Could not find the speaker profiles");
         }
 
         if (scriptableObjectType == null)

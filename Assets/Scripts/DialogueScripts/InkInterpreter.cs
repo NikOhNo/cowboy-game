@@ -14,20 +14,30 @@ public class InkInterpreter : MonoBehaviour
     {
         Debug.Log($"Playing story: {storyJSON.name}");
 
-        Story story = new Story(storyJSON.text);
+        Story story = new(storyJSON.text);
         story.ResetState();
         story.BindExternalFunction("SetSpeaker", (string name) => inkStoryDisplay.SetSpeaker(name));
 
+        inkStoryDisplay.OnChoiceMade.AddListener(() => ContinueUntilChoice(story));
+        ContinueUntilChoice(story);
+    }
+
+    private void ContinueUntilChoice(Story story)
+    {
         while (story.canContinue)
         {
             string newDialogue = story.Continue();
             newDialogue = newDialogue.Trim();
-            inkStoryDisplay.SetSpeech(newDialogue); 
+            inkStoryDisplay.SetSpeech(newDialogue);
+        }
 
-            if (story.currentChoices.Count > 0)
-            {
-                inkStoryDisplay.SetUpChoices(story);
-            }
+        if (story.currentChoices.Count > 0)
+        {
+            inkStoryDisplay.SetUpChoices(story);
+        }
+        else
+        {
+            inkStoryDisplay.ShowEndButton();
         }
     }
 }
