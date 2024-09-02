@@ -13,10 +13,11 @@ public class InkStoryDisplay : MonoBehaviour
     [SerializeField] VerticalLayoutGroup choiceButtonsLayoutGroup;
     [SerializeField] Dictionary<string, SpeakerProfileSO> nameToSpeakerProfile = new();
     [SerializeField] Image speakerImage;
+    [SerializeField] Typewriter typewriter;
     [SerializeField] TMP_Text nameText;
     [SerializeField] TMP_Text dialogueText;
 
-    public bool SpeechComplete { get; private set; } = false;
+    public bool SpeechComplete { get; private set; } = true;
     public UnityEvent OnContinue { get; private set; } = new();
     public UnityEvent OnChoiceMade { get; private set; } = new();
 
@@ -30,16 +31,33 @@ public class InkStoryDisplay : MonoBehaviour
     {
         ParseSpeakerProfiles();
         HideDisplay();
+        typewriter.SetConfig(new()
+        {
+            display = this
+        });
     }
 
     public void BeginSpeech(string text)
     {
+        StartCoroutine(SpeakMessage(text));
+    }
+
+    IEnumerator SpeakMessage(string text)
+    {
         SpeechComplete = false;
 
-        // TODO: typewriter effect
-        dialogueText.text = text;
+        typewriter.BeginTypewriter(text);
+        while (typewriter.IsTyping)
+        {
+            yield return null;
+        }
 
         SpeechComplete = true;
+    }
+
+    public void SetText(string text)
+    {
+        dialogueText.text = text;
     }
 
     public void SetUpChoices(Story story)

@@ -1441,6 +1441,7 @@ GameObject:
   - component: {fileID: 3683959543589537047}
   - component: {fileID: 9121395981039112315}
   - component: {fileID: 3162800974617410634}
+  - component: {fileID: 9121395981039112316}
   m_Layer: 5
   m_Name: Panel_Dialogue
   m_TagString: Untagged
@@ -1782,6 +1783,7 @@ MonoBehaviour:
   - {fileID: 1456890668}
   choiceButtonsLayoutGroup: {fileID: 3867138192529128705}
   speakerImage: {fileID: 7053839827897134398}
+  typewriter: {fileID: 9121395981039112316}
   nameText: {fileID: 3980090467203047386}
   dialogueText: {fileID: 6211773694323177925}
 --- !u!114 &7053839827897134398
@@ -1850,3 +1852,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4646161009429472698}
   m_CullTransparentMesh: 0
+--- !u!114 &9121395981039112316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4646161009429472698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b3be7f852f5316498546a33a16bc1fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

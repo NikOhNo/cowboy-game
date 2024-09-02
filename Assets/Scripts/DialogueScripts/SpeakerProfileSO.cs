@@ -6,4 +6,5 @@ using UnityEngine;
 public class SpeakerProfileSO : ScriptableObject
 {
     public Sprite SpeakerSprite;
+    public AudioClip Voice;
 }
