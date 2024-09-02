@@ -17,21 +17,39 @@ public class InkInterpreter : MonoBehaviour
         Story story = new(storyJSON.text);
         story.BindExternalFunction("SetSpeaker", (string name) => inkStoryDisplay.SetSpeaker(name));
 
-        inkStoryDisplay.OnChoiceMade.AddListener(() => ContinueUntilChoice(story));
+        inkStoryDisplay.OnChoiceMade.RemoveAllListeners();
+        inkStoryDisplay.OnContinue.RemoveAllListeners();
+
+        inkStoryDisplay.OnChoiceMade.AddListener(() => StartCoroutine(ContinueStoryFlow(story)));
+        inkStoryDisplay.OnContinue.AddListener(() => StartCoroutine(ContinueStoryFlow(story)));
+
         inkStoryDisplay.ShowDisplay();
-        ContinueUntilChoice(story);
+
+        StartCoroutine(ContinueStoryFlow(story));
     }
 
-    private void ContinueUntilChoice(Story story)
+    IEnumerator ContinueStoryFlow(Story story)
     {
-        while (story.canContinue)
+        // Begin Current Speech
+        if (story.canContinue)
         {
-            string newDialogue = story.Continue();
-            newDialogue = newDialogue.Trim();
-            inkStoryDisplay.SetSpeech(newDialogue);
+            string speech = story.Continue();
+            speech = speech.Trim();
+            inkStoryDisplay.BeginSpeech(speech);
         }
 
-        if (story.currentChoices.Count > 0)
+        // Wait for Speech to Complete
+        while (!inkStoryDisplay.SpeechComplete)
+        {
+            yield return null;
+        }
+
+        // Decide What To Do After Speech
+        if (story.canContinue)
+        {
+            inkStoryDisplay.ShowContinueButton();
+        }
+        else if (story.currentChoices.Count > 0)
         {
             inkStoryDisplay.SetUpChoices(story);
         }

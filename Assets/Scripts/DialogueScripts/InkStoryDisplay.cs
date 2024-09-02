@@ -16,6 +16,8 @@ public class InkStoryDisplay : MonoBehaviour
     [SerializeField] TMP_Text nameText;
     [SerializeField] TMP_Text dialogueText;
 
+    public bool SpeechComplete { get; private set; } = false;
+    public UnityEvent OnContinue { get; private set; } = new();
     public UnityEvent OnChoiceMade { get; private set; } = new();
 
     SpeakerProfileSO currentSpeaker;
@@ -30,10 +32,14 @@ public class InkStoryDisplay : MonoBehaviour
         HideDisplay();
     }
 
-    public void SetSpeech(string text)
+    public void BeginSpeech(string text)
     {
+        SpeechComplete = false;
+
         // TODO: typewriter effect
         dialogueText.text = text;
+
+        SpeechComplete = true;
     }
 
     public void SetUpChoices(Story story)
@@ -58,6 +64,14 @@ public class InkStoryDisplay : MonoBehaviour
         speakerImage.sprite = newSpeaker.SpeakerSprite;
 
         currentSpeaker = newSpeaker;
+    }
+
+    public void ShowContinueButton()
+    {
+        choiceButtons[0].SetChoice(new Choice() { text = "Continue..." }, delegate {
+            ClearChoiceButtons();
+            OnContinue.Invoke();
+        });
     }
 
     public void ShowEndButton()

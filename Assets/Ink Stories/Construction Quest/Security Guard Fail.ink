@@ -1,6 +1,6 @@
 INCLUDE ../LicketySplit.ink
 
-->Quest_Fail
+->Office_Fail
 
 === Quest_Fail ===
 ~ SetSpeaker("Security")
@@ -16,5 +16,5 @@ INCLUDE ../LicketySplit.ink
 Have you ever looked into the eyes of God and seen your own mortality? Do you point that gun at me, thinking you too can create and end life with your own hands? 
 I have seen death, I have seen life, I will eat the steel of your weapon and spit out the bullet the other side, blood, tooth, and all. 
 Leave, before you too understand what it means to suffer. Because I do. 
-~ SetSpeaker("OfficeGuard")
+~ SetSpeaker("Office Guard")
 Gee, that sure was scary! Thanks, Tim, I know I can count on you to keep us safe! -> DONE
