@@ -6,5 +6,8 @@ using UnityEngine;
 public class TypewriterConfig 
 {
     public InkStoryDisplay display;
-    public float typeTime = 0.02f;
+    public SpeakerProfileSO speaker;
+    public float commaTime = 0.3f;
+    public float punctuationTime = 0.75f;
+    public float typeTime = 0.04f;
 }

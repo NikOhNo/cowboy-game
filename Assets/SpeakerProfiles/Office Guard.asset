@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Office Guard
   m_EditorClassIdentifier: 
   SpeakerSprite: {fileID: 21300000, guid: 51d9cb668e15cd94daae9c1b986ca637, type: 3}
+  Voice: {fileID: 8300000, guid: aa77442a1f19fa243940f5a9d832bfdd, type: 3}

@@ -1640,8 +1640,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5503215872735562570}
-  - component: {fileID: 6799073125310070894}
   - component: {fileID: 6799073125310070895}
+  - component: {fileID: 6799073125310070894}
   m_Layer: 5
   m_Name: Ink Story Display
   m_TagString: Untagged

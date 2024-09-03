@@ -32,7 +32,25 @@ public class Typewriter : MonoBehaviour
         {
             typedMessage += characters[i];
             config.display.SetText(typedMessage);
-            yield return new WaitForSeconds(config.typeTime);
+
+            if (char.IsLetterOrDigit(characters[i]))
+            {
+                config.display.PlayAudio(config.speaker.Voice);
+            }
+            
+            if (characters[i] == ',')
+            {
+                yield return new WaitForSeconds(config.commaTime);
+            }
+            else if (char.IsPunctuation(characters[i]) && characters[i] != '\'' && characters[i] != '\"')
+            {
+                yield return new WaitForSeconds(config.punctuationTime);
+            }
+            else
+            {
+                yield return new WaitForSeconds(config.typeTime);
+            }
+
         }
 
         IsTyping = false;

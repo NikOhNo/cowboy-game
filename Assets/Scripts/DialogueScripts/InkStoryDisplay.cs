@@ -16,6 +16,7 @@ public class InkStoryDisplay : MonoBehaviour
     [SerializeField] Typewriter typewriter;
     [SerializeField] TMP_Text nameText;
     [SerializeField] TMP_Text dialogueText;
+    AudioSource audioSource;
 
     public bool SpeechComplete { get; private set; } = true;
     public UnityEvent OnContinue { get; private set; } = new();
@@ -29,6 +30,7 @@ public class InkStoryDisplay : MonoBehaviour
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         ParseSpeakerProfiles();
         HideDisplay();
         typewriter.SetConfig(new()
@@ -45,6 +47,12 @@ public class InkStoryDisplay : MonoBehaviour
     IEnumerator SpeakMessage(string text)
     {
         SpeechComplete = false;
+
+        typewriter.SetConfig(new()
+        {
+            display = this,
+            speaker = currentSpeaker
+        });
 
         typewriter.BeginTypewriter(text);
         while (typewriter.IsTyping)
@@ -71,6 +79,11 @@ public class InkStoryDisplay : MonoBehaviour
                 OnChoiceMade.Invoke();
             });
         }
+    }
+
+    public void PlayAudio(AudioClip audio)
+    {
+        audioSource.PlayOneShot(audio);
     }
 
     public void SetSpeaker(string name)
