@@ -63,6 +63,13 @@ public class InkStoryDisplay : MonoBehaviour
         SpeechComplete = true;
     }
 
+    public void SkipSpeech()
+    {
+        StopAllCoroutines();
+        typewriter.SkipTypewriter();
+        SpeechComplete = true;
+    }
+
     public void SetText(string text)
     {
         dialogueText.text = text;

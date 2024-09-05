@@ -789,6 +789,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Player-World",
+            "id": "72f139f2-e47c-458a-ae06-2d214109767a",
+            "actions": [
+                {
+                    "name": "SkipDialog",
+                    "type": "Button",
+                    "id": "ae7a8226-38dc-498c-afeb-3755732023eb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "82af6d1e-d693-4957-bf07-95b989fcf2b3",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkipDialog",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
