@@ -9,6 +9,7 @@ public class Typewriter : MonoBehaviour
     public string TypingMessage { get; private set; } = string.Empty;
 
     TypewriterConfig config;
+    Coroutine typingCoroutine = null;
 
     public void SetConfig(TypewriterConfig config)
     { 
@@ -18,7 +19,7 @@ public class Typewriter : MonoBehaviour
     public void BeginTypewriter(string message)
     {
         TypingMessage = message;
-        StartCoroutine(TypewriteMessage(message));
+        typingCoroutine = StartCoroutine(TypewriteMessage(message));
     }
 
     IEnumerator TypewriteMessage(string message)
@@ -58,9 +59,9 @@ public class Typewriter : MonoBehaviour
 
     public void SkipTypewriter()
     {
-        if (IsTyping)
+        if (IsTyping && typingCoroutine != null)
         {
-            StopAllCoroutines();
+            StopCoroutine(typingCoroutine);
             config.display.SetText(TypingMessage);
             IsTyping = false;
         }

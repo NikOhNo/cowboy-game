@@ -1789,6 +1789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5503215872735562570}
   - component: {fileID: 6799073125310070895}
+  - component: {fileID: 6799073125310070896}
   - component: {fileID: 6799073125310070894}
   m_Layer: 5
   m_Name: Ink Story Display
@@ -1925,6 +1926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16358eb190cbe894c9bba80485df9fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeTime: 0.8
   choiceButtons:
   - {fileID: 1176515489}
   - {fileID: 715489869}
@@ -1934,6 +1936,18 @@ MonoBehaviour:
   typewriter: {fileID: 9121395981039112316}
   nameText: {fileID: 3980090467203047386}
   dialogueText: {fileID: 6211773694323177925}
+--- !u!225 &6799073125310070896
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6330720885713385786}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!114 &7053839827897134398
 MonoBehaviour:
   m_ObjectHideFlags: 0

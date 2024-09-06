@@ -1,6 +1,7 @@
 using Ink.Runtime;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -9,6 +10,8 @@ using UnityEngine.UI;
 
 public class InkStoryDisplay : MonoBehaviour
 {
+    [SerializeField] float fadeTime = 0.3f;
+
     [SerializeField] List<ChoiceButton> choiceButtons = new List<ChoiceButton>();
     [SerializeField] VerticalLayoutGroup choiceButtonsLayoutGroup;
     [SerializeField] Dictionary<string, SpeakerProfileSO> nameToSpeakerProfile = new();
@@ -16,13 +19,16 @@ public class InkStoryDisplay : MonoBehaviour
     [SerializeField] Typewriter typewriter;
     [SerializeField] TMP_Text nameText;
     [SerializeField] TMP_Text dialogueText;
+    CanvasGroup canvasGroup;
     AudioSource audioSource;
 
+    public bool IsFadedIn { get; private set; } = false;
     public bool SpeechComplete { get; private set; } = true;
     public UnityEvent OnContinue { get; private set; } = new();
     public UnityEvent OnChoiceMade { get; private set; } = new();
 
     SpeakerProfileSO currentSpeaker;
+    Coroutine speechCoroutine;
 
     string folderPath = "Assets/SpeakerProfiles";
     List<UnityEngine.Object> scriptableObjects = new();
@@ -30,6 +36,7 @@ public class InkStoryDisplay : MonoBehaviour
 
     private void Awake()
     {
+        canvasGroup = GetComponent<CanvasGroup>();
         audioSource = GetComponent<AudioSource>();
         ParseSpeakerProfiles();
         HideDisplay();
@@ -41,7 +48,7 @@ public class InkStoryDisplay : MonoBehaviour
 
     public void BeginSpeech(string text)
     {
-        StartCoroutine(SpeakMessage(text));
+        speechCoroutine = StartCoroutine(SpeakMessage(text));
     }
 
     IEnumerator SpeakMessage(string text)
@@ -55,17 +62,16 @@ public class InkStoryDisplay : MonoBehaviour
         });
 
         typewriter.BeginTypewriter(text);
-        while (typewriter.IsTyping)
-        {
-            yield return null;
-        }
+        yield return new WaitUntil(() => typewriter.IsTyping == false);
 
         SpeechComplete = true;
     }
 
     public void SkipSpeech()
     {
-        StopAllCoroutines();
+        if (speechCoroutine == null) return;
+
+        StopCoroutine(speechCoroutine);
         typewriter.SkipTypewriter();
         SpeechComplete = true;
     }
@@ -122,12 +128,44 @@ public class InkStoryDisplay : MonoBehaviour
 
     public void ShowDisplay()
     {
-        gameObject.SetActive(true);
+        if (!gameObject.activeSelf)
+        {
+            gameObject.SetActive(true);
+            IsFadedIn = false;
+            StartCoroutine(FadeOverTime(0, 1, fadeTime, () => IsFadedIn = true));
+        }
     }
 
     public void HideDisplay()
     {
-        gameObject.SetActive(false);
+        if (gameObject.activeSelf)
+        {
+            IsFadedIn = true;
+            StartCoroutine(FadeOverTime(1, 0, fadeTime, () =>
+            {
+                IsFadedIn = false;
+                gameObject.SetActive(false);
+            }));
+        }
+    }
+
+    IEnumerator FadeOverTime(float startValue, float endValue, float fadeTime, UnityAction onComplete)
+    {
+        canvasGroup.alpha = startValue;
+
+        float startTime = Time.unscaledTime;
+        float timeElapsed = 0f;
+
+        while (timeElapsed < fadeTime)
+        {
+            canvasGroup.alpha = Mathf.Lerp(startValue, endValue, timeElapsed / fadeTime);
+            timeElapsed = Time.unscaledTime - startTime;
+            yield return null;
+        }
+
+        canvasGroup.alpha = endValue;
+
+        onComplete.Invoke();
     }
 
     public void ClearChoiceButtons()

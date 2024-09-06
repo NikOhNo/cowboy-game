@@ -39,10 +39,7 @@ public class InkInterpreter : MonoBehaviour
         }
 
         // Wait for Speech to Complete
-        while (!inkStoryDisplay.SpeechComplete)
-        {
-            yield return null;
-        }
+        yield return new WaitUntil(() => inkStoryDisplay.SpeechComplete);
 
         // Decide What To Do After Speech
         if (story.canContinue)
