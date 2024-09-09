@@ -948,6 +948,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Choice Button
       objectReference: {fileID: 0}
+    - target: {fileID: 1902657032858148120, guid: 636157b0ecdd66043a88e204fb744d2e, type: 3}
+      propertyPath: hoverExpandTime
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 5899857544596890743, guid: 636157b0ecdd66043a88e204fb744d2e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
