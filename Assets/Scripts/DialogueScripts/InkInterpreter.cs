@@ -34,6 +34,10 @@ public class InkInterpreter : MonoBehaviour
         if (story.canContinue)
         {
             string speech = story.Continue();
+            while (string.IsNullOrWhiteSpace(speech))
+            {
+                speech = story.Continue();
+            }
             speech = speech.Trim();
             inkStoryDisplay.BeginSpeech(speech);
         }

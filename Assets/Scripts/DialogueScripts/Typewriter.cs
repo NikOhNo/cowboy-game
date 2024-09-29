@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Typewriter : MonoBehaviour
@@ -43,7 +44,24 @@ public class Typewriter : MonoBehaviour
             {
                 yield return new WaitForSeconds(config.commaTime);
             }
-            else if (char.IsPunctuation(characters[i]) && characters[i] != '\'' && characters[i] != '\"')
+            else if (characters[i] == '-')
+            {
+                char characterBefore = TryGetCharacter(characters, i - 1);
+                char characterAfter = TryGetCharacter(characters, i + 1);
+
+                // hypen connecting words i.e. "hog-killin"
+                if (char.IsLetter(characterBefore) && char.IsLetter(characterAfter))
+                {
+                    yield return new WaitForSeconds(config.typeTime);
+                }
+                // hypen after a word i.e. "uh-"
+                else
+                {
+                    yield return new WaitForSeconds(config.punctuationTime);
+                }
+            }
+            else if (char.IsPunctuation(characters[i]) && characters[i] != '\'' && characters[i] != '\"'
+                    && characters[i] != '‘' && characters[i] != '’' && characters[i] != '“' && characters[i] != '”')
             {
                 yield return new WaitForSeconds(config.punctuationTime);
             }
@@ -55,6 +73,18 @@ public class Typewriter : MonoBehaviour
         }
 
         IsTyping = false;
+    }
+
+    private char TryGetCharacter(char[] characters, int index)
+    {
+        if (index >= 0 && index < characters.Length)
+        {
+            return characters[index];
+        }
+        else
+        {
+            return '\0';
+        }
     }
 
     public void SkipTypewriter()

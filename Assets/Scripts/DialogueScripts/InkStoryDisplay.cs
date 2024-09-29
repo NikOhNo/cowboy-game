@@ -10,7 +10,8 @@ using UnityEngine.UI;
 
 public class InkStoryDisplay : MonoBehaviour
 {
-    [SerializeField] float fadeTime = 0.3f;
+    [SerializeField] float fadeInTime = 0.3f;
+    [SerializeField] float fadeOutTime = 0.5f;
 
     [SerializeField] List<ChoiceButton> choiceButtons = new List<ChoiceButton>();
     [SerializeField] VerticalLayoutGroup choiceButtonsLayoutGroup;
@@ -132,7 +133,7 @@ public class InkStoryDisplay : MonoBehaviour
         {
             gameObject.SetActive(true);
             IsFadedIn = false;
-            StartCoroutine(FadeOverTime(0, 1, fadeTime, () => IsFadedIn = true));
+            StartCoroutine(FadeOverTime(0, 1, fadeInTime, () => IsFadedIn = true));
         }
     }
 
@@ -141,7 +142,7 @@ public class InkStoryDisplay : MonoBehaviour
         if (gameObject.activeSelf)
         {
             IsFadedIn = true;
-            StartCoroutine(FadeOverTime(1, 0, fadeTime, () =>
+            StartCoroutine(FadeOverTime(1, 0, fadeOutTime, () =>
             {
                 IsFadedIn = false;
                 gameObject.SetActive(false);
