@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts.Gameplay.Questing;
-using DialogueEditor;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -26,12 +25,12 @@ public class ProducerQuestManager : MonoBehaviour
     public static ProducerQuestManager Instance;
     
     // producer dialogues that are called when each step is complete
-    [SerializeField] private NPCConversation initiateQuestDialogue;
-    [SerializeField] private NPCConversation completeGeezerStepDialogue;
-    [SerializeField] private NPCConversation completeSheriffStepDialogue;
-    [SerializeField] private NPCConversation completeHouseStepDialogue;
-    [SerializeField] private NPCConversation completeBarnStepDialogue;
-    [SerializeField] private NPCConversation failQuestDialogue;
+    //[SerializeField] private NPCConversation initiateQuestDialogue;
+    //[SerializeField] private NPCConversation completeGeezerStepDialogue;
+    //[SerializeField] private NPCConversation completeSheriffStepDialogue;
+    //[SerializeField] private NPCConversation completeHouseStepDialogue;
+    //[SerializeField] private NPCConversation completeBarnStepDialogue;
+    //[SerializeField] private NPCConversation failQuestDialogue;
     
     private bool geezerStepFinished = false;
     private bool sheriffStepFinished = false;
@@ -39,7 +38,7 @@ public class ProducerQuestManager : MonoBehaviour
     private bool barnStepFinished = false;
     
     // queue conversations if one is happening already
-    private Queue<NPCConversation> conversationQueue;
+    //private Queue<NPCConversation> conversationQueue;
     
     public event Action CompleteGeezerStep;
     public event Action CompleteSheriffStep;
@@ -50,7 +49,7 @@ void Awake()
     {
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        conversationQueue = new Queue<NPCConversation>();
+        //conversationQueue = new Queue<NPCConversation>();
         countdown = GetComponent<Countdown>();
     }
 
@@ -97,14 +96,14 @@ void Awake()
 
         // if the conversation queue is nonempty, continuously check if there isn't a conversation so we can run the 
         // conversation in the queue. could probably switch this to hook into the ConversationManager.Instance.OnConversationEnd event
-        if (conversationQueue.Count != 0)
-        {
-            if (!ConversationManager.Instance.IsConversationActive)
-            {
-                var newConvo = conversationQueue.Dequeue();
-                ConversationManager.Instance.StartConversation(newConvo);
-            }
-        }
+        //if (conversationQueue.Count != 0)
+        //{
+        //    if (!ConversationManager.Instance.IsConversationActive)
+        //    {
+        //        var newConvo = conversationQueue.Dequeue();
+        //        ConversationManager.Instance.StartConversation(newConvo);
+        //    }
+        //}
     }
     
     public void OnSwitchScene(Scene scene, LoadSceneMode loadSceneMode)
@@ -133,7 +132,7 @@ void Awake()
         questStarted = true;
         countdown.duration = 60; // seconds
         countdown.Begin();
-        ConversationManager.Instance.StartConversation(initiateQuestDialogue);
+        //ConversationManager.Instance.StartConversation(initiateQuestDialogue);
     }
 
     
@@ -146,7 +145,7 @@ void Awake()
             Debug.Log("completed geezer step!");
             geezerStepFinished = true;
             countdown.AddTime(10); // can change this if it's too long or short
-            conversationQueue.Enqueue(completeGeezerStepDialogue);
+            //conversationQueue.Enqueue(completeGeezerStepDialogue);
             CompleteGeezerStep?.Invoke();
             return;
         }
@@ -156,7 +155,7 @@ void Awake()
             Debug.Log("completed sheriff step!");
             sheriffStepFinished = true;
             countdown.AddTime(10);
-            conversationQueue.Enqueue(completeSheriffStepDialogue);
+            //conversationQueue.Enqueue(completeSheriffStepDialogue);
             CompleteSheriffStep?.Invoke();
             return;
         }
@@ -166,7 +165,7 @@ void Awake()
             Debug.Log("completed house step!");
             houseStepFinished = true;
             countdown.AddTime(10);
-            conversationQueue.Enqueue(completeHouseStepDialogue);
+            //conversationQueue.Enqueue(completeHouseStepDialogue);
             CompleteHouseStep?.Invoke();
             return;
         }
@@ -176,7 +175,7 @@ void Awake()
             Debug.Log("completed barn step!");
             barnStepFinished = true;
             countdown.AddTime(10);
-            conversationQueue.Enqueue(completeBarnStepDialogue);
+            //conversationQueue.Enqueue(completeBarnStepDialogue);
             CompleteBarnStep?.Invoke();
             return;
         }
@@ -185,8 +184,8 @@ void Awake()
 
     public void ResetEntireQuest()
     {
-        conversationQueue.Clear();
-        conversationQueue.Enqueue(failQuestDialogue);
+        //conversationQueue.Clear();
+        //conversationQueue.Enqueue(failQuestDialogue);
         questLog.ProducerFinishedGeezerStep = false;
         geezerStepFinished = false;
         questLog.ProducerFinishedSheriffStep = false;

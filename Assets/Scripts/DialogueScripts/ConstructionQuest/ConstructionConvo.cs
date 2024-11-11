@@ -1,4 +1,3 @@
-using DialogueEditor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,7 +23,7 @@ public class ConstructionConvo : NPCConvo
 
         if (collision.CompareTag("Player"))
         {
-            ConversationManager.OnConversationEnded += HideNPC;
+            //ConversationManager.OnConversationEnded += HideNPC;
         }
     }
 
@@ -34,7 +33,7 @@ public class ConstructionConvo : NPCConvo
 
         if (collision.CompareTag("Player"))
         {
-            ConversationManager.OnConversationEnded -= HideNPC;
+            //ConversationManager.OnConversationEnded -= HideNPC;
             dialogueOptions.HideOptions();
         }
     }

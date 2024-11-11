@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1470d7eea904b4f903339bf66da396, type: 3}
+  m_Name: Security
+  m_EditorClassIdentifier: 
+  SpeakerSprite: {fileID: 21300000, guid: d2305057fa8565f448e31482f2bb260d, type: 3}
+  Voice: {fileID: 8300000, guid: 510b363293f89e54788a6da00df3d8f0, type: 3}

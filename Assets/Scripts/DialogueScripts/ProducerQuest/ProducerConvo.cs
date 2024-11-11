@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Scripts.Gameplay.Questing;
-using DialogueEditor;
 using UnityEngine;
 
 public class ProducerConvo : NPCConvo
 {
     [SerializeField] QuestCompletionLog questLog;
     
-    [SerializeField] NPCConversation incompleteQuestConvo;
-    [SerializeField] NPCConversation introConvo;
-    [SerializeField] NPCConversation finishQuestDialogue;
+    //[SerializeField] NPCConversation incompleteQuestConvo;
+    //[SerializeField] NPCConversation introConvo;
+    //[SerializeField] NPCConversation finishQuestDialogue;
     
     private void Awake()
     {
@@ -25,15 +24,15 @@ public class ProducerConvo : NPCConvo
     {
         if (!questLog.TalkedToGeezer)
         {
-            myConvo = incompleteQuestConvo;
+            //myConvo = incompleteQuestConvo;
         }
         else if (questLog.TalkedToGeezer && questLog.ConstructionComplete && !questLog.ProducerFinishedBarnStep)
         {
-            myConvo = introConvo;
+            //myConvo = introConvo;
         }
         else if (questLog.ProducerFinishedBarnStep)
         {
-            myConvo = finishQuestDialogue;
+            //myConvo = finishQuestDialogue;
         }
     }
 }

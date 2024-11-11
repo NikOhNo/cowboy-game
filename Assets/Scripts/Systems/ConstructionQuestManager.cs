@@ -1,6 +1,5 @@
 using Assets.Scripts.Gameplay.Player;
 using Assets.Scripts.Gameplay.Questing;
-using DialogueEditor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,10 +12,10 @@ public class ConstructionQuestManager : MonoBehaviour
 
     [SerializeField] SecurityConvo securityGuard;
 
-    [SerializeField] List<NPCConversation> revolverInteractions;
-    [SerializeField] NPCConversation officeHardHatInteraction;
-    [SerializeField] List<NPCConversation> hardHatInteractions;
-    [SerializeField] List<NPCConversation> idInteractions;
+    //[SerializeField] List<NPCConversation> revolverInteractions;
+    //[SerializeField] NPCConversation officeHardHatInteraction;
+    //[SerializeField] List<NPCConversation> hardHatInteractions;
+    //[SerializeField] List<NPCConversation> idInteractions;
 
     private void Awake()
     {
@@ -38,21 +37,21 @@ public class ConstructionQuestManager : MonoBehaviour
     private void HandleQuestFail()
     {
         securityGuard.StartRandomFailureDialogue();
-        ConversationManager.OnConversationEnded += () => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //ConversationManager.OnConversationEnded += () => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void PlayRevolverDialogue()
     {
-        ConversationManager.Instance.StartConversation(revolverInteractions[constructionLog.TimesRevolverUsed - 1]);
+        //ConversationManager.Instance.StartConversation(revolverInteractions[constructionLog.TimesRevolverUsed - 1]);
     }
 
     private void PlayHardHatDialogue()
     {
-        ConversationManager.Instance.StartConversation(hardHatInteractions[constructionLog.TimesHardHatUsed - 1]);
+        //ConversationManager.Instance.StartConversation(hardHatInteractions[constructionLog.TimesHardHatUsed - 1]);
     }
 
     private void PlayIDDialogue()
     {
-        ConversationManager.Instance.StartConversation(idInteractions[constructionLog.TimesIDUsed - 1]);
+        //ConversationManager.Instance.StartConversation(idInteractions[constructionLog.TimesIDUsed - 1]);
     }
 }
