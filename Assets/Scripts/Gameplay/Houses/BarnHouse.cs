@@ -9,20 +9,20 @@ public class BarnHouse : House
 
     private void Start()
     {
-        if (AllQuestsComplete())
-        {
-            barnEntrance.SetActive(true);
-            dialogueTrigger.SetActive(false);
-        }
-        else
-        {
-            barnEntrance.SetActive(false);
-            dialogueTrigger.SetActive(true);
-        }
+        //if (AllQuestsComplete())
+        //{
+        //    barnEntrance.SetActive(true);
+        //    dialogueTrigger.SetActive(false);
+        //}
+        //else
+        //{
+        //    barnEntrance.SetActive(false);
+        //    dialogueTrigger.SetActive(true);
+        //}
     }
 
-    public bool AllQuestsComplete()
-    {
-        return questLog.ConstructionComplete && questLog.ProducerComplete && questLog.TwinsComplete;
-    }    
+    //public bool AllQuestsComplete()
+    //{
+    //    return questLog.ConstructionComplete && questLog.ProducerComplete && questLog.TwinsComplete;
+    //}    
 }

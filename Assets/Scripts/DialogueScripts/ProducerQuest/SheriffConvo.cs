@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using Assets.Scripts.Gameplay.Questing;
 using UnityEngine;
 
 public class SheriffConvo : NPCConvo
 {
-    [SerializeField] QuestCompletionLog questLog;
+    //[SerializeField] QuestCompletionLog questLog;
     
     
     //[SerializeField] NPCConversation wrongTimeConvo;
@@ -16,11 +15,11 @@ public class SheriffConvo : NPCConvo
 
     private void Awake()
     {
-        if (ProducerQuestManager.Instance)
-        {
-            ProducerQuestManager.Instance.CompleteGeezerStep += UpdateDialogue;
-            ProducerQuestManager.Instance.CompleteSheriffStep += UpdateDialogue;
-        }
+        //if (ProducerQuestManager.Instance)
+        //{
+        //    ProducerQuestManager.Instance.CompleteGeezerStep += UpdateDialogue;
+        //    ProducerQuestManager.Instance.CompleteSheriffStep += UpdateDialogue;
+        //}
 
         UpdateDialogue();
     }

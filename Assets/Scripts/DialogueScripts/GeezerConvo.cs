@@ -1,12 +1,11 @@
 using System;
-using Assets.Scripts.Gameplay.Questing;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GeezerConvo : NPCConvo
 {
-    [SerializeField] QuestCompletionLog questLog;
+   // [SerializeField] QuestCompletionLog questLog;
 
     //[SerializeField] NPCConversation introConvo;
     //[SerializeField] NPCConversation quest2IntroConvo;
@@ -17,27 +16,27 @@ public class GeezerConvo : NPCConvo
 
     private void Awake()
     {
-        if (ProducerQuestManager.Instance)
-        {
-            ProducerQuestManager.Instance.CompleteGeezerStep += OnCompleteGeezerStep;
-        }
+        //if (ProducerQuestManager.Instance)
+        //{
+        //    ProducerQuestManager.Instance.CompleteGeezerStep += OnCompleteGeezerStep;
+        //}
         UpdateDialogue();
     }
 
     private void UpdateDialogue()
     {
-        if (questLog.TalkedToGeezer == false)
-        {
-            //myConvo = introConvo;
-        }
-        else if (questLog.ConstructionComplete && !questLog.ProducerStarted)
-        {
-            //myConvo = quest2IntroConvo;
-        }
-        else if (questLog.ProducerStarted && !quest2_usedDialogue)
-        {
-            //myConvo = quest2ActualConvo;
-        }
+        //if (questLog.TalkedToGeezer == false)
+        //{
+        //    //myConvo = introConvo;
+        //}
+        //else if (questLog.ConstructionComplete && !questLog.ProducerStarted)
+        //{
+        //    //myConvo = quest2IntroConvo;
+        //}
+        //else if (questLog.ProducerStarted && !quest2_usedDialogue)
+        //{
+        //    //myConvo = quest2ActualConvo;
+        //}
     }
 
     protected override void BeginConversation()

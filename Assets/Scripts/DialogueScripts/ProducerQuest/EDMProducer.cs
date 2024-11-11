@@ -13,18 +13,18 @@ public class EDMProducer : MonoBehaviour
     public void BeginProducerQuest()
     {
         // in case the quest was failed and the quest manager still exists
-        if (!ProducerQuestManager.Instance)
-        {
-            Instantiate(producerQuestManagerPrefab);
-        }
+        //if (!ProducerQuestManager.Instance)
+        //{
+        //    Instantiate(producerQuestManagerPrefab);
+        //}
     }
 
     public void CompleteProducerQuest()
     {
-        if (ProducerQuestManager.Instance)
-        {
-            // purpose fulfilled, time to die
-            Destroy(ProducerQuestManager.Instance.gameObject);
-        }
+        //if (ProducerQuestManager.Instance)
+        //{
+        //    // purpose fulfilled, time to die
+        //    Destroy(ProducerQuestManager.Instance.gameObject);
+        //}
     }
 }

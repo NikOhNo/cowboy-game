@@ -1,4 +1,3 @@
-using Assets.Scripts.Gameplay.Questing;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +8,7 @@ public class IntroSequenceHandler : MonoBehaviour
 {
     [SerializeField] UnityEvent OnCutsceneBegin;
     [SerializeField] UnityEvent OnCutsceneEnd;
-    [SerializeField] QuestCompletionLog questLog;
+    //[SerializeField] QuestCompletionLog questLog;
 
     PlayableDirector playableDirector;
 
@@ -20,16 +19,16 @@ public class IntroSequenceHandler : MonoBehaviour
 
     private void Start()
     {
-        if (questLog.SeenFirstCutscene == false)
-        {
-            playableDirector.Play();
-            OnCutsceneBegin.Invoke();
-            questLog.SeenFirstCutscene = true;
-        }
-        else
-        {
-            AnnounceCutsceneEnd();
-        }
+        //if (questLog.SeenFirstCutscene == false)
+        //{
+        //    playableDirector.Play();
+        //    OnCutsceneBegin.Invoke();
+        //    questLog.SeenFirstCutscene = true;
+        //}
+        //else
+        //{
+        //    AnnounceCutsceneEnd();
+        //}
     }
 
     public void AnnounceCutsceneEnd()

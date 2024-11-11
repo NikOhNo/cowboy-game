@@ -1,5 +1,4 @@
 using Assets.Scripts.Gameplay.Player;
-using Assets.Scripts.Gameplay.Questing;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class ConstructionQuestManager : MonoBehaviour
 {
-    [SerializeField] QuestCompletionLog questLog;
-    [SerializeField] ConstructionQuestLog constructionLog;
+    //[SerializeField] QuestCompletionLog questLog;
+    //[SerializeField] ConstructionQuestLog constructionLog;
 
     [SerializeField] SecurityConvo securityGuard;
 
@@ -21,17 +20,17 @@ public class ConstructionQuestManager : MonoBehaviour
     {
         //constructionLog.OnBeginQuest.AddListener();
         //constructionLog.OnFailQuest.AddListener();
-        constructionLog.OnCompleteQuest.AddListener(CompleteQuest);
-        constructionLog.OnFailQuest.AddListener(HandleQuestFail);
+        //constructionLog.OnCompleteQuest.AddListener(CompleteQuest);
+        //constructionLog.OnFailQuest.AddListener(HandleQuestFail);
 
-        constructionLog.OnUseRevolver.AddListener(PlayRevolverDialogue);
-        constructionLog.OnUseHardHat.AddListener(PlayHardHatDialogue);
-        constructionLog.OnUseID.AddListener(PlayIDDialogue);
+        //constructionLog.OnUseRevolver.AddListener(PlayRevolverDialogue);
+        //constructionLog.OnUseHardHat.AddListener(PlayHardHatDialogue);
+        //constructionLog.OnUseID.AddListener(PlayIDDialogue);
     }
 
     private void CompleteQuest()
     {
-        questLog.ConstructionComplete = true;
+        //questLog.ConstructionComplete = true;
     }
 
     private void HandleQuestFail()

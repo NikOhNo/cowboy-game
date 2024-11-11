@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ConstructionQuestOptions : MonoBehaviour
 {
-    [SerializeField] ConstructionQuestLog questLog;
+    //[SerializeField] ConstructionQuestLog questLog;
 
     [SerializeField] GameObject displayPanel;
 
@@ -30,8 +30,8 @@ public class ConstructionQuestOptions : MonoBehaviour
 
     private void UpdateOptions()
     {
-        revolverOption.SetActive(questLog.HasRevolver);
-        hardHatOption.SetActive(questLog.HasHardHat);
-        idOption.SetActive(questLog.HasID);
+        //revolverOption.SetActive(questLog.HasRevolver);
+        //hardHatOption.SetActive(questLog.HasHardHat);
+        //idOption.SetActive(questLog.HasID);
     }
 }

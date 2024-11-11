@@ -1,23 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
-using Assets.Scripts.Gameplay.Questing;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class TownsfolkConvo : NPCConvo
 {
-    [SerializeField] private QuestCompletionLog questLog;
+    //[SerializeField] private QuestCompletionLog questLog;
     
     //[SerializeField] private NPCConversation wrongTimeConvo;
     //[SerializeField] private NPCConversation quest2Convo;
 
     private void Awake()
     {
-        if (ProducerQuestManager.Instance)
-        {
-            ProducerQuestManager.Instance.CompleteSheriffStep += UpdateDialogue;
-            ProducerQuestManager.Instance.CompleteHouseStep += UpdateDialogue;
-        }
+        //if (ProducerQuestManager.Instance)
+        //{
+        //    ProducerQuestManager.Instance.CompleteSheriffStep += UpdateDialogue;
+        //    ProducerQuestManager.Instance.CompleteHouseStep += UpdateDialogue;
+        //}
 
         UpdateDialogue();
     }

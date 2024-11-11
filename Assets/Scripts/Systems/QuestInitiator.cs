@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class QuestInitiator : MonoBehaviour
 {
-    private void Awake()
-    {
-        QuestManager.Instance.ActivateQuest("TalkGeezer");
-    }
+    //private void Awake()
+    //{
+    //    QuestManager.Instance.ActivateQuest("TalkGeezer");
+    //}
 }
