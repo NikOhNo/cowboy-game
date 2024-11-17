@@ -1,39 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using UnityEngine;
+using Newtonsoft.Json;
+using UnityEngine.Rendering;
 
 public class SaveManager : MonoBehaviour
 {
-    public string savePath;
-    public SaveFile saveFile;
+    public string SavePath => Application.persistentDataPath + Path.AltDirectorySeparatorChar;
 
-    private void Awake()
+    public void CreateNewSave(string saveName)
     {
-        savePath = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "SaveFile.json";
-
-        if (File.Exists(savePath))
-        {
-            LoadGame();   
-        }
-        else
-        {
-            Debug.LogError("SaveFile not found, creating new save");
-            saveFile = new();
-            SaveGame();
-        }
+        SaveFile saveFile = new();
+        saveFile.saveName = saveName;
+        UpdateSave(saveFile);
     }
 
-    public void SaveGame()
+    public void UpdateSave(SaveFile saveFile)
     {
-        File.WriteAllBytes(savePath, Encoding.UTF8.GetBytes(JsonUtility.ToJson(saveFile, true)));
+        saveFile.UpdateSaveMetadata();
+        string saveJson = JsonConvert.SerializeObject(saveFile, Formatting.Indented);
+        File.WriteAllText(SavePath + saveFile.saveName + ".json", saveJson);
     }
 
-    public void LoadGame()
+    public List<SaveFile> LoadSaves()
     {
-        byte[] jsonData = File.ReadAllBytes(savePath);
-        string json = Encoding.UTF8.GetString(jsonData);
-        saveFile = JsonUtility.FromJson<SaveFile>(json);
+        List<SaveFile> saveFiles = new();
+        string[] saveFilePaths = Directory.GetFiles(SavePath, "*.json");
+
+        foreach (string saveFilePath in saveFilePaths)
+        {
+            string saveJson = File.ReadAllText(saveFilePath);
+            SaveFile saveFile = JsonConvert.DeserializeObject<SaveFile>(saveJson);
+
+            if (saveFile != null)
+            {
+                saveFiles.Add(saveFile);
+            }
+        }
+
+        return saveFiles;
     }
 }

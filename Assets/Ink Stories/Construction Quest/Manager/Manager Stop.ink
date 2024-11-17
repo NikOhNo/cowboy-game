@@ -1,4 +1,4 @@
-INCLUDE ../LicketySplit.ink
+INCLUDE ../../LicketySplit.ink
 
 ->intro
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,16 +6,25 @@ using UnityEngine;
 [System.Serializable]
 public class SaveFile 
 {
-    //-- Save File Data
+    //-- Save File Data (metadata)
+    public string saveName;
     public string saveDate;
     public string saveTime;
     public float playTime;
 
     //-- Quest Data
-    public List<Quest> completedQuests;
-    public List<Quest> activeQuests;
+    public Dictionary<string, Quest> quests = new(); 
 
     //-- Scene Data
 
     //-- Player Data
+
+    //-- Helper Functions
+    public void UpdateSaveMetadata()
+    {
+        saveDate = DateTime.Now.ToString("yyyy-MM-dd");
+        saveTime = DateTime.Now.ToString("HH:mm:ss");
+
+        //TODO: record playtime
+    }
 }
