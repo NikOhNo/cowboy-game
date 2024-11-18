@@ -679,6 +679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 846bd787d1f8e9549b59c1671a1529df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   saveDisplays:
   - {fileID: 2803918512653291760}
   - {fileID: 5323002409909740560}
@@ -692,6 +693,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2231060656530188494}
     m_Modifications:
+    - target: {fileID: 53659016651452722, guid: 659fa9ae0d4e4a64d99bca2bc924a4a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2506630246083358465, guid: 659fa9ae0d4e4a64d99bca2bc924a4a1, type: 3}
+      propertyPath: SaveName
+      value: Save3
+      objectReference: {fileID: 0}
     - target: {fileID: 2506630246083358465, guid: 659fa9ae0d4e4a64d99bca2bc924a4a1, type: 3}
       propertyPath: saveName
       value: Save3
@@ -813,6 +822,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2231060656530188494}
     m_Modifications:
+    - target: {fileID: 53659016651452722, guid: 659fa9ae0d4e4a64d99bca2bc924a4a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2506630246083358465, guid: 659fa9ae0d4e4a64d99bca2bc924a4a1, type: 3}
+      propertyPath: SaveName
+      value: Save1
+      objectReference: {fileID: 0}
     - target: {fileID: 4939871129434590578, guid: 659fa9ae0d4e4a64d99bca2bc924a4a1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -930,6 +947,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2231060656530188494}
     m_Modifications:
+    - target: {fileID: 53659016651452722, guid: 659fa9ae0d4e4a64d99bca2bc924a4a1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2506630246083358465, guid: 659fa9ae0d4e4a64d99bca2bc924a4a1, type: 3}
+      propertyPath: SaveName
+      value: Save2
+      objectReference: {fileID: 0}
     - target: {fileID: 2506630246083358465, guid: 659fa9ae0d4e4a64d99bca2bc924a4a1, type: 3}
       propertyPath: saveName
       value: Save2

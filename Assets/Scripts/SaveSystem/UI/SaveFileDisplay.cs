@@ -4,21 +4,27 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SaveFileDisplay : MonoBehaviour
 {
-    [SerializeField] string saveName;
+    public string SaveName;
     [SerializeField] TMP_Text newSaveText;
     [SerializeField] TMP_Text saveNameText;
     [SerializeField] TMP_Text dateText;
     [SerializeField] TMP_Text timeText;
-    [SerializeField] SaveManager saveManager;
 
-    SaveFile saveFile = null;
+    public Button Button { get; private set; }
+    public SaveFile SaveFile { get; private set; } = null;
+
+    private void Awake()
+    {
+        Button = GetComponent<Button>();
+    }
 
     public void SetSave(SaveFile saveFile)
     {
-        this.saveFile = saveFile;
+        this.SaveFile = saveFile;
         bool savePresent = saveFile != null;
 
         newSaveText.enabled = !savePresent;
@@ -27,7 +33,7 @@ public class SaveFileDisplay : MonoBehaviour
         dateText.enabled = savePresent;
         timeText.enabled = savePresent;
 
-        saveNameText.text = saveName;
+        saveNameText.text = SaveName;
 
         if (saveFile != null)
         {
@@ -41,21 +47,6 @@ public class SaveFileDisplay : MonoBehaviour
 
             dateText.text = "Date: " + readableDate;
             timeText.text = "Time: " + readableTime;
-        }
-    }
-
-    public void OnSaveFilePressed()
-    {
-        // TODO: load saves & start game
-
-        if (saveFile == null)
-        {
-            Debug.Log($"Creating save: {saveName}");
-            saveManager.CreateNewSave(saveName);
-        }
-        else
-        {
-
         }
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 [System.Serializable]
@@ -13,9 +14,10 @@ public class SaveFile
     public float playTime;
 
     //-- Quest Data
-    public Dictionary<string, Quest> quests = new(); 
+    public Dictionary<string, Quest> quests = new();
 
     //-- Scene Data
+    public string lastScene;
 
     //-- Player Data
 

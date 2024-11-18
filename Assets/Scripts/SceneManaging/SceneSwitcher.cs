@@ -15,4 +15,9 @@ public class SceneSwitcher : MonoBehaviour
         Debug.Log($"asset path is {assetPath}");
         // SceneManager.LoadScene(scene.buildIndex);
     }
+
+    public void LoadSceneName(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
 }

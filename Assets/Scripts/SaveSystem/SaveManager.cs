@@ -6,21 +6,25 @@ using System.Text;
 using UnityEngine;
 using Newtonsoft.Json;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class SaveManager : MonoBehaviour
 {
     public string SavePath => Application.persistentDataPath + Path.AltDirectorySeparatorChar;
 
-    public void CreateNewSave(string saveName)
+    public SaveFile CreateNewSave(string saveName)
     {
         SaveFile saveFile = new();
         saveFile.saveName = saveName;
-        UpdateSave(saveFile);
+        saveFile.lastScene = "Town Scene";
+        UpdateSave(saveFile, false);
+        return saveFile;
     }
 
-    public void UpdateSave(SaveFile saveFile)
+    public void UpdateSave(SaveFile saveFile, bool recordScene)
     {
         saveFile.UpdateSaveMetadata();
+        if (recordScene) saveFile.lastScene = SceneManager.GetActiveScene().name;
         string saveJson = JsonConvert.SerializeObject(saveFile, Formatting.Indented);
         File.WriteAllText(SavePath + saveFile.saveName + ".json", saveJson);
     }
