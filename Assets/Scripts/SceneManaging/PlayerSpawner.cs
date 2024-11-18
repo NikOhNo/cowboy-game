@@ -9,8 +9,7 @@ public class PlayerSpawner : MonoBehaviour
     
     // object for spawning player if it doesn't exist in the scene already
     // should be in every scene :)
-    
-    // Start is called before the first frame update
+
     void Start()
     {
         if (!GameObject.FindWithTag("Player"))
@@ -18,14 +17,6 @@ public class PlayerSpawner : MonoBehaviour
             var player = Instantiate(playerPrefab);
             player.transform.position = this.transform.position;
             
-            GameObject.FindWithTag("MainCamera").GetComponent<CinemachineBrain>().ActiveVirtualCamera.Follow = player.transform;
-            
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+            GameObject.FindWithTag("MainCamera").GetComponent<CinemachineBrain>().ActiveVirtualCamera.Follow = player.transform;        }
     }
 }

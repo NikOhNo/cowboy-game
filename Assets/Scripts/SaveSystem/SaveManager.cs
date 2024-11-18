@@ -17,6 +17,8 @@ public class SaveManager : MonoBehaviour
         SaveFile saveFile = new();
         saveFile.saveName = saveName;
         saveFile.lastScene = "Town Scene";
+        IntroQuest introQuest = new();
+        saveFile.quests.Add(typeof(IntroQuest).Name, introQuest);
         UpdateSave(saveFile, false);
         return saveFile;
     }
@@ -25,7 +27,14 @@ public class SaveManager : MonoBehaviour
     {
         saveFile.UpdateSaveMetadata();
         if (recordScene) saveFile.lastScene = SceneManager.GetActiveScene().name;
-        string saveJson = JsonConvert.SerializeObject(saveFile, Formatting.Indented);
+
+        var settings = new JsonSerializerSettings
+        {
+            TypeNameHandling = TypeNameHandling.Auto, // Handles polymorphic deserialization
+            Formatting = Formatting.Indented
+        };
+
+        string saveJson = JsonConvert.SerializeObject(saveFile, settings);
         File.WriteAllText(SavePath + saveFile.saveName + ".json", saveJson);
     }
 
@@ -34,10 +43,15 @@ public class SaveManager : MonoBehaviour
         List<SaveFile> saveFiles = new();
         string[] saveFilePaths = Directory.GetFiles(SavePath, "*.json");
 
+        var settings = new JsonSerializerSettings
+        {
+            TypeNameHandling = TypeNameHandling.Auto // Handles polymorphic deserialization
+        };
+
         foreach (string saveFilePath in saveFilePaths)
         {
             string saveJson = File.ReadAllText(saveFilePath);
-            SaveFile saveFile = JsonConvert.DeserializeObject<SaveFile>(saveJson);
+            SaveFile saveFile = JsonConvert.DeserializeObject<SaveFile>(saveJson, settings);
 
             if (saveFile != null)
             {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Playables;
@@ -19,16 +20,19 @@ public class IntroSequenceHandler : MonoBehaviour
 
     private void Start()
     {
-        //if (questLog.SeenFirstCutscene == false)
-        //{
-        //    playableDirector.Play();
-        //    OnCutsceneBegin.Invoke();
-        //    questLog.SeenFirstCutscene = true;
-        //}
-        //else
-        //{
-        //    AnnounceCutsceneEnd();
-        //}
+        IntroQuest introQuest = GameManager.Instance.GetQuest<IntroQuest>();
+
+        if (introQuest.SeenFirstCutscene == false)
+        {
+            playableDirector.Play();
+            OnCutsceneBegin.Invoke();
+            GameManager.Instance.GetQuest<IntroQuest>().SeenFirstCutscene = true;
+            GameManager.Instance.SaveGame();
+        }
+        else
+        {
+            AnnounceCutsceneEnd();
+        }
     }
 
     public void AnnounceCutsceneEnd()

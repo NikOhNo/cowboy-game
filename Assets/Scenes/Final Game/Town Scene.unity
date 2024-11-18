@@ -831,8 +831,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07844b99599eb4448b181564db930ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questLog: {fileID: 11400000, guid: 079e9e6f44425954880e2a258d727ab1, type: 2}
-  constructionQuestLog: {fileID: 11400000, guid: dd9d6f4387f211e4f980b2b97d4d1aa7, type: 2}
   Q1StartTrigger: {fileID: 1114331712}
   DialogueTrigger: {fileID: 2036789690}
 --- !u!1 &209235542
@@ -1113,7 +1111,7 @@ Transform:
   m_Children:
   - {fileID: 231950659}
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &229164597
 GameObject:
@@ -1480,7 +1478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8745791302635816966, guid: cf8538c0518a80941a5b91c4a5e8fe74, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8745791302635816966, guid: cf8538c0518a80941a5b91c4a5e8fe74, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2117,7 +2115,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4823375575644220473, guid: 1097bbb97963d394aa4280528f145c4f, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4823375575644220473, guid: 1097bbb97963d394aa4280528f145c4f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2314,7 +2312,7 @@ RectTransform:
   - {fileID: 1019324811}
   - {fileID: 938488575}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2360,7 +2358,7 @@ Transform:
   - {fileID: 270355196}
   - {fileID: 1490234812}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &327445950 stripped
 Transform:
@@ -2381,7 +2379,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6536880052589737189, guid: a2195b50d5c4e344da2600a7cea51131, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6536880052589737189, guid: a2195b50d5c4e344da2600a7cea51131, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3036,7 +3034,7 @@ Transform:
   m_Children:
   - {fileID: 740526415}
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &410251941
 PrefabInstance:
@@ -3350,7 +3348,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5fad3af9ab9cf444a26009077f46ae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  constructionQuestLog: {fileID: 11400000, guid: dd9d6f4387f211e4f980b2b97d4d1aa7, type: 2}
   displayPanel: {fileID: 1479003465}
   revolver: {fileID: 757552004}
   hardHat: {fileID: 1971328587}
@@ -3398,7 +3395,7 @@ Transform:
   m_Children:
   - {fileID: 410251942}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &463834627
 GameObject:
@@ -3445,7 +3442,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925591e5e20c7354cbb3dd83ec7dcb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questLog: {fileID: 11400000, guid: 079e9e6f44425954880e2a258d727ab1, type: 2}
   quest2_usedDialogue: 0
 --- !u!61 &463834630
 BoxCollider2D:
@@ -3732,7 +3728,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &511160284
 GameObject:
@@ -3819,7 +3815,7 @@ Transform:
   - {fileID: 1418071199}
   - {fileID: 750549292}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &517699042
 PrefabInstance:
@@ -4827,7 +4823,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e82c20acb8b4a8b43b9fa77148aa2196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questLog: {fileID: 11400000, guid: dd9d6f4387f211e4f980b2b97d4d1aa7, type: 2}
   displayPanel: {fileID: 525408921}
   revolverOption: {fileID: 257752660}
   hardHatOption: {fileID: 1384034680}
@@ -4877,7 +4872,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9375c13e3b02df74d8a75b8a829fc763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questLog: {fileID: 11400000, guid: 079e9e6f44425954880e2a258d727ab1, type: 2}
 --- !u!61 &645265421
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5141,7 +5135,7 @@ Transform:
   m_Children:
   - {fileID: 1838498159}
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &706149988
 GameObject:
@@ -6168,7 +6162,7 @@ Transform:
   - {fileID: 1652780924}
   - {fileID: 693210379}
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &834957087
 GameObject:
@@ -6376,7 +6370,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &858295351
 GameObject:
@@ -6649,7 +6643,7 @@ Transform:
   - {fileID: 645265419}
   - {fileID: 672242630}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &921729824
 MonoBehaviour:
@@ -6663,7 +6657,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d7501959c3e576448ab2203c139110f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questLog: {fileID: 11400000, guid: 079e9e6f44425954880e2a258d727ab1, type: 2}
   barnEntrance: {fileID: 185599886}
   dialogueTrigger: {fileID: 645265418}
 --- !u!1 &938488574
@@ -7789,7 +7782,7 @@ Transform:
   - {fileID: 463834628}
   - {fileID: 914939261}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1083143731
 GameObject:
@@ -8648,7 +8641,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1222811987
 GameObject:
@@ -9619,7 +9612,7 @@ Transform:
   m_Children:
   - {fileID: 1790253407}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1349000650
 GameObject:
@@ -10005,8 +9998,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ea8e96c6ba7a1d4587b3d7158fd9119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questLog: {fileID: 11400000, guid: 079e9e6f44425954880e2a258d727ab1, type: 2}
-  constructionLog: {fileID: 11400000, guid: dd9d6f4387f211e4f980b2b97d4d1aa7, type: 2}
   securityGuard: {fileID: 1132996884}
 --- !u!224 &1383253473
 RectTransform:
@@ -10031,7 +10022,7 @@ RectTransform:
   - {fileID: 2136735082}
   - {fileID: 1393988071}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10290,30 +10281,6 @@ MonoBehaviour:
   OnCutsceneBegin:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayableCharacter, Assembly-CSharp
-        m_MethodName: FreezePlayer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayableCharacter, Assembly-CSharp
-        m_MethodName: FreezePlayer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 11400000, guid: 51a18bed02fdb6c47b4bd9f674d1857a, type: 2}
         m_TargetAssemblyTypeName: MusicChannelSO, Assembly-CSharp
         m_MethodName: PauseSong
@@ -10377,7 +10344,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  questLog: {fileID: 11400000, guid: 079e9e6f44425954880e2a258d727ab1, type: 2}
 --- !u!4 &1390714850
 Transform:
   m_ObjectHideFlags: 0
@@ -10391,7 +10357,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1393988070
 GameObject:
@@ -10596,7 +10562,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1418071198
 GameObject:
@@ -10643,7 +10609,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebff43574cb65e1428e0367cd6ace68d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questLog: {fileID: 11400000, guid: 079e9e6f44425954880e2a258d727ab1, type: 2}
 --- !u!61 &1418071201
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11214,7 +11179,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1479003465
 GameObject:
@@ -11428,7 +11393,7 @@ Transform:
   m_Children:
   - {fileID: 1288284594}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1514967442
 GameObject:
@@ -11606,7 +11571,7 @@ Transform:
   - {fileID: 1254232884}
   - {fileID: 548725345}
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1565317744
 PrefabInstance:
@@ -12113,7 +12078,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75943a415bb7111499cfd1e79ce5e356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questLog: {fileID: 11400000, guid: 079e9e6f44425954880e2a258d727ab1, type: 2}
   quest2_usedDialogue: 0
 --- !u!61 &1652780926
 BoxCollider2D:
@@ -12160,37 +12124,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0373275, y: 0.8158655}
   m_EdgeRadius: 0
---- !u!1 &1748808320
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1748808321}
-  m_Layer: 0
-  m_Name: Quest Initiator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1748808321
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1748808320}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1750119796
 GameObject:
   m_ObjectHideFlags: 0
@@ -12884,7 +12817,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1815297288
 GameObject:
@@ -13729,7 +13662,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925591e5e20c7354cbb3dd83ec7dcb0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questLog: {fileID: 11400000, guid: 079e9e6f44425954880e2a258d727ab1, type: 2}
   quest2_usedDialogue: 0
 --- !u!61 &2036789693
 BoxCollider2D:
@@ -14465,7 +14397,7 @@ Transform:
   - {fileID: 41906752}
   - {fileID: 306778945}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2113841927
 GameObject:
@@ -14707,7 +14639,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2119858732
 GameObject:

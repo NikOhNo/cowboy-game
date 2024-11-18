@@ -21,8 +21,28 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void SaveGame()
+    {
+        saveManager.UpdateSave(ChosenSave, true);
+    }
+
     public void SetSave(SaveFile save)
     {
         ChosenSave = save;
+    }
+
+    public void AddQuest<T>(T quest) where T : Quest
+    {
+        ChosenSave.quests.Add(typeof(T).Name, quest);
+    }
+
+    public bool HasQuest<T>() where T : Quest
+    {
+        return ChosenSave.quests.ContainsKey(typeof(T).Name);
+    }
+
+    public T GetQuest<T>() where T: Quest
+    {
+        return ChosenSave.quests.TryGetValue(typeof(T).Name, out var quest) ? (T)quest : null;
     }
 }
